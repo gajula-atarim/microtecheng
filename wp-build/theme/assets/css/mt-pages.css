@@ -238,6 +238,7 @@ body:has(.mtp-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
   .mtp.mtp.mtp .mff47c9 { grid-template-columns: minmax(0px, 1fr) }
   .mtp.mtp.mtp .m0769b2 { grid-area: span 1 / span 1 }
 }
+.mtp.mtp.mtp :is(.m0e7591) { contain: size; }
 /* Hover states from the design */
 .mtp.mtp.mtp .mh0:hover { background: rgb(242, 244, 247) !important; color: rgb(59, 71, 156) !important; text-decoration: none !important; }
 .mtp.mtp.mtp .mh1:hover { background: rgb(238, 240, 244) !important; }

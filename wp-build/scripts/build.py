@@ -56,6 +56,7 @@ css_blocks = []   # (classname, [dict per level])
 hover_cls = {}    # rule body -> class
 hover_css = []
 missing_fs = []
+slot_classes = set()  # classes on images that replace the design's <image-slot>
 
 def cls_for(levels):
     sig = json.dumps(levels, sort_keys=True)
@@ -110,6 +111,8 @@ def build(key):
             extra.append(name)
         elif any(levels):
             extra.append(cls_for(levels))
+            if n0.get('slot'):
+                slot_classes.add(extra[-1])
         for h in n0['hov']:
             extra.append(hov_rules[h])
         attrs = dict(n0['attrs'])
@@ -187,6 +190,8 @@ for mq in MQ:
     if not rules: continue
     if mq is None: css += rules
     else: css.append(f'@media (max-width: {mq}px) {{\n  ' + '\n  '.join(rules) + '\n}')
+# image-slot frames are absolutely positioned, so the image never sizes its box
+css.append(f"{P} :is({', '.join('.' + c for c in sorted(slot_classes))}) {{ contain: size; }}")
 css.append('/* Hover states from the design */')
 css += hover_css
 os.makedirs(OUT, exist_ok=True)
