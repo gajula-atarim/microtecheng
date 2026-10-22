@@ -44,6 +44,13 @@ def img_url(src):
     m = re.search(r'pexels-photo-(\d+)', src) or re.search(r'assets/([a-z-]+)\.png', src)
     return IMAGES[m.group(1)]
 
+# Client feedback (Atarim) applied on top of the design's copy: page -> [(old, new)].
+COPY_CHANGES = {
+    'home': [
+        ('Since 2000 · Construction &amp; mining equipment', 'Established 2000 · Specialist Electronics Engineering'),
+    ],
+}
+
 def eid(*parts):
     return hashlib.md5('/'.join(parts).encode()).hexdigest()[:7]
 
@@ -60,6 +67,8 @@ def page_tree(key, sections):
     out = []
     for i, s in enumerate(sections):
         html = re.sub(r'\{\{IMG:([^}]*)\}\}', lambda m: img_url(m.group(1)), s['html'])
+        for before, after in COPY_CHANGES.get(key, []):
+            html = html.replace(before, after)
         if i == 0:
             html = html.replace(' loading="lazy"', '', 1)  # hero image loads eagerly
         out.append({
