@@ -41,3 +41,31 @@ body:has(.mtp-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 @media (prefers-reduced-motion: reduce) {
 	.mtp *, .mtp *::before, .mtp *::after { transition: none !important; animation: none !important; }
 }
+
+/* Homepage enquiry: the Contact Form 7 form (id 88) laid out like the design's form */
+.mtp.mtp.mtp .mtp-form .mt-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; }
+.mtp.mtp.mtp .mtp-form label { display: flex; flex-direction: column; gap: 6px; margin: 0; font-size: 14px; font-weight: 600; color: #3B479C; }
+.mtp.mtp.mtp .mtp-form .mt-full, .mtp.mtp.mtp .mtp-form .mt-submit { grid-column: 1 / -1; }
+.mtp.mtp.mtp .mtp-form .wpcf7-form-control-wrap { display: block; }
+.mtp.mtp.mtp .mtp-form :is(input[type="text"], input[type="email"], input[type="tel"], select, textarea) {
+	width: 100%; margin: 0; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 400; line-height: normal; padding: 12px 14px;
+	border: 1px solid #C9D0DC; border-radius: 8px; color: #1E2433; background: #fff; outline: none; box-shadow: none;
+}
+.mtp.mtp.mtp .mtp-form textarea { resize: vertical; height: auto; }
+.mtp.mtp.mtp .mtp-form input[type="file"] {
+	width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 400; padding: 10px;
+	border: 1px dashed #C9D0DC; border-radius: 8px; background: #F2F4F7; color: #1E2433;
+}
+.mtp.mtp.mtp .mtp-form :is(input, select, textarea):focus { border-color: #3B479C; }
+.mtp.mtp.mtp .mtp-form .wpcf7-submit {
+	width: 100%; background: #3B479C; color: #fff; border: 0; border-radius: 999px; padding: 15px 28px;
+	font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; line-height: normal; cursor: pointer; transition: background .2s;
+}
+.mtp.mtp.mtp .mtp-form .wpcf7-submit:hover { background: #2E3880; }
+.mtp.mtp.mtp .mtp-form .wpcf7-spinner { position: absolute; margin: 16px 0 0 8px; }
+.mtp.mtp.mtp .mtp-form .wpcf7-not-valid-tip { font-size: 13px; font-weight: 500; margin-top: 4px; }
+.mtp.mtp.mtp .mtp-form .wpcf7-response-output { margin: 16px 0 0; padding: 12px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; }
+
+/* Homepage sliders: the script positions the services track; categories swap content */
+.mtp.mtp.mtp .mtp-cat-card.is-swapping { animation: mtp-fade .45s ease; }
+@keyframes mtp-fade { from { opacity: .35; } to { opacity: 1; } }

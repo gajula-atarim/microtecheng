@@ -1,8 +1,8 @@
 # Microtec Engineering – inner pages build
 
-Source for the About, Services and Load Systems pages on https://microteceng.wsdfy.com,
-built from the design handoff (`Microtec_Engineering_website_rebuild.zip`). The homepage is
-not part of this build.
+Source for the Home, About, Services and Load Systems pages on https://microteceng.wsdfy.com,
+built from the design handoff (`Microtec_Engineering_website_rebuild.zip`).
+`backup/home-48-elementor-before.json` is the homepage's Elementor data before the rebuild.
 
 ## How it works
 
@@ -18,10 +18,10 @@ not part of this build.
 
 ## Theme files (microtec-child)
 
-- `assets/css/mt-pages.css` – all rules scoped to `.mtp`; never affects the homepage.
-- `assets/js/mt-pages.js` – EWP feature list rotation (3 s per item, pauses on hover).
-- `functions.php` – enqueues the two files plus Barlow Semi Condensed / Inter on pages other
-  than the front page.
+- `assets/css/mt-pages.css` – all rules scoped to `.mtp`, the wrapper on each built section.
+- `assets/js/mt-pages.js` – EWP feature list rotation and the homepage hero slides, category
+  arrows, services slider, "Why choose" highlight and industry tiles.
+- `functions.php` – enqueues the two files plus Barlow Semi Condensed / Inter on pages.
 
 `images/` holds web-sized copies of the design's local diagrams; Pexels photos are placeholders
 (see the handoff README) and are uploaded to the media library straight from Pexels.

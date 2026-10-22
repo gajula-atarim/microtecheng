@@ -10,7 +10,7 @@ S, OUT = sys.argv[1], sys.argv[2]
 
 WIDTHS = ['1440', '1200', '1050', '900', '700', '620', '390']
 MQ = [None, 1239, 1099, 999, 759, 639, 599]
-PAGES = 'about design repairs ewp load loader forklift telehandler crane'.split()
+PAGES = 'about design repairs ewp load loader forklift telehandler crane home'.split()
 
 LINKS = {
     'Microtec Home v4.dc.html': '/',
@@ -88,6 +88,19 @@ def build(key):
             hover_css.append(f'{P} .{hover_cls[body]}:hover {{ {body} }}')
         hov_rules[m.group(1)] = hover_cls[body]
     trees = [d[w]['sections'] for w in WIDTHS]
+    for tpl in SAME_AS_DESKTOP.get(key, []):
+        desk = [x for s in trees[0] for x in find_all(s, tpl, [])]
+        for t in trees[1:]:
+            for s in t:
+                stack = [s]
+                while stack:
+                    x = stack.pop()
+                    if 't' in x: continue
+                    x['kids'] = [json.loads(json.dumps(desk[0])) if ('t' not in k and k['tpl'] == tpl) else k for k in x['kids']]
+                    stack.extend(x['kids'])
+    cyc = cycle_styles(key, trees)
+    cycle_seen = {}
+    view_product = list(VIEW_PRODUCT_URLS) if key == 'home' else []
     out = []
 
     def emit(nodes, ewp_item=None):
@@ -96,13 +109,20 @@ def build(key):
         if 't' in n0:
             return html.escape(n0['t'], quote=False)
         tag = n0['tag']
+        if n0['tpl'] == FORM_TPL.get(key):
+            return FORM_HTML
         levels = [split_style(n['style']) for n in nodes]
         extra = []
         if n0.get('slot'):
             levels = [{'display': 'block', 'width': '100%', 'height': '100%', 'object-fit': 'cover', **l} for l in levels]
         if tag in ('h1', 'h2', 'h3', 'h4', 'p') and 'font-size' not in levels[0]:
             missing_fs.append((key, tag, n0['tpl']))
-        if ewp_item is not None and n0['tpl'] in EWP_TPLS:
+        if n0['tpl'] in cyc:
+            gname, inactive, active = cyc[n0['tpl']]
+            name = f'mtp-c-{key}-{n0["tpl"]}'
+            cyc_css.append((name, inactive, active))
+            extra.append(name)
+        elif ewp_item is not None and n0['tpl'] in EWP_TPLS:
             # cycle list: base = inactive item, .is-active = active item
             inactive = [split_style(x['style']) for x in ewp_item['inactive'][n0['tpl']]]
             active = [split_style(x['style']) for x in ewp_item['active'][n0['tpl']]]
@@ -116,6 +136,24 @@ def build(key):
         for h in n0['hov']:
             extra.append(hov_rules[h])
         attrs = dict(n0['attrs'])
+        if n0['tpl'] in cyc and tag == 'svg':
+            attrs.pop('stroke', None)
+        gname = CYCLES.get(key, {}).get(n0['tpl'])
+        if gname:
+            extra += ['mtp-cyc', 'mtp-cyc-' + gname]
+            if not cycle_seen.get(gname):
+                extra.append('is-active')
+                cycle_seen[gname] = True
+        if n0['tpl'] in HOOKS.get(key, {}):
+            extra.append(HOOKS[key][n0['tpl']])
+        for k, v in DATA.get(key, {}).get(n0['tpl'], {}).items():
+            attrs[k] = json.dumps(v)
+        if tag == 'a' and attrs.get('href') == '#':
+            for title, url in CARD_LINKS.items():
+                if text_of(n0).strip().startswith(title):
+                    attrs['href'] = url
+            if text_of(n0).strip() == 'View Product' and view_product:
+                attrs['href'] = view_product.pop(0)
         if 'href' in attrs:
             attrs['href'] = LINKS.get(attrs['href'], attrs['href'])
         if tag == 'img':
@@ -142,6 +180,95 @@ def build(key):
             ewp_item = ewp_states(nodes)
         out.append({'label': nodes[0].get('label'), 'html': emit(nodes, ewp_item)})
     return out
+
+
+# --- Interactive groups (homepage) --------------------------------------------------------
+# Repeated items whose styles change with the design's state: base class = inactive item,
+# .is-active = active item. Rendered at state 0, so the first item of each group is active.
+CYCLES = {
+    'home': {'65': 'hero-bg', '90': 'hero-card', '100': 'hero-tab', '128': 'cat-dot',
+             '152': 'svc-dot', '163': 'why', '235': 'ind'},
+}
+# Classes the script (mt-pages.js) hooks onto.
+HOOKS = {
+    'home': {'63': 'mtp-hero-slider', '94': 'mtp-hero-cap', '95': 'mtp-hero-link', '96': 'mtp-hero-count',
+             '109': 'mtp-cats', '114': 'mtp-cat-card', '116': 'mtp-cat-img', '118': 'mtp-cat-name',
+             '119': 'mtp-cat-desc', '124': 'mtp-cat-prev', '125': 'mtp-cat-next',
+             '138': 'mtp-svc', '139': 'mtp-svc-track', '150': 'mtp-svc-dots', '154': 'mtp-svc-prev',
+             '155': 'mtp-svc-next', '161': 'mtp-why', '233': 'mtp-ind'},
+}
+PX = lambda i, w=1400: f'https://images.pexels.com/photos/{i}/pexels-photo-{i}.jpeg?auto=compress&cs=tinysrgb&w={w}'
+DATA = {
+    'home': {
+        '63': {'data-slides': [
+            {'cap': 'Excavators & cranes', 'link': 'Designed & built in-house'},
+            {'cap': 'Mobile cranes & radio remotes', 'link': 'Diagnostics & repairs'},
+            {'cap': 'Plant & machinery', 'link': 'Custom control design'}]},
+        '109': {'data-cats': [
+            {'name': 'Electronic displays and LCDs', 'url': '/product-category/lcds/', 'desc': 'Replacement LCDs and keypad overlays for Tadano, Kato and Bronto equipment.', 'img': '{{IMG:' + PX(37492292, 1600) + '}}'},
+            {'name': 'Crane sensors and potentiometers', 'url': '/products/', 'desc': 'Load, angle and length sensors for cranes and elevated work platforms.', 'img': '{{IMG:' + PX(34054470, 1600) + '}}'},
+            {'name': 'COBO components', 'url': '/product-category/cobo-components/', 'desc': 'Cobo switches and control components for machine operation.', 'img': '{{IMG:' + PX(33694016, 1600) + '}}'},
+            {'name': 'Hydraulic and mechanical components', 'url': '/product-category/hydraulic-parts/', 'desc': 'Hydraulic parts, level bubbles and mechanical spares for cranes and plant.', 'img': '{{IMG:' + PX(29502218, 1600) + '}}'},
+            {'name': 'Radio remote controls', 'url': '/product-category/hetronic/', 'desc': 'Hetronic radio remote controls, supplied and repaired in-house.', 'img': '{{IMG:' + PX(38146898, 1600) + '}}'},
+            {'name': 'Safety and monitoring equipment', 'url': '/product-category/warning-lights-accessories/', 'desc': 'Robway load and safety systems, plus external warning lights.', 'img': '{{IMG:' + PX(5328573, 1600) + '}}'}]},
+    },
+}
+# Service cards link to the built pages (by card title).
+CARD_LINKS = {
+    'Design Services': '/services/design-services/',
+    'Electronic Repairs': '/services/electronic-repairs/',
+    'Elevated Work Platform Control Systems': '/services/ewp-control-systems/',
+    'Load Systems': '/services/load-systems/',
+    'Learn About Us': '/about/',
+    # WooCommerce: shop page and product categories
+    'View all products': '/products/',
+    'Shop now': '/products/',
+    'Electronic displays and LCDs': '/product-category/lcds/',
+    'Crane sensors and potentiometers': '/products/',
+    'COBO components': '/product-category/cobo-components/',
+    'Hydraulic and mechanical components': '/product-category/hydraulic-parts/',
+}
+# Popular Parts "View Product" buttons, in order (brand categories until products exist).
+VIEW_PRODUCT_URLS = ['/product-category/hetronic/', '/product-category/tadano-parts/',
+                     '/product-category/cobo-components/', '/product-category/warning-lights-accessories/']
+# The enquiry form is the site's Contact Form 7 form, styled to the design in base.css.
+FORM_TPL = {'home': '288'}
+FORM_HTML = '<div class="mtp-form">[contact-form-7 id="88" title="Homepage enquiry"]</div>'
+# Pager dots are rebuilt by the script (2-up vs 1-up), so every width uses the desktop markup.
+SAME_AS_DESKTOP = {'home': ['150']}
+
+def text_of(n):
+    if 't' in n: return n['t']
+    return ''.join(text_of(k) for k in n['kids'])
+
+def find_all(n, tpl, acc):
+    if 't' in n: return acc
+    if n['tpl'] == tpl: acc.append(n)
+    for k in n['kids']: find_all(k, tpl, acc)
+    return acc
+
+def cycle_styles(key, trees):
+    """tpl -> (group, [inactive levels], [active levels]) for elements that change with state."""
+    out = {}
+    for gtpl, gname in CYCLES.get(key, {}).items():
+        act, ina = {}, {}
+        for t in trees:
+            items = [x for s in t for x in find_all(s, gtpl, [])]
+            for item, store in ((items[0], act), (items[1], ina)):
+                stack = [item]
+                while stack:
+                    x = stack.pop()
+                    if 't' in x: continue
+                    st = split_style(x['style'])
+                    if x['tag'] == 'svg' and 'stroke' in x['attrs']:
+                        st['stroke'] = x['attrs']['stroke']
+                    store.setdefault(x['tpl'], []).append(st)
+                    stack.extend(x['kids'])
+        for tpl in act:
+            if act[tpl] != ina[tpl]:
+                out[tpl] = (gname, ina[tpl], act[tpl])
+    return out
+cyc_css = []
 
 # --- EWP feature list (tpl 213 list, 215 item) -------------------------------------------
 EWP_LIST_TPL, EWP_ITEM_TPL = '213', '215'
@@ -183,6 +310,12 @@ for name, inactive, active in ewp_css:
         by_mq[mq].append(f'{P} .{name} {{ {body} }}')
     for mq, body in level_css(name, active).items():
         by_mq[mq].append(f'{P} .mtp-ewp-item.is-active .{name}, {P} .mtp-ewp-item.is-active.{name} {{ {body} }}')
+
+for name, inactive, active in cyc_css:
+    for mq, body in level_css(name, inactive).items():
+        by_mq[mq].append(f'{P} .{name} {{ {body} }}')
+    for mq, body in level_css(name, active).items():
+        by_mq[mq].append(f'{P} .is-active.{name}, {P} .is-active .{name} {{ {body} }}')
 
 css = [open(S + '/scripts/base.css').read()]
 for mq in MQ:

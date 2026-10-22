@@ -16,10 +16,10 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'microtec', $uri . '/assets/js/microtec.js', [], filemtime( $dir . '/assets/js/microtec.js' ), true );
 }, 20 );
 
-// Inner pages (About, Services, Load Systems) built from the design handoff: their own
-// type, section styles and the EWP feature-list rotation. Never loaded on the homepage.
+// Pages built from the design handoff (Home, About, Services, Load Systems): their own type,
+// section styles and the slider / highlight behaviour.
 add_action( 'wp_enqueue_scripts', function () {
-	if ( is_front_page() || ! is_page() ) {
+	if ( ! is_page() ) {
 		return;
 	}
 	$dir = get_stylesheet_directory();

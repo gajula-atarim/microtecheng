@@ -12,6 +12,27 @@ IMAGES = {
     '28442180': U + 'pexels-photo-28442180.jpeg',
     '16100275': U + 'pexels-photo-16100275.jpeg',
     '4705088': U + 'pexels-photo-4705088.jpeg',
+    '37492292': U + 'pexels-photo-37492292-scaled.jpeg',
+    '34054470': U + 'pexels-photo-34054470-scaled.jpeg',
+    '33694016': U + 'pexels-photo-33694016-scaled.jpeg',
+    '29502218': U + 'pexels-photo-29502218.jpeg',
+    '38146898': U + 'pexels-photo-38146898.jpeg',
+    '5328573': U + 'pexels-photo-5328573.jpeg',
+    '36861987': U + 'pexels-photo-36861987.jpeg',
+    '37492293': U + 'pexels-photo-37492293.jpeg',
+    '39105511': U + 'pexels-photo-39105511.jpeg',
+    '33531830': U + 'pexels-photo-33531830.jpeg',
+    '29502219': U + 'pexels-photo-29502219.jpeg',
+    '11454241': U + 'pexels-photo-11454241.jpeg',
+    '31580848': U + 'pexels-photo-31580848-scaled.jpeg',
+    '29827405': U + 'pexels-photo-29827405.jpeg',
+    '4993793': U + 'pexels-photo-4993793.jpeg',
+    '35072810': U + 'pexels-photo-35072810-scaled.jpeg',
+    '32588540': U + 'pexels-photo-32588540-scaled.jpeg',
+    '35693092': U + 'pexels-photo-35693092.jpeg',
+    '35290678': U + 'pexels-photo-35290678-scaled.jpeg',
+    '7286002': U + 'pexels-photo-7286002.jpeg',
+    '7286016': U + 'pexels-photo-7286016.jpeg',
     'repairs-board-hd': U + 'repairs-board-hd.jpg',
     'ewp-schematic': U + 'ewp-schematic.jpg',
     'forklift-weighing-diagram': U + 'forklift-weighing-diagram.jpg',
@@ -26,6 +47,15 @@ def img_url(src):
 def eid(*parts):
     return hashlib.md5('/'.join(parts).encode()).hexdigest()[:7]
 
+def widget(key, i, html):
+    # Sections holding a shortcode (the enquiry form) use Elementor's Shortcode widget so
+    # WordPress renders it; everything else is an HTML widget.
+    if '[contact-form-7' in html:
+        return {'id': eid(key, str(i), 'html'), 'elType': 'widget', 'widgetType': 'shortcode',
+                'settings': {'shortcode': html}, 'elements': []}
+    return {'id': eid(key, str(i), 'html'), 'elType': 'widget', 'widgetType': 'html',
+            'settings': {'html': html}, 'elements': []}
+
 def page_tree(key, sections):
     out = []
     for i, s in enumerate(sections):
@@ -39,10 +69,7 @@ def page_tree(key, sections):
                 'flex_gap': {'column': '0', 'row': '0', 'isLinked': True, 'unit': 'px', 'size': 0},
                 'padding': {'unit': 'px', 'top': '0', 'right': '0', 'bottom': '0', 'left': '0', 'isLinked': True},
             },
-            'elements': [{
-                'id': eid(key, str(i), 'html'), 'elType': 'widget', 'widgetType': 'html',
-                'settings': {'html': '<div class="mtp">' + html + '</div>'}, 'elements': [],
-            }],
+            'elements': [widget(key, i, '<div class="mtp">' + html + '</div>')],
         })
     return out
 
