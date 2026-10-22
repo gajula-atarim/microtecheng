@@ -72,3 +72,7 @@ body:has(.mtp-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 
 /* Homepage hero heading: smaller than the design (84px → 60px desktop, 46px → 36px phones) */
 .mtp.mtp.mtp .mtp-hero-slider h1 { font-size: clamp(36px, 4.6vw, 60px); }
+
+/* Header: no "Home" link while on the homepage (client feedback); shown on every other page.
+   Covers the desktop and phone menus — WordPress marks the front-page item .menu-item-home. */
+body.home #masthead .menu-item-home { display: none !important; }
