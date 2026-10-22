@@ -76,6 +76,17 @@ COPY_CHANGES = {
          '        \n', ''),
         ('<span class="m88aee1">A full range of services for construction and mining equipment.</span>',
          '<span class="m88aee1">A full range of services for plant and equipment.</span>'),
+        # Street address alongside the PO Box in the enquiry block.
+        ('<span class="mc2e688">PO Box 4413, Dandenong South VIC 3164</span>',
+         '<span class="mc2e688">16-18 Maxwell St, Dandenong South VIC 3175</span>\n'
+         '        <span class="mc2e688">PO Box 4413, Dandenong South VIC 3164</span>'),
+    ],
+    # The street address is in Dandenong South.
+    'about': [
+        ('16-18 Maxwell St<br>Dandenong, Victoria, 3175', '16-18 Maxwell St<br>Dandenong South, Victoria, 3175'),
+    ],
+    'repairs': [
+        ('16 -18 Maxwell St, Dandenong, 3175', '16-18 Maxwell St, Dandenong South VIC 3175'),
     ],
 }
 
