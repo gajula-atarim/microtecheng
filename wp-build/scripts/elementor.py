@@ -48,6 +48,8 @@ def img_url(src):
 COPY_CHANGES = {
     'home': [
         ('Since 2000 · Construction &amp; mining equipment', 'Established 2000 · Specialist Electronics Engineering'),
+        ('Specialist Crane Electronics <span class="m4bffa3">&amp; Engineering Solutions</span>',
+         'Electronic Engineering, Repairs <span class="m4bffa3">&amp; Custom Solutions for Plant and Equipment</span>'),
     ],
 }
 
