@@ -50,6 +50,8 @@ COPY_CHANGES = {
         ('Since 2000 · Construction &amp; mining equipment', 'Established 2000 · Specialist Electronics Engineering'),
         ('Specialist Crane Electronics <span class="m4bffa3">&amp; Engineering Solutions</span>',
          'Electronic Engineering, Repairs <span class="m4bffa3">&amp; Custom Solutions for Plant and Equipment</span>'),
+        ('custom-designed systems for construction and mining equipment.</p>',
+         'custom-designed systems for plant and equipment.</p>'),
     ],
 }
 
