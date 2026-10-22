@@ -121,6 +121,27 @@ def band(title, text):
     </div>
   </div></section>'''
 
+def process(kicker, heading, intro, note, steps):
+    rows = ''.join(f'''
+          <div class="mb0ca0d">
+            <span class="mcb78bb">{n:02d}</span>
+            <div class="m7299c9"><span class="md63603">{t}</span><span class="md04055">{d}</span></div>
+          </div>''' for n, (t, d) in enumerate(steps, 1))
+    return f'''<section class="ma2e621">
+  <div class="m0787aa">
+    <div class="m51de31">
+      <div class="md8d053">{kicker}</div>
+      <h2 class="m71bc66">{heading}</h2>
+      <p class="m1ca2d3">{intro}</p>
+      <div class="m119a29">
+        {svg('shield', 'md59f61', '#3B479C')}
+        <p class="m12fd6b">{note}</p>
+      </div>
+    </div>
+    <div class="m61d522">{rows}
+    </div>
+  </div></section>'''
+
 def cta(title):
     return f'''<section class="ma2e621">
   <div class="medb174">
@@ -191,10 +212,16 @@ EXTRA_PAGES = {
                 ('link', 'CanBus control systems', 'CanBus technology minimises wiring, increases reliability and makes troubleshooting simpler.'),
                 ('tools', 'Complete installation', 'The full scope of work, including electronics, hydraulics, pneumatics and mechanical installation.'),
             ])},
-        {'label': '03 Built for site', 'html': band(
-            'Robust, reliable and made to withstand harsh conditions.',
-            'Our experience in working with electronics used in plant and equipment has given our engineers '
-            'the expertise to ensure that all designs are robust, reliable and made to withstand harsh conditions.')},
+        {'label': '03 How we work', 'html': process(
+            'How we work', 'From your requirements to a fitted, working system',
+            'Every system is specified, fitted and calibrated by our engineers to suit your machine and your site.',
+            'Robust, reliable and made to withstand harsh conditions. Our experience with electronics used in '
+            'plant and equipment goes into every design.', [
+                ('Discuss your requirements', 'Call us to arrange an appointment so we can understand your machine, your site and what the system needs to do.'),
+                ('Design', 'Custom electronics and control systems designed and manufactured for your machinery.'),
+                ('Supply and fit', 'The complete supply and installation, covering electronics, hydraulics, pneumatics and mechanical installation.'),
+                ('Calibrate', 'Systems are calibrated by our engineers to suit your machine and your site.'),
+            ])},
         {'label': 'CTA', 'html': cta('Need a machine control system designed and fitted?')},
     ],
 }
