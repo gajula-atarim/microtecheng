@@ -204,7 +204,7 @@ EXTRA_PAGES = {
             'pexels-photo-31580848-scaled.jpeg', 'Machine control system integration')},
         {'label': '02 Integration', 'html': cards(
             'What we design and fit', 'Machine control systems, designed and fitted',
-            'Every system is specified, fitted and calibrated by our engineers to suit your machine and your site.', [
+            'We can assist you to customise a system to suit your needs.', [
                 ('chip', 'Customised machine control electronics', 'Custom electronic products and systems designed and manufactured for your machinery since 2007.'),
                 ('shield', 'Safety systems', 'Load monitoring, light control modules, warning lights, height limiting and alarm latching systems.'),
                 ('radio', 'Radio remote control', 'Radio control to complement your existing safety systems and controls, or to replace them.'),
