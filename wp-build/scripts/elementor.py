@@ -89,6 +89,20 @@ COPY_CHANGES = {
         ('16 -18 Maxwell St, Dandenong, 3175', '16-18 Maxwell St, Dandenong South VIC 3175'),
     ],
 }
+# Site-wide wording from the client's review: Microtec serves plant and equipment, not just
+# construction and mining. Industry names (the Construction and Mining tiles, project case
+# studies) stay as they are.
+SITE_COPY = [
+    ('assisting customers with construction and mining equipment', 'assisting customers with plant and equipment'),
+    ('a full range of services to construction and mining equipment.', 'a full range of services for plant and equipment.'),
+    ('<span class="mc16a85">Construction &amp; mining equipment</span>', '<span class="mc16a85">Plant &amp; equipment</span>'),
+    ('electronics used in construction and mining equipment', 'electronics used in plant and equipment'),
+    ('repair services to the construction and mining industry since 2000.', 'repair services for plant and equipment since 2000.'),
+    ('services and repairs for construction and mining equipment', 'services and repairs for plant and equipment'),
+    ('Electronics experience built on construction and mining sites.', 'Electronics experience built for plant and equipment.'),
+    ('harsh Australian conditions on construction and mining sites.', 'harsh Australian site conditions.'),
+    ('years supporting<br>construction &amp; mining', 'years supporting<br>plant &amp; equipment'),
+]
 
 def eid(*parts):
     return hashlib.md5('/'.join(parts).encode()).hexdigest()[:7]
@@ -106,7 +120,7 @@ def page_tree(key, sections):
     out = []
     for i, s in enumerate(sections):
         html = re.sub(r'\{\{IMG:([^}]*)\}\}', lambda m: img_url(m.group(1)), s['html'])
-        for before, after in COPY_CHANGES.get(key, []):
+        for before, after in COPY_CHANGES.get(key, []) + SITE_COPY:
             html = html.replace(before, after)
         if i == 0:
             html = html.replace(' loading="lazy"', '', 1)  # hero image loads eagerly
