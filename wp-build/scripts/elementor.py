@@ -52,6 +52,18 @@ COPY_CHANGES = {
          'Electronic Engineering, Repairs <span class="m4bffa3">&amp; Custom Solutions for Plant and Equipment</span>'),
         ('custom-designed systems for construction and mining equipment.</p>',
          'custom-designed systems for plant and equipment.</p>'),
+        # Hydraulic and mechanical components is no longer a range: the 4th card shows the
+        # next category in the carousel data instead.
+        ('<a class="mb099a5 mh11 mtp-cat-card" href="#">\n'
+         '          <div class="mf2a67f"><img class="m0e7591 mtp-cat-img" src="https://microteceng.wsdfy.com/wp-content/uploads/2026/10/pexels-photo-29502218.jpeg" alt="Hydraulic and mechanical components" loading="lazy"></div>\n'
+         '          <div class="m1ee890">\n'
+         '            <span class="mf63644 mtp-cat-name">Hydraulic and mechanical components</span>\n'
+         '            <span class="mb0299f mtp-cat-desc">Hydraulic parts, level bubbles and mechanical spares for cranes and plant.</span>',
+         '<a class="mb099a5 mh11 mtp-cat-card" href="/product-category/hetronic/">\n'
+         '          <div class="mf2a67f"><img class="m0e7591 mtp-cat-img" src="https://microteceng.wsdfy.com/wp-content/uploads/2026/10/pexels-photo-38146898.jpeg" alt="Radio remote controls" loading="lazy"></div>\n'
+         '          <div class="m1ee890">\n'
+         '            <span class="mf63644 mtp-cat-name">Radio remote controls</span>\n'
+         '            <span class="mb0299f mtp-cat-desc">Hetronic radio remote controls, supplied and repaired in-house.</span>'),
     ],
 }
 

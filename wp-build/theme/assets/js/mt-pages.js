@@ -86,6 +86,20 @@
 			dots = [].slice.call( grid.querySelectorAll( '.mtp-cyc-cat-dot' ) ),
 			start = 0;
 		if ( ! cats.length || ! cards.length ) return;
+		// Arrows move two cards at a time; with an odd number of categories they move one, so
+		// every category gets its turn. One dot per stop.
+		var step = cats.length % 2 ? 1 : 2, stops = cats.length / step;
+		if ( dots.length && dots.length !== stops ) {
+			var wrap = dots[ 0 ].parentNode, template = dots[ 0 ];
+			wrap.innerHTML = '';
+			dots = [];
+			for ( var d = 0; d < stops; d++ ) {
+				var dot = template.cloneNode( true );
+				dot.classList.toggle( 'is-active', d === 0 );
+				wrap.appendChild( dot );
+				dots.push( dot );
+			}
+		}
 
 		function render() {
 			cards.forEach( function ( card, i ) {
@@ -101,11 +115,11 @@
 				void card.offsetWidth;
 				card.classList.add( 'is-swapping' );
 			} );
-			activate( dots, Math.floor( start / 2 ) );
+			activate( dots, Math.floor( start / step ) );
 		}
 		var prev = grid.querySelector( '.mtp-cat-prev' ), next = grid.querySelector( '.mtp-cat-next' );
-		if ( prev ) prev.addEventListener( 'click', function () { start = ( start - 2 + cats.length * 2 ) % cats.length; render(); } );
-		if ( next ) next.addEventListener( 'click', function () { start = ( start + 2 ) % cats.length; render(); } );
+		if ( prev ) prev.addEventListener( 'click', function () { start = ( start - step + cats.length ) % cats.length; render(); } );
+		if ( next ) next.addEventListener( 'click', function () { start = ( start + step ) % cats.length; render(); } );
 	}
 
 	function initServices( view ) {

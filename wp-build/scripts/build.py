@@ -208,7 +208,6 @@ DATA = {
             {'name': 'Electronic displays and LCDs', 'url': '/product-category/lcds/', 'desc': 'Replacement LCDs and keypad overlays for Tadano, Kato and Bronto equipment.', 'img': '{{IMG:' + PX(37492292, 1600) + '}}'},
             {'name': 'Crane sensors and potentiometers', 'url': '/products/', 'desc': 'Load, angle and length sensors for cranes and elevated work platforms.', 'img': '{{IMG:' + PX(34054470, 1600) + '}}'},
             {'name': 'COBO components', 'url': '/product-category/cobo-components/', 'desc': 'Cobo switches and control components for machine operation.', 'img': '{{IMG:' + PX(33694016, 1600) + '}}'},
-            {'name': 'Hydraulic and mechanical components', 'url': '/product-category/hydraulic-parts/', 'desc': 'Hydraulic parts, level bubbles and mechanical spares for cranes and plant.', 'img': '{{IMG:' + PX(29502218, 1600) + '}}'},
             {'name': 'Radio remote controls', 'url': '/product-category/hetronic/', 'desc': 'Hetronic radio remote controls, supplied and repaired in-house.', 'img': '{{IMG:' + PX(38146898, 1600) + '}}'},
             {'name': 'Safety and monitoring equipment', 'url': '/product-category/warning-lights-accessories/', 'desc': 'Robway load and safety systems, plus external warning lights.', 'img': '{{IMG:' + PX(5328573, 1600) + '}}'}]},
     },
@@ -226,7 +225,6 @@ CARD_LINKS = {
     'Electronic displays and LCDs': '/product-category/lcds/',
     'Crane sensors and potentiometers': '/products/',
     'COBO components': '/product-category/cobo-components/',
-    'Hydraulic and mechanical components': '/product-category/hydraulic-parts/',
 }
 # Popular Parts "View Product" buttons, in order (brand categories until products exist).
 VIEW_PRODUCT_URLS = ['/product-category/hetronic/', '/product-category/tadano-parts/',
