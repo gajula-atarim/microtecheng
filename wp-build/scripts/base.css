@@ -1,0 +1,43 @@
+/*
+ * Microtec Engineering — inner pages (About, Services, Load Systems).
+ * Generated from the design handoff (microtec-site/*.dc.html) by wp-build/scripts/build.py.
+ * Every rule is scoped to .mtp, the wrapper on each section, so the homepage, header and
+ * footer are untouched. Breakpoints match the design: 1240 / 1100 / 1000 / 760 / 640 / 600.
+ */
+
+/* Section wrapper: the design's page defaults */
+.mtp {
+	font-family: 'Inter', sans-serif;
+	color: #1E2433;
+	-webkit-font-smoothing: antialiased;
+	line-height: normal;
+	font-size: 16px;
+}
+.mtp *, .mtp *::before, .mtp *::after { box-sizing: border-box; }
+/* Specificity: resets and links (0,3,1) sit below the generated element rules (0,4,0). */
+.mtp.mtp.mtp a { color: #2E3880; text-decoration: none; }
+.mtp.mtp.mtp a:where(:hover) { color: #3B479C; text-decoration: underline; }
+
+/* Neutralise the theme / Elementor kit type so only the design's own styles apply */
+.mtp.mtp.mtp :is(h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, small, strong) {
+	font-family: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+}
+.mtp.mtp.mtp :is(h1, h2, h3, h4, h5, h6) { color: inherit; line-height: inherit; }
+.mtp.mtp.mtp p { margin: 1em 0; }
+.mtp.mtp.mtp img { max-width: none; height: auto; border: 0; border-radius: 0; box-shadow: none; }
+.mtp.mtp.mtp svg { display: inline-block; }
+.mtp.mtp.mtp button { font-family: inherit; }
+
+/* The floating header bar sits over each page hero, as it does on the homepage */
+body:has(.mtp-hero) #masthead { margin-bottom: -98px; position: relative; z-index: 20; }
+
+/* Elementor wrappers around each section: no spacing of their own */
+.e-con.mtp-con { --padding-top: 0px; --padding-bottom: 0px; --padding-left: 0px; --padding-right: 0px; --gap: 0px; --row-gap: 0px; --column-gap: 0px; padding: 0; }
+.e-con.mtp-con > .e-con-inner { padding: 0; max-width: none; }
+.mtp-con .elementor-widget-html { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+	.mtp *, .mtp *::before, .mtp *::after { transition: none !important; animation: none !important; }
+}
