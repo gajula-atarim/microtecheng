@@ -149,7 +149,9 @@
 		}
 		function go( i ) {
 			page = ( i + pages ) % pages;
-			track.style.transform = 'translateX(calc(' + ( -page ) + ' * (100% + 24px)))';
+			// The last page ends on the last card, so an odd count never leaves a gap.
+			var per = perView(), first = Math.max( 0, Math.min( page * per, count - per ) );
+			track.style.transform = 'translateX(calc(' + ( -first ) + ' * (100% + 24px) / ' + per + '))';
 			activate( dots, page );
 		}
 		var prev = section.querySelector( '.mtp-svc-prev' ), next = section.querySelector( '.mtp-svc-next' );

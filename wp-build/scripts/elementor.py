@@ -64,6 +64,16 @@ COPY_CHANGES = {
          '          <div class="m1ee890">\n'
          '            <span class="mf63644 mtp-cat-name">Radio remote controls</span>\n'
          '            <span class="mb0299f mtp-cat-desc">Hetronic radio remote controls, supplied and repaired in-house.</span>'),
+        # The EWP service stays on its own page but is no longer featured in the services slider.
+        ('          <a class="mc8fec3 mh5" href="/services/ewp-control-systems/">\n'
+         '            <div class="m363e2e"><img class="m0e7591" src="https://microteceng.wsdfy.com/wp-content/uploads/2026/10/pexels-photo-16100275.jpeg" alt="Elevated Work Platform Control Systems" loading="lazy"></div>\n'
+         '            <div class="m8ef944">\n'
+         '              <span class="m4cfc65">Elevated Work Platform Control Systems</span>\n'
+         '              <span class="mbad608">Control systems for elevated work platforms.</span>\n'
+         '              <span class="m934ec2">View more →</span>\n'
+         '            </div>\n'
+         '          </a>\n'
+         '        \n', ''),
     ],
 }
 
