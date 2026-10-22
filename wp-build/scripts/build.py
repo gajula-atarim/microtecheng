@@ -218,6 +218,8 @@ CARD_LINKS = {
     'Electronic Repairs': '/services/electronic-repairs/',
     'Elevated Work Platform Control Systems': '/services/ewp-control-systems/',
     'Load Systems': '/services/load-systems/',
+    'Radio Control Systems': '/services/radio-control-systems/',
+    'System Integration': '/services/system-integration/',
     'Learn About Us': '/about/',
     # WooCommerce: shop page and product categories
     'View all products': '/products/',
