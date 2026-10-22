@@ -74,6 +74,8 @@ COPY_CHANGES = {
          '            </div>\n'
          '          </a>\n'
          '        \n', ''),
+        ('<span class="m88aee1">A full range of services for construction and mining equipment.</span>',
+         '<span class="m88aee1">A full range of services for plant and equipment.</span>'),
     ],
 }
 
