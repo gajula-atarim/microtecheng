@@ -76,3 +76,6 @@ body:has(.mtp-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 /* Header: no "Home" link while on the homepage (client feedback); shown on every other page.
    Covers the desktop and phone menus — WordPress marks the front-page item .menu-item-home. */
 body.home #masthead .menu-item-home { display: none !important; }
+/* The sticky intro column (Design Services, System Integration) only makes sense side by side;
+   once the two columns stack it would slide over the list below. */
+@media (max-width: 999px) { .mtp.mtp.mtp.mtp .m51de31 { position: static; } }

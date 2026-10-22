@@ -317,7 +317,7 @@ for name, inactive, active in cyc_css:
     for mq, body in level_css(name, active).items():
         by_mq[mq].append(f'{P} .is-active.{name}, {P} .is-active .{name} {{ {body} }}')
 
-css = [open(S + '/scripts/base.css').read()]
+css = [open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'base.css')).read()]
 for mq in MQ:
     rules = list(dict.fromkeys(by_mq[mq]))
     if not rules: continue
