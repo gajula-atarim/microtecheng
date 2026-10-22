@@ -166,7 +166,7 @@ EXTRA_PAGES = {
             'We supply and fit radio control systems to all types of machinery. From simple on/off '
             'functions to full proportional and digital control of machines, radio remote systems can '
             'save time and money by increasing your efficiency.',
-            'pexels-photo-11454241.jpeg', 'Radio remote control system')},
+            'radio-remote-systems.jpg', 'Radio remote control systems and the industries they are used in')},
         {'label': '02 Radio control', 'html': cards(
             'What we supply and fit', 'Radio control for all types of machinery',
             'Every system is customised to suit your machine and your needs.', [
