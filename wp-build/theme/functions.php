@@ -107,6 +107,11 @@ add_filter( 'woocommerce_get_price_html', function ( $html, $product ) {
 	return $html;
 }, 10, 2 );
 
+// Empty categories point visitors to the team rather than a dead end.
+add_filter( 'woocommerce_no_products_found_text', function () {
+	return 'Products for this range are coming soon. Please contact us or call 03 9792 2243 for parts and availability.';
+} );
+
 // Contact Form 7: no auto <p>/<br>, so the enquiry form keeps its grid markup.
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 

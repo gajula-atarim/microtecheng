@@ -197,6 +197,93 @@ body.mt-catalog .mt-shop ul.product_list_widget li ins { text-decoration: none; 
 	color: var(--mt-body);
 }
 
+/* Category intro (e.g. Hetronic): text beside an image, written as the term description. */
+.mt-shop .term-description:has(.mt-cat-intro) { max-width: none; }
+.mt-shop .mt-cat-intro {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 32px;
+	align-items: center;
+	margin: 8px 0 24px;
+	padding: 28px;
+	background: var(--mt-grey);
+	border-radius: 18px;
+}
+.mt-shop .mt-cat-intro h3 {
+	margin: 0 0 10px;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: var(--mt-blue);
+}
+.mt-shop .mt-cat-intro ul {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 6px 18px;
+	margin: 0 0 16px;
+	padding: 0;
+	list-style: none;
+}
+.mt-shop .mt-cat-intro li {
+	position: relative;
+	padding-left: 18px;
+	color: var(--mt-ink);
+	font-weight: 500;
+}
+.mt-shop .mt-cat-intro li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: .55em;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--mt-blue);
+}
+.mt-shop .mt-cat-intro p { margin: 0 0 12px; font-size: 15px; }
+.mt-shop .mt-cat-intro p strong { color: var(--mt-ink); }
+.mt-shop .mt-cat-intro-img {
+	width: 100%;
+	height: auto;
+	border-radius: 14px;
+	background: #fff;
+}
+.mt-shop .mt-cat-cta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin-top: 18px !important;
+}
+.mt-shop .mt-cat-btn {
+	padding: 12px 24px;
+	border-radius: 999px;
+	background: var(--mt-blue);
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+.mt-shop .mt-cat-btn:hover { background: var(--mt-blue-hover); color: #fff; }
+.mt-shop .mt-cat-phone {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: 22px;
+	color: var(--mt-blue);
+	text-decoration: none;
+}
+
+/* Empty categories: a short note instead of WooCommerce's notice bar. */
+.mt-shop .woocommerce-no-products-found .woocommerce-info,
+.mt-shop .woocommerce-info.woocommerce-no-products-found {
+	margin: 8px 0 0;
+	padding: 18px 22px;
+	border: 0;
+	border-radius: 14px;
+	background: var(--mt-grey);
+	color: var(--mt-ink);
+}
+.mt-shop .woocommerce-no-products-found .woocommerce-info::before { display: none; }
+
 .mt-shop .woocommerce-result-count {
 	margin: 20px 0;
 	font-size: 14px;
@@ -384,6 +471,8 @@ body.woocommerce .related ul.products li.product .woocommerce-loop-product__titl
 	.mt-shop { grid-template-columns: 1fr; padding-top: 32px; }
 	.mt-shop-main { order: 1; }
 	.mt-shop-side { order: 2; }
+	.mt-shop .mt-cat-intro { grid-template-columns: 1fr; padding: 20px; }
+	.mt-shop .mt-cat-intro-img { order: -1; }
 }
 
 @media (max-width: 559px) {
