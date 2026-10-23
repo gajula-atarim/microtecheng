@@ -420,8 +420,9 @@ body.mt-catalog nav.woocommerce-pagination ul li {
 	border: 0;
 	overflow: visible;
 }
-body.mt-catalog nav.woocommerce-pagination ul li a,
-body.mt-catalog nav.woocommerce-pagination ul li span {
+body.mt-catalog nav.woocommerce-pagination ul li > a,
+body.mt-catalog nav.woocommerce-pagination ul li > span {
+	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -436,19 +437,19 @@ body.mt-catalog nav.woocommerce-pagination ul li span {
 	text-decoration: none;
 	transition: background-color .2s, border-color .2s, color .2s;
 }
-body.mt-catalog nav.woocommerce-pagination ul li a:hover,
-body.mt-catalog nav.woocommerce-pagination ul li a:focus-visible {
+body.mt-catalog nav.woocommerce-pagination ul li > a:hover,
+body.mt-catalog nav.woocommerce-pagination ul li > a:focus-visible {
 	border-color: var(--mt-blue);
 	background: var(--mt-grey);
 	color: var(--mt-blue);
 }
-body.mt-catalog nav.woocommerce-pagination ul li a:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
-body.mt-catalog nav.woocommerce-pagination ul li span.current {
+body.mt-catalog nav.woocommerce-pagination ul li > a:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
+body.mt-catalog nav.woocommerce-pagination ul li > span.current {
 	border-color: var(--mt-blue);
 	background: var(--mt-blue);
 	color: #fff;
 }
-body.mt-catalog nav.woocommerce-pagination ul li span.dots {
+body.mt-catalog nav.woocommerce-pagination ul li > span.dots {
 	min-width: 24px;
 	padding: 0;
 	border: 0;
@@ -463,12 +464,13 @@ body.mt-catalog nav.woocommerce-pagination ul li .next {
 }
 @media (max-width: 559px) {
 	body.mt-catalog nav.woocommerce-pagination { margin-top: 32px; padding-top: 24px; }
-	body.mt-catalog nav.woocommerce-pagination ul { gap: 6px; }
-	body.mt-catalog nav.woocommerce-pagination ul li a,
-	body.mt-catalog nav.woocommerce-pagination ul li span { min-width: 40px; height: 40px; padding: 0 10px; font-size: 14px; }
-	/* Previous / Next drop to their own row under the page numbers. */
+	body.mt-catalog nav.woocommerce-pagination ul { display: flex; gap: 6px; }
+	body.mt-catalog nav.woocommerce-pagination ul li > a,
+	body.mt-catalog nav.woocommerce-pagination ul li > span { min-width: 40px; height: 40px; padding: 0 10px; font-size: 14px; }
+	/* Page numbers on the first row; Previous / Next share a second row underneath. */
+	body.mt-catalog nav.woocommerce-pagination ul::before { content: ""; order: 1; flex-basis: 100%; height: 0; }
 	body.mt-catalog nav.woocommerce-pagination ul li:has(.prev),
-	body.mt-catalog nav.woocommerce-pagination ul li:has(.next) { order: 2; flex: 1 1 40%; }
+	body.mt-catalog nav.woocommerce-pagination ul li:has(.next) { order: 2; flex: 1 1 calc(50% - 3px); }
 	body.mt-catalog nav.woocommerce-pagination ul li .prev,
 	body.mt-catalog nav.woocommerce-pagination ul li .next { width: 100%; }
 }
