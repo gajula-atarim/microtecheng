@@ -36,6 +36,77 @@ add_action( 'elementor/preview/enqueue_styles', function () {
 	wp_enqueue_style( 'microtec-pages', get_stylesheet_directory_uri() . '/assets/css/mt-pages.css', [ 'microtec' ], filemtime( get_stylesheet_directory() . '/assets/css/mt-pages.css' ) );
 } );
 
+/**
+ * Shop and product category pages: a sidebar (search, price filter, categories, best sellers)
+ * on the left and the breadcrumb, title, sorting and product grid on the right.
+ */
+function microtec_is_catalog() {
+	return function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() );
+}
+
+add_action( 'wp_enqueue_scripts', function () {
+	if ( ! function_exists( 'is_woocommerce' ) || ! is_woocommerce() ) {
+		return;
+	}
+	$dir = get_stylesheet_directory();
+	$uri = get_stylesheet_directory_uri();
+
+	wp_enqueue_style( 'microtec-pages-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap', [], null );
+	wp_enqueue_style( 'microtec-shop', $uri . '/assets/css/mt-shop.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-shop.css' ) );
+}, 30 );
+
+add_filter( 'body_class', function ( $classes ) {
+	if ( microtec_is_catalog() ) {
+		$classes[] = 'mt-catalog';
+	}
+	return $classes;
+} );
+
+add_filter( 'loop_shop_columns', function () {
+	return 3;
+} );
+
+// Open the two-column layout after WooCommerce's page wrapper (priority 10) and before the
+// breadcrumb (20), so the breadcrumb sits in the right-hand column.
+add_action( 'woocommerce_before_main_content', function () {
+	if ( ! microtec_is_catalog() ) {
+		return;
+	}
+	$widget = [
+		'before_widget' => '<section class="mt-shop-widget %s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="mt-shop-widget-title">',
+		'after_title'   => '</h2>',
+	];
+	echo '<div class="mt-shop"><aside class="mt-shop-side">';
+	the_widget( 'WC_Widget_Product_Search', [ 'title' => '' ], $widget );
+	the_widget( 'WC_Widget_Price_Filter', [ 'title' => 'Filter by Price' ], $widget );
+	the_widget( 'WC_Widget_Product_Categories', [ 'title' => 'Categories', 'count' => 1, 'hide_empty' => 1 ], $widget );
+	the_widget( 'WC_Widget_Products', [ 'title' => 'Our Best Sellers', 'number' => 5, 'orderby' => 'sales', 'order' => 'desc' ], $widget );
+	echo '</aside><div class="mt-shop-main">';
+}, 15 );
+
+add_action( 'woocommerce_after_main_content', function () {
+	if ( microtec_is_catalog() ) {
+		echo '</div></div>';
+	}
+}, 5 );
+
+// The theme has no shop sidebar of its own; the layout above replaces it.
+add_action( 'wp', function () {
+	if ( microtec_is_catalog() ) {
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+	}
+} );
+
+// Products sold on enquiry (no price set) show "Call for price" instead of an empty price.
+add_filter( 'woocommerce_get_price_html', function ( $html, $product ) {
+	if ( '' === $product->get_price() && ! $product->is_type( 'variable' ) ) {
+		return '<span class="mt-call-price">Call for price</span>';
+	}
+	return $html;
+}, 10, 2 );
+
 // Contact Form 7: no auto <p>/<br>, so the enquiry form keeps its grid markup.
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 

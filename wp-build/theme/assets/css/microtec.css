@@ -1,0 +1,806 @@
+/*
+ * Microtec Engineering — brand layer for the Elementor build.
+ *
+ * Content, typography, colours, spacing and layout are set on each Elementor
+ * element so they stay editable in the panel. This file only carries what
+ * Elementor has no control for: borders/shadows/hover states, pseudo-element
+ * decoration, and the states driven by assets/js/microtec.js.
+ *
+ * Brand rules (brand kit v1): square corners everywhere, pill shape only for
+ * buttons/chips, Archivo for type, IBM Plex Mono for labels and part numbers.
+ */
+
+:root {
+	--mt-blue: #3B479C;
+	--mt-blue-hover: #262E6B;
+	--mt-blue-label: #2E3880;
+	--mt-blue-deep: #1F2766;
+	--mt-blue-light: #A3ABDB;
+	--mt-ink: #1E2433;
+	--mt-body: #4A5266;
+	--mt-muted: #5B6478;
+	--mt-grey: #F2F4F7;
+	--mt-line: #E1E5EC;
+	--mt-ease: cubic-bezier(.4, 0, .2, 1);
+	--mt-pills-sm: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='16'%3E%3Cg fill='%23fff'%3E%3Crect width='5' height='16' rx='2.5'/%3E%3Crect x='8' width='5' height='16' rx='2.5'/%3E%3Crect x='16' width='5' height='16' rx='2.5'/%3E%3C/g%3E%3C/svg%3E");
+	--mt-pills-lg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='28'%3E%3Cg fill='%23fff'%3E%3Crect width='8' height='28' rx='4'/%3E%3Crect x='12' width='8' height='28' rx='4'/%3E%3Crect x='24' width='8' height='28' rx='4'/%3E%3C/g%3E%3C/svg%3E");
+	--mt-pills-deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='188' height='220'%3E%3Cg fill='%23fff'%3E%3Crect width='56' height='220' rx='28'/%3E%3Crect x='66' width='56' height='220' rx='28'/%3E%3Crect x='132' width='56' height='220' rx='28'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.elementor a:hover { text-decoration: none; }
+
+/* Elementor uses ::before on containers for background overlays. Where we use
+   it for decoration, reset its overlay positioning first. */
+.e-con.mt-deco-flow::before {
+	position: relative;
+	inset: auto;
+	top: auto; left: auto; right: auto; bottom: auto;
+	display: block;
+	flex: none;
+	z-index: 1;
+}
+
+/* ---------- Shared pieces ---------- */
+
+/* Containers that size to their content / fill the remaining space */
+.e-con.mt-auto { --width: auto; width: auto; max-width: 100%; }
+.e-con.mt-grow { flex: 1 1 auto; }
+
+/* Text editor paragraphs: spacing comes from container gaps, not <p> margins */
+.elementor-widget-text-editor p { margin: 0; }
+
+/* Max-width helpers (Elementor forces max-width:100% on container children, hence !important) */
+.mt-mw-380 { max-width: 380px !important; }
+.mt-mw-420 { max-width: 420px !important; }
+.mt-mw-440 { max-width: 440px !important; }
+.mt-mw-520 { max-width: 520px !important; }
+.mt-mw-560 { max-width: 560px !important; }
+.mt-mw-760 { max-width: 760px !important; }
+
+.mt-balance .elementor-heading-title { text-wrap: balance; }
+.mt-pretty p { text-wrap: pretty; }
+
+/* Hero eyebrow: three logo pills before the label */
+.mt-pills .elementor-heading-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.mt-pills .elementor-heading-title::before {
+	content: "";
+	flex: none;
+	width: 21px;
+	height: 16px;
+	background: var(--mt-pills-sm) no-repeat center / contain;
+}
+
+/* Enquiry: larger pill trio at the top of the column */
+.e-con.mt-pills-lg::before {
+	content: "";
+	width: 32px;
+	height: 28px;
+	background: var(--mt-pills-lg) no-repeat center / contain;
+}
+
+/* Images that keep the design's aspect ratios */
+.mt-img-cover img,
+.mt-ratio-4-3 img,
+.mt-ratio-16-10 img,
+.mt-ratio-1-1 img,
+.mt-ratio-5-4 img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 0;
+}
+.mt-ratio-4-3 img { aspect-ratio: 4 / 3; }
+.mt-ratio-16-10 img { aspect-ratio: 16 / 10; }
+.mt-ratio-1-1 img { aspect-ratio: 1 / 1; }
+.mt-ratio-5-4 img { aspect-ratio: 5 / 4; }
+
+/* Pill chips (heading widgets) */
+.mt-chip .elementor-heading-title,
+.mt-chip-glass .elementor-heading-title,
+.mt-badge .elementor-heading-title {
+	display: inline-block;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.mt-chip .elementor-heading-title { background: var(--mt-grey); padding: 3px 10px; }
+.mt-badge .elementor-heading-title { background: rgba(255, 255, 255, .14); padding: 6px 12px; }
+.mt-chip-glass .elementor-heading-title {
+	background: rgba(255, 255, 255, .16);
+	border: 1px solid rgba(255, 255, 255, .28);
+	padding: 5px 12px;
+}
+
+/* Buttons that share a row equally */
+.mt-btn-row > .elementor-widget-button { flex: 1 1 0; min-width: 0; }
+.mt-btn-row .elementor-button { width: 100%; justify-content: center; }
+
+/* Square icon tile (Why cards, guide rows) */
+.mt-tile .elementor-icon {
+	width: 52px;
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #5562B8 0%, #3B479C 100%);
+	box-shadow: 0 6px 14px rgba(59, 71, 156, .22);
+	transition: background .45s, box-shadow .45s, color .45s;
+}
+
+/* ---------- 01 Hero ---------- */
+
+.e-con.mt-hero { position: relative; overflow: hidden; }
+.e-con.mt-hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	display: block;
+	background: linear-gradient(90deg, rgba(59, 71, 156, .94) 0%, rgba(59, 71, 156, .82) 45%, rgba(59, 71, 156, .45) 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+.mt-hero > .e-con-inner { position: relative; z-index: 1; justify-content: center; }
+
+/* ---------- Header (UAE) ---------- */
+
+.mt-logo img { height: 58px !important; width: auto !important; max-width: none; display: block; }
+.mt-logo .hfe-site-logo-container { display: block; line-height: 0; }
+
+/* Wordmark beside the logo mark: the name baked into the logo PNG is 85px wide at
+   source and renders 43px here, so it can never be read. This sets it as real text. */
+.elementor-widget.mt-wordmark-w { flex: 0 0 auto; width: auto !important; margin-left: -4px; }
+.mt-wordmark {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 1;
+	text-decoration: none;
+}
+.mt-wordmark:hover,
+.mt-wordmark:focus { text-decoration: none; }
+.mt-wordmark__a {
+	font-family: "Archivo", sans-serif;
+	font-weight: 700;
+	font-size: 17px;
+	letter-spacing: .11em;
+	text-transform: uppercase;
+	color: var(--mt-blue);
+}
+.mt-wordmark__b {
+	font-family: "Archivo", sans-serif;
+	font-weight: 600;
+	font-size: 11px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: var(--mt-blue);
+	margin-top: 3px;
+}
+/* Phones: one line, then the mark alone. The icons and Enquire need the room. */
+@media (max-width: 767px) {
+	.mt-wordmark__a { font-size: 14px; letter-spacing: .06em; }
+	.mt-wordmark__b { display: none; }
+}
+@media (max-width: 599px) {
+	.elementor-widget.mt-wordmark-w { display: none !important; }
+}
+.mt-nav-desktop { flex: 1 1 auto; min-width: 0; }
+.mt-nav-desktop .hfe-nav-menu { flex-wrap: nowrap; white-space: nowrap; }
+.mt-topbar-cart a { color: #fff; font-family: "Archivo", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; }
+
+.mt-topbar a { transition: color .2s; }
+.mt-topbar a:hover { color: #fff !important; }
+.mt-topbar .elementor-heading-title,
+.mt-topbar-cart a { white-space: nowrap; }
+
+/* Below tablet: one row — call link left, account links right. Email lives in the enquiry
+   section and footer; Track order is reachable from My account on the smallest phones. */
+@media (max-width: 767px) {
+	.e-con.mt-topbar > .e-con-inner { --flex-wrap: nowrap !important; flex-wrap: nowrap !important; justify-content: space-between; align-items: center; }
+	.mt-topbar .e-con.mt-auto { --flex-wrap: nowrap !important; flex-wrap: nowrap !important; --gap: 0 16px !important; --column-gap: 16px !important; }
+	.mt-topbar .mt-topbar-email { display: none !important; }
+}
+@media (max-width: 399px) {
+	.mt-topbar .mt-topbar-track { display: none !important; }
+	.mt-topbar .e-con.mt-auto { --gap: 0 12px !important; --column-gap: 12px !important; }
+	.mt-topbar .elementor-heading-title,
+	.mt-topbar-cart a { font-size: 12px !important; }
+}
+
+.e-con.mt-header {
+	position: relative;
+	z-index: 20;
+	pointer-events: none;
+}
+.e-con.mt-header-bar {
+	pointer-events: auto;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(250, 250, 250, .94);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	border: 1px solid #E6E8EC;
+	border-radius: 999px;
+	box-shadow: 0 10px 30px rgba(59, 71, 156, .10);
+}
+/* On the homepage the floating bar sits over the hero */
+body.home #masthead { margin-bottom: -98px; }
+
+.mt-header-icon .elementor-icon,
+.mt-header-bar .hfe-search-button-wrapper .hfe-search-icon-toggle,
+.mt-header-bar .hfe-cart-container .hfe-menu-cart__toggle .elementor-button {
+	transition: background-color .2s;
+	border-radius: 50%;
+}
+.mt-header-icon .elementor-icon {
+	width: 42px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+.mt-header-icon .elementor-icon:hover { background: #EEF0F4; }
+
+/* Desktop nav shows from 1240px, the menu toggle below it (per design) */
+@media (max-width: 1239px) { .mt-nav-desktop { display: none !important; } }
+@media (min-width: 1240px) { .mt-nav-mobile { display: none !important; } }
+
+/* Mobile menu: toggle sits with the header icons; the panel opens full width under the bar */
+.elementor-widget.mt-nav-mobile { flex: 0 0 auto; width: auto !important; }
+/* Static so the panel anchors to the header bar (UAE sets inline width/left for "full width") */
+.elementor-widget.mt-nav-mobile,
+.e-con.mt-header-actions { position: static !important; }
+.mt-nav-mobile nav.hfe-nav-menu__layout-expandible {
+	position: absolute !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 100% !important;
+	width: auto !important;
+	margin-top: 8px;
+	padding: 8px 22px 16px;
+	background: #fff;
+	border: 1px solid #E6E8EC;
+	border-radius: 20px;
+	box-shadow: 0 10px 30px rgba(59, 71, 156, .10);
+	max-height: calc(100vh - 80px);
+	overflow: auto;
+	z-index: 30;
+}
+.mt-nav-mobile nav.hfe-nav-menu__layout-expandible a.hfe-menu-item { padding: 14px 0 !important; border-bottom: 1px solid #E1E5EC; }
+.mt-nav-mobile nav.hfe-nav-menu__layout-expandible li:last-child a.hfe-menu-item { border-bottom: 0; }
+.mt-nav-mobile .hfe-nav-menu__toggle {
+	width: 42px;
+	height: 42px;
+	justify-content: center;
+	align-items: center;
+	transition: background-color .2s;
+	border-radius: 50%;
+}
+.mt-nav-mobile .hfe-nav-menu__toggle:hover { background: #EEF0F4; }
+
+/* Phones: tighten the floating bar so logo, icons and Enquire fit on one line */
+@media (max-width: 480px) {
+	.e-con.mt-header-bar { --gap: 14px 12px !important; --column-gap: 12px !important; padding-left: 14px !important; padding-right: 10px !important; }
+	.e-con.mt-header-actions { --gap: 2px !important; --column-gap: 2px !important; --row-gap: 2px !important; }
+	.mt-header-icon .elementor-icon,
+	.mt-nav-mobile .hfe-nav-menu__toggle { width: 36px; height: 36px; }
+	.mt-header-actions .elementor-widget-button .elementor-button { padding: 10px 16px !important; font-size: 14px !important; }
+	.mt-header-cart .hfe-menu-cart__toggle .elementor-button { padding: 8px !important; }
+}
+
+.mt-nav-desktop .hfe-nav-menu .sub-menu { border-radius: 20px; padding: 8px; }
+.mt-nav-desktop .hfe-nav-menu .sub-menu a.hfe-sub-menu-item:hover { text-decoration: none; }
+
+/* ---------- 02 Categories ---------- */
+
+.e-con.mt-cat-card {
+	border: 1px solid #E6E9EF;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(59, 71, 156, .06);
+	transition: box-shadow .25s, opacity .3s;
+	text-decoration: none;
+}
+.e-con.mt-cat-card:hover { box-shadow: 0 10px 24px rgba(59, 71, 156, .12); }
+.mt-cat-card .mt-card-title .elementor-heading-title { min-height: 2.3em; }
+.e-con.mt-card-more {
+	border-top: 1px solid #E6E9EF;
+	margin-top: auto;
+}
+.mt-cat-intro { order: 0; }
+.mt-cat-controls { order: 9; }
+.mt-cat-card.is-hidden { display: none !important; }
+
+/* Card change animation, matching the rotator on eurostrap.wsdfy.com. */
+@keyframes mt-cardIn { from { opacity: 0; transform: translateX(56px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes mt-cardInBack { from { opacity: 0; transform: translateX(-56px) scale(.98); } to { opacity: 1; transform: none; } }
+.mt-cat-card.mt-card-in { animation: mt-cardIn .6s var(--mt-ease) backwards; }
+.mt-cat-card.mt-card-in--back { animation: mt-cardInBack .6s var(--mt-ease) backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+	.mt-cat-card.mt-card-in,
+	.mt-cat-card.mt-card-in--back { animation: none !important; }
+}
+
+.mt-cat-arrows { display: flex; gap: 10px; justify-content: center; }
+.mt-cat-arrows button,
+.mt-svc-arrows button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	color: var(--mt-blue);
+	font-family: inherit;
+	line-height: 1;
+	transition: border-color .2s, background-color .2s;
+}
+.mt-cat-arrows button {
+	width: 44px;
+	height: 44px;
+	border: 1px solid #D5DAE3;
+	background: #fff;
+	font-size: 18px;
+	box-shadow: 0 1px 3px rgba(59, 71, 156, .08);
+}
+.mt-cat-arrows button:hover,
+.mt-cat-arrows button:focus { border-color: var(--mt-blue); background: #fff; color: var(--mt-blue); }
+
+.mt-cat-dots { display: flex; gap: 5px; align-items: center; justify-content: center; margin-top: 20px; }
+.mt-cat-dots span {
+	height: 3px;
+	width: 8px;
+	background: #D5DAE3;
+	border-radius: 2px;
+	transition: width .3s, background-color .3s;
+}
+.mt-cat-dots span.is-active { width: 22px; background: var(--mt-blue); }
+
+.mt-shadow-btn .elementor-button { box-shadow: 0 8px 18px rgba(59, 71, 156, .28); }
+
+/* ---------- 03 Services slider ---------- */
+
+.e-con.mt-svc-viewport { overflow: hidden; }
+.e-con.mt-svc-track {
+	flex-wrap: nowrap !important;
+	transition: transform .6s var(--mt-ease);
+	will-change: transform;
+}
+.mt-svc-track > .e-con.mt-svc-card {
+	--width: calc((100% - 24px) / 2);
+	flex: 0 0 calc((100% - 24px) / 2);
+	max-width: none;
+	text-decoration: none;
+}
+@media (max-width: 759px) {
+	.mt-svc-track > .e-con.mt-svc-card { --width: 100%; flex-basis: 100%; }
+}
+.elementor-editor-active .e-con.mt-svc-track { flex-wrap: wrap !important; transform: none !important; }
+.elementor-editor-active .mt-svc-track > .e-con.mt-svc-card { margin-bottom: 24px; }
+
+.mt-svc-nav {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	gap: 16px;
+}
+.mt-svc-dots { display: flex; gap: 6px; align-items: center; }
+.mt-svc-dots button {
+	height: 6px;
+	width: 6px;
+	padding: 0;
+	border: 0;
+	border-radius: 3px;
+	background: #C9D0DC;
+	cursor: pointer;
+	transition: width .3s, background-color .3s;
+}
+.mt-svc-dots button.is-active { width: 28px; background: var(--mt-blue); }
+.mt-svc-arrows { display: flex; gap: 8px; justify-content: flex-end; }
+.mt-svc-arrows button {
+	width: 36px;
+	height: 36px;
+	border: 0;
+	background: #fff;
+	font-size: 15px;
+}
+.mt-svc-arrows button:hover,
+.mt-svc-arrows button:focus { background: var(--mt-line); color: var(--mt-blue); }
+
+/* ---------- 04 Why Microtec (auto-highlight loop) ---------- */
+
+.e-con.mt-why-card {
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	box-shadow: 0 1px 2px rgba(59, 71, 156, .04);
+	cursor: default;
+	transition: background-color .45s ease, transform .45s ease, box-shadow .45s ease, border-color .45s ease;
+}
+.e-con.mt-why-card::before,
+.e-con.mt-why-card::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 3px;
+	display: block;
+	z-index: 1;
+}
+.e-con.mt-why-card::before { width: 100%; background: var(--mt-line); inset: 0 auto auto 0; }
+.e-con.mt-why-card::after { width: 0; background: var(--mt-line); }
+
+.e-con.mt-why-card.is-active {
+	background: var(--mt-blue);
+	border-color: var(--mt-blue);
+	transform: translateY(-6px);
+	box-shadow: 0 18px 36px rgba(59, 71, 156, .22);
+}
+.e-con.mt-why-card.is-active::before { background: rgba(255, 255, 255, .18); }
+.e-con.mt-why-card.is-active::after { width: 100%; background: #fff; transition: none; }
+.e-con.mt-why-card.is-active.is-running::after { transition: width 3.5s linear; }
+
+.mt-why-card .elementor-heading-title,
+.mt-why-card .elementor-widget-text-editor { transition: color .45s; }
+.mt-why-card.is-active .mt-why-num .elementor-heading-title { color: var(--mt-blue-light) !important; }
+.mt-why-card.is-active .mt-why-title .elementor-heading-title { color: #fff !important; }
+.mt-why-card.is-active .mt-why-desc,
+.mt-why-card.is-active .mt-why-desc p { color: #D5DBEA !important; }
+.mt-why-card.is-active .mt-tile .elementor-icon {
+	background: linear-gradient(135deg, #FFFFFF 0%, #CDD1EC 100%);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, .25);
+	color: var(--mt-blue) !important;
+}
+.mt-why-card.is-active .mt-tile .elementor-icon svg { stroke: var(--mt-blue); }
+
+/* Tablets (600–1199px): heading full width on top, reason cards in a 2 × 2 grid */
+@media (min-width: 600px) and (max-width: 1199px) {
+	.mt-why-section > .e-con-inner {
+		--e-con-grid-template-columns: minmax(0, 1fr) !important;
+		grid-template-columns: minmax(0, 1fr) !important;
+	}
+	.e-con.mt-why-grid {
+		--e-con-grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+}
+
+/* ---------- 05 Featured products ---------- */
+
+.e-con.mt-prod-card {
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	overflow: hidden;
+}
+.e-con.mt-prod-body { border-top: 1px solid var(--mt-line); }
+.mt-prod-name { flex: 1 1 auto; }
+.mt-part .elementor-heading-title { font-variant-numeric: tabular-nums; }
+
+/* ---------- 06 Technical resources ---------- */
+
+.e-con.mt-jobsheet {
+	position: relative;
+	overflow: hidden;
+	min-height: 340px;
+}
+.e-con.mt-jobsheet::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	display: block;
+	background: linear-gradient(160deg, rgba(46, 56, 128, .55) 0%, rgba(59, 71, 156, .82) 50%, rgba(31, 39, 102, .97) 100%);
+	z-index: 0;
+	pointer-events: none;
+}
+.e-con.mt-jobsheet::after {
+	content: "";
+	position: absolute;
+	right: -30px;
+	top: -30px;
+	width: 188px;
+	height: 220px;
+	background: var(--mt-pills-deco) no-repeat;
+	opacity: .12;
+	pointer-events: none;
+	z-index: 0;
+}
+.mt-jobsheet > * { position: relative; z-index: 1; }
+
+.e-con.mt-guide {
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	text-decoration: none;
+	transition: box-shadow .25s, border-color .25s, transform .25s;
+}
+.e-con.mt-guide:hover {
+	border-color: #CDD1EC;
+	box-shadow: 0 10px 24px rgba(59, 71, 156, .08);
+	transform: translateY(-2px);
+}
+.mt-arrow-box .elementor-heading-title {
+	width: 34px;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--mt-grey);
+}
+
+/* ---------- 07 Industries (expanding tiles) ---------- */
+
+.e-con.mt-ind { flex-wrap: nowrap; }
+.e-con.mt-ind-tile {
+	position: relative;
+	overflow: hidden;
+	min-width: 0;
+	height: clamp(360px, 36vw, 440px);
+	flex: 1 1 0;
+	cursor: default;
+	transition: flex .5s var(--mt-ease);
+}
+.e-con.mt-ind-tile.is-active { flex: 1.8 1 0; }
+.e-con.mt-ind-tile::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	display: block;
+	background: linear-gradient(180deg, rgba(31, 39, 102, .05) 30%, rgba(31, 39, 102, .92) 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+.e-con.mt-ind-body {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+.e-con.mt-ind-kit {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity .4s, max-height .5s;
+}
+.mt-ind-tile.is-active .e-con.mt-ind-kit { opacity: 1; max-height: 120px; }
+
+@media (max-width: 1099px) {
+	.e-con.mt-ind { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.e-con.mt-ind-tile { height: 300px; }
+	.e-con.mt-ind-tile .e-con.mt-ind-kit { opacity: 1; max-height: 120px; }
+}
+@media (max-width: 599px) {
+	.e-con.mt-ind { grid-template-columns: minmax(0, 1fr); }
+}
+.elementor-editor-active .e-con.mt-ind-kit { opacity: 1; max-height: 120px; }
+
+.mt-brand .elementor-heading-title {
+	padding: 0 26px;
+	border-left: 1px solid rgba(255, 255, 255, .2);
+	opacity: .85;
+}
+
+/* Brands row: single line from 1200px; below that a centred grid so names never wrap raggedly */
+@media (max-width: 1199px) {
+	.e-con.mt-brands {
+		display: grid !important;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		row-gap: 18px !important;
+		column-gap: 0 !important;
+		align-items: center;
+		justify-items: stretch;
+	}
+	.mt-brands > .mt-brands-label { grid-column: 1 / -1; margin: 0 0 4px !important; }
+	.mt-brands > .mt-brands-label > .elementor-widget-container { margin: 0 !important; }
+	.mt-brands > .mt-brands-label .elementor-heading-title { text-align: center; }
+	.mt-brands > .mt-brand { text-align: center; }
+	.mt-brands > .mt-brand .elementor-heading-title {
+		padding: 4px 8px !important;
+		border-left: 0 !important;
+		font-size: 22px !important;
+		text-align: center;
+	}
+	/* Divider before the 2nd and 3rd brand of each row (children 3,4,6,7; child 1 is the label) */
+	.mt-brands > .mt-brand:nth-child(3n),
+	.mt-brands > .mt-brand:nth-child(3n+1) { border-left: 1px solid rgba(255, 255, 255, .2); }
+}
+@media (max-width: 599px) {
+	.e-con.mt-brands { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px !important; }
+	.mt-brands > .mt-brand { border-left: 0 !important; }
+	.mt-brands > .mt-brand:nth-child(odd) { border-left: 1px solid rgba(255, 255, 255, .2) !important; }
+	.mt-brands > .mt-brand .elementor-heading-title { font-size: 20px !important; }
+}
+/* ---------- 08 About ---------- */
+
+.e-con.mt-about-media { position: relative; }
+.e-con.mt-about-media::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: auto;
+	width: 62%;
+	height: 70%;
+	display: block;
+	background: var(--mt-blue);
+	z-index: 0;
+}
+.mt-about-media > .elementor-widget-image { position: relative; z-index: 1; width: 100%; }
+.mt-about-media > .elementor-widget-image img { box-shadow: 0 24px 50px rgba(59, 71, 156, .22); }
+.e-con.mt-about-badge {
+	position: absolute;
+	right: -8px;
+	top: 24px;
+	z-index: 2;
+	width: auto;
+	--width: auto;
+	min-width: 150px;
+	box-shadow: 0 16px 36px rgba(59, 71, 156, .18);
+}
+
+.e-con.mt-timeline { position: relative; }
+.e-con.mt-timeline::before {
+	content: "";
+	position: absolute;
+	left: 8px;
+	right: 8px;
+	top: 8px;
+	height: 2px;
+	display: block;
+	background: linear-gradient(90deg, #3B479C, #A3ABDB);
+	z-index: 0;
+}
+.e-con.mt-milestone::before {
+	content: "";
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #fff;
+	border: 4px solid var(--mt-blue);
+	box-sizing: border-box;
+}
+
+/* ---------- 09 Enquiry form (Contact Form 7) ---------- */
+
+.mt-enquiry-form .wpcf7 form { margin: 0; }
+.mt-form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+	gap: 16px;
+}
+.mt-form-grid label {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--mt-blue);
+}
+.mt-form-grid .mt-full { grid-column: 1 / -1; }
+.mt-form-grid .wpcf7-form-control-wrap { display: block; }
+.mt-form-grid input[type="text"],
+.mt-form-grid input[type="email"],
+.mt-form-grid input[type="tel"],
+.mt-form-grid select,
+.mt-form-grid textarea {
+	width: 100%;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 12px 14px;
+	border: 1px solid #C9D0DC;
+	border-radius: 0;
+	color: var(--mt-ink);
+	background: #fff;
+	outline: none;
+	transition: border-color .2s, box-shadow .2s;
+}
+.mt-form-grid textarea { resize: vertical; min-height: 0; }
+.mt-form-grid input:focus,
+.mt-form-grid select:focus,
+.mt-form-grid textarea:focus {
+	border-color: var(--mt-blue-label);
+	box-shadow: 0 0 0 3px rgba(46, 56, 128, .15);
+}
+.mt-form-grid input[type="file"] {
+	width: 100%;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px;
+	border: 1px dashed #C9D0DC;
+	border-radius: 0;
+	background: var(--mt-grey);
+	color: var(--mt-ink);
+}
+.mt-form-grid .mt-submit { grid-column: 1 / -1; position: relative; }
+.mt-form-grid input[type="submit"] {
+	width: 100%;
+	background: var(--mt-blue);
+	color: #fff;
+	border: 0;
+	border-radius: 999px;
+	padding: 15px 28px;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.2;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+.mt-form-grid input[type="submit"]:hover,
+.mt-form-grid input[type="submit"]:focus { background: var(--mt-blue-hover); }
+.mt-form-grid .wpcf7-spinner { position: absolute; right: 16px; top: 50%; margin: -12px 0 0; }
+.mt-form-grid .wpcf7-not-valid-tip { font-size: 13px; font-weight: 500; margin-top: 4px; }
+.mt-enquiry-form .wpcf7 form .wpcf7-response-output {
+	margin: 16px 0 0;
+	padding: 12px 14px;
+	border-radius: 0;
+	font-size: 14px;
+	color: var(--mt-ink);
+}
+
+/* ---------- Footer (UAE) ---------- */
+
+.mt-footer-contact a { color: #C3CBDD; }
+.mt-footer-contact a:hover { color: #fff; }
+.mt-footer-contact a.mt-strong { color: #fff; font-weight: 600; }
+.mt-footer-mark img { width: 40px; height: auto; display: block; }
+
+.mt-wordmark p { margin: 0; }
+.mt-wordmark span {
+	display: block;
+	line-height: 1.15;
+}
+.mt-wordmark span:first-child { letter-spacing: .36em; }
+.mt-wordmark span:last-child { letter-spacing: .04em; }
+
+/* Tablets (768–1199px): brand + contact as a strip on top, link columns evenly below */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.e-con.mt-footer-grid {
+		--e-con-grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+		grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+	}
+	.mt-footer-grid > .e-con.mt-footer-brand {
+		grid-column: 1 / -1;
+		--flex-direction: row !important;
+		flex-direction: row !important;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		--gap: 14px 48px !important;
+		gap: 14px 48px !important;
+		padding-bottom: 28px;
+		border-bottom: 1px solid rgba(255, 255, 255, .14);
+	}
+	.mt-footer-brand > .elementor-element { --width: auto; width: auto !important; max-width: 100%; }
+}
+/* Phones (≤767px): "Idea B" — brand, contact card, links 2 × 2 (columns/gaps set in Elementor mobile settings) */
+@media (max-width: 767px) {
+	.mt-footer-grid > .e-con.mt-footer-brand { grid-column: 1 / -1; }
+	.mt-footer-card .elementor-icon-list-item,
+	.mt-footer-card .elementor-icon-list-item > a { align-items: center; }
+	.mt-footer-card .elementor-icon-list-icon { color: #A3ABDB; }
+	.mt-footer-card-lines .elementor-icon-list-item:last-child .elementor-icon-list-text { color: #C3CBDD; }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.e-con.mt-svc-track,
+	.e-con.mt-ind-tile,
+	.e-con.mt-why-card,
+	.e-con.mt-why-card::after,
+	.e-con.mt-ind-kit { transition: none !important; }
+}
