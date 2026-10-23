@@ -88,9 +88,10 @@ add_filter( 'loop_shop_columns', function () {
 	return 3;
 } );
 
-// 18 per page: six full rows of three, so no page ends on a lone card.
+// 12 per page: four full rows of three, so no page ends on a lone card and the larger
+// categories (LCDs, Overlays, Misc Crane Parts, Tadano Parts) still get page numbers.
 add_filter( 'loop_shop_per_page', function () {
-	return 18;
+	return 12;
 } );
 
 // Pagination arrows with words, styled as pills in mt-shop.css.
