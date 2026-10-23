@@ -305,6 +305,8 @@ body.home #masthead { margin-bottom: -98px; }
 }
 
 .mt-nav-desktop .hfe-nav-menu .sub-menu { border-radius: 20px; padding: 8px; }
+/* Dropdowns grow to fit their longest item (the menu doesn't wrap), within limits. */
+.mt-nav-desktop .hfe-nav-menu .sub-menu { width: max-content !important; min-width: 220px !important; max-width: 420px; }
 .mt-nav-desktop .hfe-nav-menu .sub-menu a.hfe-sub-menu-item:hover { text-decoration: none; }
 
 /* ---------- 02 Categories ---------- */
