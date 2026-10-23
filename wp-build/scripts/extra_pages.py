@@ -1,17 +1,20 @@
-"""Service pages that are not in the design handoff, written from the client's old site
+"""Pages that are not in the design handoff. The service pages are written from the client's old site
 (microteceng.com.au/page/radio-control-systems/ and /page/system-intergration/) and the
 copy already on the new site. They reuse the class combinations of the built service pages,
-so they share the same CSS, fonts and layout."""
+so they share the same CSS, fonts and layout. The Contact page is assembled from the
+homepage enquiry block and the About page contact details."""
+
+import json
 
 U = 'https://microteceng.wsdfy.com/wp-content/uploads/2026/10/'
 
-def hero(title, intro, img, alt):
+def hero(title, intro, img, alt, crumbs='<a class="m892be7" href="/#services">Our Services</a><span>/</span>'):
     return f'''<section class="m75245e mtp-hero">
   <div class="mbefb19"><span class="m0069f5"></span><span class="m0069f5"></span><span class="m0069f5"></span></div>
   <div class="md6a7de">
     <div class="m350759">
       <div class="m40d029">
-        <div class="m58aedf"><a class="m892be7" href="/">Home</a><span>/</span><a class="m892be7" href="/#services">Our Services</a><span>/</span><span class="m8f2809">{title}</span></div>
+        <div class="m58aedf"><a class="m892be7" href="/">Home</a><span>/</span>{crumbs}<span class="m8f2809">{title}</span></div>
         <h1 class="m6f8485">{title}</h1>
         <p class="m54d788">{intro}</p>
       </div>
@@ -159,6 +162,20 @@ def cta(title):
     </div>
   </div></section>'''
 
+# Contact page: the homepage enquiry block (with its own Contact Form 7 form) and the About
+# page contact details and map, as they are built for those pages.
+_built = json.load(open('sections/pages.json'))
+CONTACT_FORM = '<div class="mtp-form">[contact-form-7 id="419" title="Contact page enquiry"]</div>'
+_enquiry = _built['home'][8]['html'].replace(
+    '<div class="mtp-form">[contact-form-7 id="88" title="Homepage enquiry"]</div>', CONTACT_FORM)
+assert CONTACT_FORM in _enquiry
+_details = _built['about'][3]['html'].replace(
+    '<a class="mef7ec2 mh2" href="/#enquiry">Contact Us →</a>',
+    '<a class="mef7ec2 mh2" href="#enquiry">Send an Enquiry →</a>')
+_details = _details.replace('<a class="mbfe739" href="/#enquiry">contact us page</a>',
+                            '<a class="mbfe739" href="#enquiry">enquiry form above</a>')
+assert 'Send an Enquiry' in _details and 'enquiry form above' in _details
+
 EXTRA_PAGES = {
     'radio': [
         {'label': '01 Services Hero', 'html': hero(
@@ -223,5 +240,14 @@ EXTRA_PAGES = {
                 ('Calibrate', 'Systems are calibrated by our engineers to suit your machine and your site.'),
             ])},
         {'label': 'CTA', 'html': cta('Need a machine control system designed and fitted?')},
+    ],
+    'contact': [
+        {'label': '01 Contact Hero', 'html': hero(
+            'Contact Us',
+            'Talk to our team about parts, electronic repairs, custom design and installation for '
+            'plant and equipment. Call us, email us or send an enquiry below.',
+            'pexels-photo-14319099.jpeg', 'Technician working on machine electronics', crumbs='')},
+        {'label': '02 Enquiry', 'html': _enquiry},
+        {'label': '03 Contact details', 'html': _details},
     ],
 }

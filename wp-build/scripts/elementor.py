@@ -139,6 +139,8 @@ pages = json.load(open('sections/pages.json'))
 sys.path.insert(0, 'scripts')
 from extra_pages import EXTRA_PAGES
 pages.update(EXTRA_PAGES)
+# The Contact page reuses the homepage enquiry block and the About contact details.
+COPY_CHANGES['contact'] = COPY_CHANGES['home'] + COPY_CHANGES['about']
 for key, secs in pages.items():
     tree = page_tree(key, secs)
     json.dump(tree, open(f'sections/{key}.elementor.json', 'w'), separators=(',', ':'))
