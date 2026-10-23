@@ -226,11 +226,12 @@ body.mt-catalog #main {
 .mt-shop ul.products::before,
 .mt-shop ul.products::after { content: none; }
 
-.mt-shop ul.products li.product {
+/* WooCommerce sizes each card as a float column (30.75%); the grid above sizes them instead. */
+body.mt-catalog .mt-shop ul.products li.product {
 	position: relative;
-	float: none;
-	width: auto;
-	margin: 0;
+	float: none !important;
+	width: auto !important;
+	margin: 0 !important;
 	padding: 14px 14px 18px;
 	display: flex;
 	flex-direction: column;
