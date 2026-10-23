@@ -29,6 +29,15 @@ body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .wp-bloc
 	color: var(--mt-blue);
 }
 
+/* The blocks are "wide" aligned, which pulls them past the content edge in this theme. */
+body.woocommerce-cart .wp-block-woocommerce-cart,
+body.woocommerce-checkout .wp-block-woocommerce-checkout {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width: none !important;
+	width: auto !important;
+}
+
 /* Headings and links inside the blocks */
 .wc-block-cart .wc-block-cart__totals-title,
 .wc-block-components-title.wc-block-components-title,

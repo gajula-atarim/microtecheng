@@ -161,4 +161,7 @@
 		e.stopImmediatePropagation();
 		open();
 	}, true );
+
+	// A link ending in #search opens the popup straight away.
+	if ( window.location.hash === '#search' ) open();
 } )();
