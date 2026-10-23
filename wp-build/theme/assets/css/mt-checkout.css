@@ -1,0 +1,112 @@
+/*
+ * Microtec Engineering — Cart, Checkout and My account (WooCommerce block layouts) in the site's
+ * colours and type. The site-wide link and button styles otherwise turn the block buttons into
+ * dark-on-dark or pink outlines.
+ */
+
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) {
+	--mt-blue: #3B479C;
+	--mt-blue-hover: #262E6B;
+	--mt-ink: #1E2433;
+	--mt-line: #E1E5EC;
+}
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .site-main {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 48px clamp(16px, 4vw, 48px) 96px;
+	font-family: "Inter", sans-serif;
+}
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .site-main .page-header,
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .site-main .page-content { max-width: none; margin: 0; padding: 0; }
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .entry-title,
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .wp-block-woocommerce-cart h1,
+body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .wp-block-woocommerce-checkout h1 {
+	margin: 0 0 28px;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: clamp(36px, 4vw, 52px);
+	line-height: 1.05;
+	color: var(--mt-blue);
+}
+
+/* Headings and links inside the blocks */
+.wc-block-cart .wc-block-cart__totals-title,
+.wc-block-components-title.wc-block-components-title,
+.wc-block-components-checkout-step__title {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	color: var(--mt-ink);
+}
+.wp-block-woocommerce-cart a:not(.wc-block-components-button),
+.wp-block-woocommerce-checkout a:not(.wc-block-components-button) { color: var(--mt-blue); }
+.wc-block-components-product-name { font-weight: 600; text-decoration: none !important; }
+.wc-block-components-product-name:hover { text-decoration: underline !important; }
+.wc-block-cart-item__image img, .wc-block-components-order-summary-item__image img { border-radius: 10px; border: 1px solid var(--mt-line); background: #fff; }
+
+/* Buttons: Proceed to Checkout, Place Order, Apply coupon and the rest */
+.wp-block-woocommerce-cart .wc-block-components-button:not(.is-link),
+.wp-block-woocommerce-checkout .wc-block-components-button:not(.is-link),
+.wp-block-woocommerce-empty-cart-block .wp-block-button__link,
+.woocommerce-account .woocommerce .button,
+.woocommerce-account .woocommerce button[type="submit"] {
+	min-height: 52px;
+	padding: 14px 26px !important;
+	border: 0 !important;
+	border-radius: 999px !important;
+	background: var(--mt-blue) !important;
+	color: #fff !important;
+	font-family: "Inter", sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 16px !important;
+	text-decoration: none !important;
+	box-shadow: none !important;
+	transition: background-color .2s, transform .2s;
+}
+.wp-block-woocommerce-cart .wc-block-components-button:not(.is-link):hover,
+.wp-block-woocommerce-checkout .wc-block-components-button:not(.is-link):hover,
+.wp-block-woocommerce-empty-cart-block .wp-block-button__link:hover,
+.woocommerce-account .woocommerce .button:hover,
+.woocommerce-account .woocommerce button[type="submit"]:hover {
+	background: var(--mt-blue-hover) !important;
+	color: #fff !important;
+	transform: translateY(-1px);
+}
+.wc-block-components-button:not(.is-link) .wc-block-components-button__text { color: #fff !important; text-decoration: none !important; }
+.wc-block-components-button:not(.is-link):focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
+.wc-block-components-checkout-place-order-button { width: 100%; }
+.wc-block-components-button.is-link { color: var(--mt-blue) !important; }
+
+/* Quantity, inputs and selections in the brand blue */
+.wc-block-components-quantity-selector { border-radius: 10px !important; border-color: var(--mt-line) !important; }
+.wc-block-components-quantity-selector__button { color: var(--mt-blue) !important; }
+.wc-block-components-text-input input:focus,
+.wc-block-components-combobox .wc-block-components-combobox-control input:focus,
+.wc-blocks-components-select .wc-blocks-components-select__select:focus,
+.wc-block-components-textarea:focus {
+	border-color: var(--mt-blue) !important;
+	box-shadow: 0 0 0 1px var(--mt-blue) !important;
+}
+.wc-block-components-radio-control__input:checked,
+.wc-block-components-checkbox .wc-block-components-checkbox__input:checked { border-color: var(--mt-blue) !important; background-color: var(--mt-blue) !important; }
+.wc-block-components-radio-control__input:checked::before { background: #fff !important; }
+.wc-block-components-checkbox .wc-block-components-checkbox__mark { fill: #fff !important; }
+
+/* Totals and sidebars as a soft card */
+.wc-block-cart .wc-block-cart__sidebar .wc-block-components-sidebar-layout__inner,
+.wc-block-checkout__sidebar .wc-block-components-order-summary {
+	border-radius: 18px;
+}
+.wc-block-cart__sidebar,
+.wc-block-checkout__sidebar {
+	padding: 24px !important;
+	background: #F2F4F7;
+	border-radius: 18px;
+}
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__value,
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__label { color: var(--mt-ink); font-weight: 700; }
+.wc-block-components-sale-badge { border-color: var(--mt-blue) !important; color: var(--mt-blue) !important; }
+
+@media (max-width: 767px) {
+	body:is(.woocommerce-cart, .woocommerce-checkout, .woocommerce-account) .site-main { padding-top: 28px; }
+	.wc-block-cart__sidebar, .wc-block-checkout__sidebar { padding: 18px !important; }
+}

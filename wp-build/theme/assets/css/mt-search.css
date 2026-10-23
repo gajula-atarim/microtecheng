@@ -1,0 +1,89 @@
+/*
+ * Microtec Engineering — search popup (assets/js/mt-search.js), opened from the header search icon.
+ */
+
+/* The header widget's own inline box is replaced by the popup. */
+.mt-header-search .hfe-search-form__container .hfe-search-form__input { display: none !important; }
+
+html.mt-sp-open { overflow: hidden; }
+
+.mt-sp { position: fixed; inset: 0; z-index: 100000; font-family: "Inter", sans-serif; }
+.mt-sp[hidden] { display: none; }
+.mt-sp-backdrop {
+	position: absolute; inset: 0; background: rgba(15, 20, 60, .55);
+	-webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+	opacity: 0; transition: opacity .2s ease;
+}
+.mt-sp-panel {
+	position: relative; width: min(760px, calc(100% - 32px)); max-height: calc(100vh - 14vh - 32px); overflow: auto;
+	margin: 12vh auto 0; padding: 18px; background: #fff; border-radius: 20px;
+	box-shadow: 0 30px 80px rgba(10, 14, 45, .35);
+	opacity: 0; transform: translateY(-12px) scale(.98); transition: opacity .2s ease, transform .2s ease;
+}
+.mt-sp.is-open .mt-sp-backdrop { opacity: 1; }
+.mt-sp.is-open .mt-sp-panel { opacity: 1; transform: none; }
+
+.mt-sp-form { display: flex; align-items: center; gap: 10px; margin: 0; padding: 6px 6px 6px 16px; border: 2px solid #3B479C; border-radius: 999px; }
+.mt-sp-icon { display: flex; color: #3B479C; }
+.mt-sp-icon svg { width: 22px; height: 22px; }
+.mt-sp .mt-sp-input {
+	flex: 1; min-width: 0; height: 44px; margin: 0; padding: 0; border: 0 !important; outline: 0; box-shadow: none !important;
+	background: transparent; font: 400 17px "Inter", sans-serif; color: #1E2433;
+}
+.mt-sp-input::-webkit-search-cancel-button { display: none; }
+.mt-sp .mt-sp-submit {
+	flex-shrink: 0; height: 44px; padding: 0 22px; border: 0; border-radius: 999px; cursor: pointer;
+	background: #3B479C; color: #fff; font: 600 15px "Inter", sans-serif;
+}
+.mt-sp .mt-sp-submit:hover { background: #262E6B; }
+.mt-sp .mt-sp-close {
+	flex-shrink: 0; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+	background: #EEF0F4; color: #1E2433; font-size: 24px; line-height: 1;
+}
+.mt-sp .mt-sp-close:hover { background: #E1E5EC; }
+
+.mt-sp-results { padding: 6px 4px 2px; }
+.mt-sp-label { margin: 18px 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #3B479C; }
+.mt-sp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.mt-sp a.mt-sp-chip {
+	padding: 9px 16px; border-radius: 999px; background: #EEF0F8; color: #3B479C; font-size: 14px; font-weight: 600; text-decoration: none;
+}
+.mt-sp a.mt-sp-chip:hover { background: #3B479C; color: #fff; }
+
+.mt-sp-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.mt-sp a.mt-sp-product {
+	display: flex; align-items: center; gap: 12px; padding: 8px; border: 1px solid #E1E5EC; border-radius: 14px; text-decoration: none;
+	transition: border-color .2s, box-shadow .2s;
+}
+.mt-sp a.mt-sp-product:hover { border-color: #A3ABDB; box-shadow: 0 8px 20px rgba(15, 20, 60, .08); }
+.mt-sp-thumb { flex-shrink: 0; width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: #F2F4F7; }
+.mt-sp-thumb img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.mt-sp-pname { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-family: "Barlow Semi Condensed", sans-serif; font-weight: 600; font-size: 16px; line-height: 1.2; color: #1E2433; }
+.mt-sp-price { font-family: "Inter", sans-serif; font-size: 13px; font-weight: 600; color: #3B479C; }
+.mt-sp-price del { color: #8A93A6; font-weight: 400; margin-right: 4px; }
+.mt-sp-price ins { text-decoration: none; }
+
+.mt-sp-pages { display: flex; flex-direction: column; }
+.mt-sp a.mt-sp-page { padding: 11px 4px; border-bottom: 1px solid #EEF0F4; color: #1F2766; font-size: 15px; text-decoration: none; }
+.mt-sp a.mt-sp-page:last-child { border-bottom: 0; }
+.mt-sp a.mt-sp-page:hover { color: #3B479C; }
+.mt-sp a.mt-sp-page span { color: #A3ABDB; }
+
+.mt-sp a.mt-sp-all {
+	display: block; margin-top: 16px; padding: 13px; border-radius: 12px; background: #F2F4F7; text-align: center;
+	color: #3B479C; font-weight: 600; font-size: 15px; text-decoration: none;
+}
+.mt-sp a.mt-sp-all:hover { background: #EEF0F8; }
+.mt-sp-empty { margin: 18px 4px 6px; color: #4A5266; line-height: 1.6; }
+.mt-sp-empty a { color: #3B479C; font-weight: 600; }
+
+@media (max-width: 599px) {
+	.mt-sp-panel { margin-top: 16px; padding: 14px; max-height: calc(100vh - 32px); }
+	.mt-sp-form { padding-left: 12px; }
+	.mt-sp .mt-sp-submit { display: none; }
+	.mt-sp .mt-sp-input { font-size: 16px; }
+	.mt-sp-products { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.mt-sp-backdrop, .mt-sp-panel { transition: none; }
+}

@@ -58,6 +58,24 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'microtec-shop', $uri . '/assets/css/mt-shop.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-shop.css' ) );
 }, 30 );
 
+// Search popup from the header search icon (every page), and the Cart / Checkout / My account
+// pages in the site's colours.
+add_action( 'wp_enqueue_scripts', function () {
+	$dir = get_stylesheet_directory();
+	$uri = get_stylesheet_directory_uri();
+
+	wp_enqueue_style( 'microtec-search', $uri . '/assets/css/mt-search.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-search.css' ) );
+	wp_enqueue_script( 'microtec-search', $uri . '/assets/js/mt-search.js', [], filemtime( $dir . '/assets/js/mt-search.js' ), true );
+	wp_localize_script( 'microtec-search', 'mtSearch', [
+		'home' => home_url( '/' ),
+		'rest' => esc_url_raw( rest_url() ),
+	] );
+
+	if ( function_exists( 'is_cart' ) && ( is_cart() || is_checkout() || is_account_page() ) ) {
+		wp_enqueue_style( 'microtec-checkout', $uri . '/assets/css/mt-checkout.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-checkout.css' ) );
+	}
+}, 40 );
+
 add_filter( 'body_class', function ( $classes ) {
 	if ( microtec_is_catalog() || is_search() ) {
 		$classes[] = 'mt-catalog';
