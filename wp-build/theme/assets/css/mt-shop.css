@@ -324,6 +324,55 @@ body.mt-catalog .mt-shop ul.products li.product {
 	color: var(--mt-ink);
 }
 
+/* ---- Single product page: brand type and colours over WooCommerce's defaults ---- */
+
+body.single-product .product_title {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: clamp(32px, 3.6vw, 48px);
+	line-height: 1.05;
+	color: var(--mt-blue);
+}
+body.woocommerce div.product p.price,
+body.woocommerce div.product span.price,
+body.woocommerce ul.products li.product .price { color: var(--mt-blue); font-weight: 600; }
+body.woocommerce div.product p.price del,
+body.woocommerce ul.products li.product .price del { color: var(--mt-muted); font-weight: 400; }
+body.woocommerce div.product p.price ins,
+body.woocommerce ul.products li.product .price ins { text-decoration: none; }
+
+body.woocommerce .single_add_to_cart_button.button.alt,
+body.woocommerce ul.products li.product .button {
+	padding: 12px 26px;
+	border-radius: 999px;
+	background: var(--mt-blue);
+	color: #fff;
+	font: 600 15px "Inter", sans-serif;
+}
+body.woocommerce .single_add_to_cart_button.button.alt:hover,
+body.woocommerce ul.products li.product .button:hover { background: var(--mt-blue-hover); color: #fff; }
+body.woocommerce .single_add_to_cart_button.button.alt.disabled { background: var(--mt-blue); opacity: .55; }
+body.woocommerce span.onsale { background: var(--mt-blue); color: #fff; }
+body.woocommerce div.product form.cart .variations select {
+	height: 44px;
+	padding: 0 14px;
+	border: 1px solid var(--mt-line);
+	border-radius: 10px;
+	background: #fff;
+}
+body.woocommerce div.product .woocommerce-tabs h2,
+body.woocommerce .related > h2,
+body.woocommerce .upsells > h2 {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	color: var(--mt-blue);
+}
+body.woocommerce .related ul.products li.product .woocommerce-loop-product__title {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 600;
+	color: var(--mt-ink);
+}
+
 /* ---- Smaller screens ---- */
 
 @media (max-width: 1099px) {
