@@ -102,6 +102,9 @@ SITE_COPY = [
     ('Electronics experience built on construction and mining sites.', 'Electronics experience built for plant and equipment.'),
     ('harsh Australian conditions on construction and mining sites.', 'harsh Australian site conditions.'),
     ('years supporting<br>construction &amp; mining', 'years supporting<br>plant &amp; equipment'),
+    # Contact buttons open the Contact page rather than the homepage form.
+    ('href="/#enquiry">Contact Us →</a>', 'href="/contact/">Contact Us →</a>'),
+    ('href="/#enquiry">contact us page</a>', 'href="/contact/">contact us page</a>'),
 ]
 
 def eid(*parts):
