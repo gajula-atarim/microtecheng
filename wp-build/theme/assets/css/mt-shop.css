@@ -393,16 +393,85 @@ body.mt-catalog .mt-shop ul.products li.product {
 	font: 600 12px/1.4 "Inter", sans-serif;
 }
 
-.mt-shop .woocommerce-pagination ul { border: 0; }
-.mt-shop .woocommerce-pagination ul li { border: 0; margin: 0 4px; }
-.mt-shop .woocommerce-pagination ul li a,
-.mt-shop .woocommerce-pagination ul li span {
-	min-width: 40px;
-	padding: 10px;
+/* Pagination: round page pills in the brand blue, clear of the grid. Selectors start at
+   body.mt-catalog to outrank WooCommerce's boxed ".woocommerce nav.woocommerce-pagination" rules. */
+body.mt-catalog nav.woocommerce-pagination {
+	clear: both;
+	margin: 48px 0 8px;
+	padding-top: 32px;
+	border-top: 1px solid var(--mt-line);
+	text-align: center;
+}
+body.mt-catalog nav.woocommerce-pagination ul {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	white-space: normal;
+}
+body.mt-catalog nav.woocommerce-pagination ul li {
+	float: none;
+	display: block;
+	margin: 0;
+	border: 0;
+	overflow: visible;
+}
+body.mt-catalog nav.woocommerce-pagination ul li a,
+body.mt-catalog nav.woocommerce-pagination ul li span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	height: 44px;
+	padding: 0 12px;
+	border: 1px solid var(--mt-line);
 	border-radius: 999px;
+	background: #fff;
+	color: var(--mt-ink);
+	font: 600 15px/1 "Inter", sans-serif;
+	text-decoration: none;
+	transition: background-color .2s, border-color .2s, color .2s;
+}
+body.mt-catalog nav.woocommerce-pagination ul li a:hover,
+body.mt-catalog nav.woocommerce-pagination ul li a:focus-visible {
+	border-color: var(--mt-blue);
+	background: var(--mt-grey);
 	color: var(--mt-blue);
 }
-.mt-shop .woocommerce-pagination ul li span.current { background: var(--mt-blue); color: #fff; }
+body.mt-catalog nav.woocommerce-pagination ul li a:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
+body.mt-catalog nav.woocommerce-pagination ul li span.current {
+	border-color: var(--mt-blue);
+	background: var(--mt-blue);
+	color: #fff;
+}
+body.mt-catalog nav.woocommerce-pagination ul li span.dots {
+	min-width: 24px;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--mt-body);
+}
+body.mt-catalog nav.woocommerce-pagination ul li .prev,
+body.mt-catalog nav.woocommerce-pagination ul li .next {
+	gap: 8px;
+	padding: 0 20px;
+	color: var(--mt-blue);
+}
+@media (max-width: 559px) {
+	body.mt-catalog nav.woocommerce-pagination { margin-top: 32px; padding-top: 24px; }
+	body.mt-catalog nav.woocommerce-pagination ul { gap: 6px; }
+	body.mt-catalog nav.woocommerce-pagination ul li a,
+	body.mt-catalog nav.woocommerce-pagination ul li span { min-width: 40px; height: 40px; padding: 0 10px; font-size: 14px; }
+	/* Previous / Next drop to their own row under the page numbers. */
+	body.mt-catalog nav.woocommerce-pagination ul li:has(.prev),
+	body.mt-catalog nav.woocommerce-pagination ul li:has(.next) { order: 2; flex: 1 1 40%; }
+	body.mt-catalog nav.woocommerce-pagination ul li .prev,
+	body.mt-catalog nav.woocommerce-pagination ul li .next { width: 100%; }
+}
 
 .mt-shop .woocommerce-info {
 	border-top-color: var(--mt-blue);

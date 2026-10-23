@@ -88,6 +88,20 @@ add_filter( 'loop_shop_columns', function () {
 	return 3;
 } );
 
+// 18 per page: six full rows of three, so no page ends on a lone card.
+add_filter( 'loop_shop_per_page', function () {
+	return 18;
+} );
+
+// Pagination arrows with words, styled as pills in mt-shop.css.
+add_filter( 'woocommerce_pagination_args', function ( $args ) {
+	$args['prev_text'] = '<span aria-hidden="true">&larr;</span> Previous';
+	$args['next_text'] = 'Next <span aria-hidden="true">&rarr;</span>';
+	$args['end_size']  = 1;
+	$args['mid_size']  = 1;
+	return $args;
+} );
+
 // Open the two-column layout after WooCommerce's page wrapper (priority 10) and before the
 // breadcrumb (20), so the breadcrumb sits in the right-hand column.
 add_action( 'woocommerce_before_main_content', function () {
