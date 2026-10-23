@@ -30,6 +30,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'microtec-pages', $uri . '/assets/js/mt-pages.js', [], filemtime( $dir . '/assets/js/mt-pages.js' ), true );
 	// Technical / Installation Guides: built from Elementor widgets, styled by class.
 	wp_enqueue_style( 'microtec-guides', $uri . '/assets/css/mt-guides.css', [ 'microtec-pages' ], filemtime( $dir . '/assets/css/mt-guides.css' ) );
+	wp_enqueue_script( 'microtec-guide', $uri . '/assets/js/mt-guide.js', [], filemtime( $dir . '/assets/js/mt-guide.js' ), true );
 }, 30 );
 
 // Load the brand CSS inside the Elementor editor preview too, so editing matches the front end.

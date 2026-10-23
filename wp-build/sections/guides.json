@@ -2307,7 +2307,7 @@
  ],
  "bronto": [
   {
-   "id": "d2adc2d",
+   "id": "4b40562",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2318,7 +2318,7 @@
    },
    "elements": [
     {
-     "id": "67e5b5b",
+     "id": "ed7a52f",
      "elType": "container",
      "isInner": false,
      "settings": {
@@ -2328,7 +2328,7 @@
      },
      "elements": [
       {
-       "id": "2f68ad5",
+       "id": "67e5b5b",
        "elType": "container",
        "isInner": false,
        "settings": {
@@ -2342,13 +2342,24 @@
          "elType": "widget",
          "widgetType": "text-editor",
          "settings": {
-          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Bronto LCD Display Keypad Overlay Replacement</strong></p>",
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Bronto Keypad Overlay</strong></p>",
           "_css_classes": "mtg-crumbs"
          },
          "elements": []
         },
         {
          "id": "5ebbf75",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Installation guide · 17 steps",
+          "header_size": "div",
+          "_css_classes": "mtb-kicker"
+         },
+         "elements": []
+        },
+        {
+         "id": "040eb24",
          "elType": "widget",
          "widgetType": "heading",
          "settings": {
@@ -2359,29 +2370,71 @@
          "elements": []
         },
         {
-         "id": "040eb24",
-         "elType": "widget",
-         "widgetType": "text-editor",
+         "id": "ea4fb5e",
+         "elType": "container",
+         "isInner": false,
          "settings": {
-          "editor": "<p>Step-by-step instructions for replacing the keypad overlay on a Bronto LCD display.</p>",
-          "_css_classes": "mtg-intro"
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtb-hero-actions"
          },
-         "elements": []
+         "elements": [
+          {
+           "id": "2f68ad5",
+           "elType": "widget",
+           "widgetType": "button",
+           "settings": {
+            "text": "Start the guide",
+            "link": {
+             "url": "#steps",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "selected_icon": {
+             "value": "fas fa-arrow-down",
+             "library": "fa-solid"
+            },
+            "icon_align": "row-reverse",
+            "_css_classes": "mtb-btn mtb-btn-start"
+           },
+           "elements": []
+          },
+          {
+           "id": "a5d6213",
+           "elType": "widget",
+           "widgetType": "button",
+           "settings": {
+            "text": "Download PDF",
+            "link": {
+             "url": "#print",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "selected_icon": {
+             "value": "fas fa-download",
+             "library": "fa-solid"
+            },
+            "icon_align": "row-reverse",
+            "_css_classes": "mtb-btn mtb-btn-pdf"
+           },
+           "elements": []
+          }
+         ]
         }
        ]
       },
       {
-       "id": "ea4fb5e",
+       "id": "351d17b",
        "elType": "container",
        "isInner": false,
        "settings": {
         "content_width": "full",
         "flex_direction": "column",
-        "css_classes": "mtg-hero-media"
+        "css_classes": "mtg-hero-media mtb-hero-media"
        },
        "elements": [
         {
-         "id": "a5d6213",
+         "id": "d2adc2d",
          "elType": "widget",
          "widgetType": "image",
          "settings": {
@@ -2390,8 +2443,6 @@
            "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/bronto-skylift-screen-overlay-3.jpg"
           },
           "image_size": "full",
-          "caption_source": "custom",
-          "caption": "Bronto Skylift display",
           "_css_classes": "mtg-hero-img"
          },
          "elements": []
@@ -2403,85 +2454,463 @@
    ]
   },
   {
-   "id": "194ac21",
+   "id": "5d529e9",
    "elType": "container",
    "isInner": false,
    "settings": {
     "content_width": "full",
     "flex_direction": "column",
-    "css_classes": "mtg-body",
-    "_title": "Guides"
+    "css_classes": "mtg-body mtb-body",
+    "_title": "Steps",
+    "_element_id": "steps"
    },
    "elements": [
     {
-     "id": "926ff15",
+     "id": "391fa63",
      "elType": "container",
      "isInner": false,
      "settings": {
       "content_width": "full",
-      "flex_direction": "column",
-      "css_classes": "mtg-wrap"
+      "flex_direction": "row",
+      "css_classes": "mtb-wrap"
      },
      "elements": [
       {
-       "id": "537d816",
+       "id": "99111e5",
        "elType": "container",
        "isInner": false,
        "settings": {
         "content_width": "full",
         "flex_direction": "column",
-        "css_classes": "mtg-card"
+        "css_classes": "mtb-side"
        },
        "elements": [
         {
-         "id": "2e49b20",
+         "id": "90c94e8",
          "elType": "container",
          "isInner": false,
          "settings": {
           "content_width": "full",
-          "flex_direction": "row",
-          "css_classes": "mtg-card-head"
+          "flex_direction": "column",
+          "css_classes": "mtb-card mtb-progress"
          },
          "elements": [
           {
-           "id": "70d95aa",
-           "elType": "widget",
-           "widgetType": "heading",
+           "id": "2e49b20",
+           "elType": "container",
+           "isInner": false,
            "settings": {
-            "title": "01",
-            "header_size": "div",
-            "_css_classes": "mtg-num"
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-progress-head"
            },
-           "elements": []
+           "elements": [
+            {
+             "id": "446da27",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Your progress",
+              "header_size": "div",
+              "_css_classes": "mtb-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "10b8879",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "0 / 17",
+              "header_size": "div",
+              "_css_classes": "mtb-count"
+             },
+             "elements": []
+            }
+           ]
           },
           {
-           "id": "10b8879",
+           "id": "537d816",
            "elType": "container",
            "isInner": false,
            "settings": {
             "content_width": "full",
             "flex_direction": "column",
-            "css_classes": "mtg-card-heading"
+            "css_classes": "mtb-bar"
            },
            "elements": [
             {
-             "id": "2657f84",
+             "id": "c9d8589",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "mtb-bar-fill"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "926ff15",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>Tap a step to mark it done.</p>",
+            "_css_classes": "mtb-hint"
+           },
+           "elements": []
+          },
+          {
+           "id": "194ac21",
+           "elType": "widget",
+           "widgetType": "icon-list",
+           "settings": {
+            "icon_list": [
+             {
+              "_id": "55eb5e3",
+              "text": "01 Disassemble the display",
+              "link": {
+               "url": "#phase-1",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": "",
+               "library": ""
+              }
+             },
+             {
+              "_id": "3c26099",
+              "text": "02 Remove the old overlay",
+              "link": {
+               "url": "#phase-2",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": "",
+               "library": ""
+              }
+             },
+             {
+              "_id": "70d95aa",
+              "text": "03 Fit the new overlay",
+              "link": {
+               "url": "#phase-3",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": "",
+               "library": ""
+              }
+             },
+             {
+              "_id": "2657f84",
+              "text": "04 Seal, reassemble and test",
+              "link": {
+               "url": "#phase-4",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": "",
+               "library": ""
+              }
+             }
+            ],
+            "view": "traditional",
+            "_css_classes": "mtb-phases"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "e543261",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtb-card mtb-before"
+         },
+         "elements": [
+          {
+           "id": "70e5897",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Before you start",
+            "header_size": "div",
+            "_css_classes": "mtb-label"
+           },
+           "elements": []
+          },
+          {
+           "id": "c76b728",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p><strong>Before undertaking any electrical work on a vehicle ensure that the power supply is isolated.</strong></p><p>Reasonable care is exercised in the preparation of these instructions, but variations in machine build may impact the accuracy from time to time and are beyond our control. These instructions should be used by suitably competent personnel for guidance only.</p>",
+            "_css_classes": "mtb-before-text"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "f42d04c",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtb-steps"
+       },
+       "elements": [
+        {
+         "id": "d06174d",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtb-phase",
+          "_element_id": "phase-1"
+         },
+         "elements": [
+          {
+           "id": "d6a784d",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-phase-head"
+           },
+           "elements": [
+            {
+             "id": "d2547a7",
              "elType": "widget",
              "widgetType": "heading",
              "settings": {
-              "title": "Bronto LCD Display Keypad Overlay Replacement",
-              "header_size": "h2",
-              "_css_classes": "mtg-card-title"
+              "title": "01",
+              "header_size": "div",
+              "_css_classes": "mtb-pnum"
              },
              "elements": []
             },
             {
-             "id": "446da27",
+             "id": "6b460c0",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Disassemble the display",
+              "header_size": "h2",
+              "_css_classes": "mtb-ptitle"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "53576c0",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "97568f4",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "1",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "30c8843",
              "elType": "widget",
              "widgetType": "text-editor",
              "settings": {
-              "editor": "<p>17 steps</p>",
-              "_css_classes": "mtg-card-meta"
+              "editor": "<p>Unscrew the front panel of the display unit. Disconnect the internal connectors to allow separation of the panel from the housing. Ensure that the connectors can be returned to their original locations during re assembly.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "e146c96",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "f83aabf",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "2",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "a44e062",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Remove the display to a clean work area.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "b9d702f",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "25da5c0",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "3",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "4823cfe",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Remove the outer cover and mounting screws that secure the main PCB behind the display module.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "23f95fe",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "17bc9c1",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "4",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "6e3471b",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Taking great care not to tug on or damage the interconnecting wires, remove the fixings that secure the display module behind the front panel.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "532f1ec",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "939c328",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "5",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "9012f46",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Carefully unplug the 14 way ribbon cable connecting the front panel to the main PCB. Separate the 2 assemblies and put the electronics safely aside ready for re assembly.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "a63b099",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "0b5e762",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "6",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "fcbd962",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Cut through the silicone around the rear of the ribbon cable to free the cable from the panel.</p>",
+              "_css_classes": "mtb-stext"
              },
              "elements": []
             }
@@ -2490,66 +2919,561 @@
          ]
         },
         {
-         "id": "c9d8589",
+         "id": "984c9ab",
          "elType": "container",
          "isInner": false,
          "settings": {
           "content_width": "full",
           "flex_direction": "column",
-          "css_classes": "mtg-card-body"
+          "css_classes": "mtb-phase",
+          "_element_id": "phase-2"
          },
          "elements": [
           {
-           "id": "351d17b",
-           "elType": "widget",
-           "widgetType": "text-editor",
+           "id": "114bfee",
+           "elType": "container",
+           "isInner": false,
            "settings": {
-            "editor": "<p>Reasonable care is exercised in the preparation of these instructions, but variations in machine build may impact the accuracy from time to time and are beyond our control. These instructions should be used by suitably competent personnel for guidance only.</p>",
-            "_css_classes": "mtg-disclaimer"
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-phase-head"
            },
-           "elements": []
+           "elements": [
+            {
+             "id": "c3417a4",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "02",
+              "header_size": "div",
+              "_css_classes": "mtb-pnum"
+             },
+             "elements": []
+            },
+            {
+             "id": "05b63aa",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Remove the old overlay",
+              "header_size": "h2",
+              "_css_classes": "mtb-ptitle"
+             },
+             "elements": []
+            }
+           ]
           },
           {
-           "id": "ed7a52f",
-           "elType": "widget",
-           "widgetType": "text-editor",
+           "id": "65922ae",
+           "elType": "container",
+           "isInner": false,
            "settings": {
-            "editor": "<ol><li>Before undertaking any electrical work on a vehicle ensure that the power supply is isolated.</li><li>Unscrew the front panel of the display unit. Disconnect the internal connectors to allow separation of the panel from the housing. Ensure that the connectors can be returned to their original locations during re assembly.</li><li>Remove the display to a clean work area.</li><li>Remove the outer cover and mounting screws that secure the main PCB behind the display module.</li><li>Taking great care not to tug on or damage the interconnecting wires, remove the fixings that secure the display module behind the front panel.</li><li>Carefully unplug the 14 way ribbon cable connecting the front panel to the main PCB. Separate the 2 assemblies and put the electronics safely aside ready for re assembly.</li><li>Cut through the silicone around the rear of the ribbon cable to free the cable from the panel.</li><li>Without damaging the paint finish or the acrylic window on the panel, lift an outer corner of the keypad label and peel it from the panel.</li><li>Thoroughly clean remnants of the old label and any adhesive / sealant from the panel and cable slot. A solvent such as IPA alcohol is ideal for this because of its degreasing properties. Stronger solvents may damage the acrylic window or paint finish.</li><li>Dry fit the replacement label to ensure a good fit. Do not kink or tightly bend the connecting ribbon as this will cause irreparable damage to the new overlay.</li><li>When a satisfactory fit is confirmed the label should be removed and approximately 1/3 of the protective backing peeled back from the area nearest to the ribbon cable. Also remove the backing from the small in-fill piece behind the ribbon cable ensuring that the ribbon is not allowed to contact the adhesive.</li></ol>",
-            "_css_classes": "mtg-steps"
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
            },
-           "elements": []
+           "elements": [
+            {
+             "id": "4255ce0",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "7",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "9992a94",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Without damaging the paint finish or the acrylic window on the panel, lift an outer corner of the keypad label and peel it from the panel.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
           },
           {
-           "id": "4b40562",
-           "elType": "widget",
-           "widgetType": "text-editor",
+           "id": "a1fc858",
+           "elType": "container",
+           "isInner": false,
            "settings": {
-            "editor": "<p><strong>WARNING!</strong> Once adhered to the panel, removal of the new label will not be possible without damage.</p>",
-            "_css_classes": "mtg-warning"
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
            },
-           "elements": []
+           "elements": [
+            {
+             "id": "07dca51",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "8",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "988b5a2",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Thoroughly clean remnants of the old label and any adhesive / sealant from the panel and cable slot. A solvent such as IPA alcohol is ideal for this because of its degreasing properties. Stronger solvents may damage the acrylic window or paint finish.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "1582990",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtb-phase",
+          "_element_id": "phase-3"
+         },
+         "elements": [
+          {
+           "id": "6ca9019",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-phase-head"
+           },
+           "elements": [
+            {
+             "id": "9a4a59c",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "03",
+              "header_size": "div",
+              "_css_classes": "mtb-pnum"
+             },
+             "elements": []
+            },
+            {
+             "id": "6a93eb2",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Fit the new overlay",
+              "header_size": "h2",
+              "_css_classes": "mtb-ptitle"
+             },
+             "elements": []
+            }
+           ]
           },
           {
-           "id": "55eb5e3",
-           "elType": "widget",
-           "widgetType": "text-editor",
+           "id": "6e6098a",
+           "elType": "container",
+           "isInner": false,
            "settings": {
-            "editor": "<ol><li>Feed the ribbon cable through the slot and carefully place the section of the label <strong>WITH</strong> backing in place on the panel while keeping the section with exposed adhesive clear of the panel.</li><li>Use the section of the label <strong>WITH</strong> backing to slide the label precisely into position.</li><li>Only when absolutely sure of a perfect placement should the section with exposed adhesive be allowed to come down gently on the panel. The margins of the adhesive that bound the backing material should not be allowed to bond firmly with the panel as this makes removal of the remaining backing difficult.</li><li>The remaining backing must now be removed from beneath the label so that the entire surface may be fully applied to the panel. Firmly rub down the label to ensure complete adhesion and sealing.</li><li>Invert the panel and pour a small quantity of flowable silicone into the slot around the ribbon cable. It is beneficial for the silicone to seep into any voids around the ribbon in-fill area. <em>The quality of the seal provided by this step will determine the level of protection afforded to the electronics within the enclosure.</em></li><li>Allow the silicone to fully cure before plugging the ribbon connector into the main PCB and re assembling the display.</li></ol>",
-            "_css_classes": "mtg-steps"
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
            },
-           "elements": []
+           "elements": [
+            {
+             "id": "21236ee",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "9",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "352b4c8",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Dry fit the replacement label to ensure a good fit. Do not kink or tightly bend the connecting ribbon as this will cause irreparable damage to the new overlay.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
           },
           {
-           "id": "3c26099",
+           "id": "ef63fcd",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "6f34495",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "10",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "1b12708",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>When a satisfactory fit is confirmed the label should be removed and approximately 1/3 of the protective backing peeled back from the area nearest to the ribbon cable. Also remove the backing from the small in-fill piece behind the ribbon cable ensuring that the ribbon is not allowed to contact the adhesive.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "fb7c764",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtb-warn"
+           },
+           "elements": [
+            {
+             "id": "8dec1f3",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "WARNING!",
+              "header_size": "div",
+              "_css_classes": "mtb-warn-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "a44f85a",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Once adhered to the panel, removal of the new label will not be possible without damage.</p>",
+              "_css_classes": "mtb-warn-text"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "988f661",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "5e4487b",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "11",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "3526877",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Feed the ribbon cable through the slot and carefully place the section of the label WITH backing in place on the panel while keeping the section with exposed adhesive clear of the panel.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "9a7a8a8",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "f66e79e",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "12",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "b1db745",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Use the section of the label WITH backing to slide the label precisely into position.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "e751f33",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "185899c",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "13",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "3df2678",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Only when absolutely sure of a perfect placement should the section with exposed adhesive be allowed to come down gently on the panel. The margins of the adhesive that bound the backing material should not be allowed to bond firmly with the panel as this makes removal of the remaining backing difficult.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "79cef8b",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "50296f7",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "14",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "6b829f8",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>The remaining backing must now be removed from beneath the label so that the entire surface may be fully applied to the panel. Firmly rub down the label to ensure complete adhesion and sealing.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "153910b",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtb-phase",
+          "_element_id": "phase-4"
+         },
+         "elements": [
+          {
+           "id": "39e9e76",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-phase-head"
+           },
+           "elements": [
+            {
+             "id": "42c6b42",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "04",
+              "header_size": "div",
+              "_css_classes": "mtb-pnum"
+             },
+             "elements": []
+            },
+            {
+             "id": "7830e57",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Seal, reassemble and test",
+              "header_size": "h2",
+              "_css_classes": "mtb-ptitle"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "defcb7e",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "974c89d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "15",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "10d09f8",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Invert the panel and pour a small quantity of flowable silicone into the slot around the ribbon cable. It is beneficial for the silicone to seep into any voids around the ribbon in-fill area. The quality of the seal provided by this step will determine the level of protection afforded to the electronics within the enclosure.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "5b88fc1",
            "elType": "widget",
            "widgetType": "text-editor",
            "settings": {
             "editor": "<p>“Permatex Flowable Silicone” is available in 42g tubes from Repco for under $10.</p>",
-            "_css_classes": "mtg-note"
+            "_css_classes": "mtb-tip"
            },
            "elements": []
+          },
+          {
+           "id": "6de1393",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "c637d12",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "16",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "a72843d",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Allow the silicone to fully cure before plugging the ribbon connector into the main PCB and re assembling the display.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "17a487a",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtb-step"
+           },
+           "elements": [
+            {
+             "id": "dbb6ed1",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "17",
+              "header_size": "div",
+              "_css_classes": "mtb-snum"
+             },
+             "elements": []
+            },
+            {
+             "id": "2919838",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>When re fitted to the machine the display may be tested for key function using the panel test application as required.</p>",
+              "_css_classes": "mtb-stext"
+             },
+             "elements": []
+            }
+           ]
           }
          ]
+        },
+        {
+         "id": "9de7c7b",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>All 17 steps complete.</p>",
+          "_css_classes": "mtb-alldone"
+         },
+         "elements": []
         }
        ]
       }
@@ -2558,7 +3482,7 @@
    ]
   },
   {
-   "id": "97568f4",
+   "id": "7eee635",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2569,7 +3493,7 @@
    },
    "elements": [
     {
-     "id": "d6a784d",
+     "id": "496e552",
      "elType": "container",
      "isInner": false,
      "settings": {
@@ -2579,7 +3503,7 @@
      },
      "elements": [
       {
-       "id": "c76b728",
+       "id": "33b885e",
        "elType": "container",
        "isInner": false,
        "settings": {
@@ -2589,18 +3513,18 @@
        },
        "elements": [
         {
-         "id": "90c94e8",
+         "id": "c82afa5",
          "elType": "widget",
          "widgetType": "heading",
          "settings": {
-          "title": "Can’t find the guide you need?",
+          "title": "Need help with your Bronto display?",
           "header_size": "h2",
           "_css_classes": "mtg-cta-title"
          },
          "elements": []
         },
         {
-         "id": "70e5897",
+         "id": "898e107",
          "elType": "widget",
          "widgetType": "text-editor",
          "settings": {
@@ -2612,7 +3536,7 @@
        ]
       },
       {
-       "id": "6b460c0",
+       "id": "dc8bff3",
        "elType": "container",
        "isInner": false,
        "settings": {
@@ -2622,7 +3546,7 @@
        },
        "elements": [
         {
-         "id": "e543261",
+         "id": "2b29dcd",
          "elType": "widget",
          "widgetType": "button",
          "settings": {
@@ -2637,7 +3561,7 @@
          "elements": []
         },
         {
-         "id": "99111e5",
+         "id": "f99b875",
          "elType": "widget",
          "widgetType": "text-editor",
          "settings": {
@@ -2647,7 +3571,7 @@
          "elements": []
         },
         {
-         "id": "d2547a7",
+         "id": "7fbc17d",
          "elType": "widget",
          "widgetType": "heading",
          "settings": {

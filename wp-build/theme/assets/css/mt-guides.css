@@ -164,3 +164,138 @@ body:has(.mtg-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 @media (prefers-reduced-motion: reduce) {
 	:is(.mtg-card-link, .mtg-card-link *, .mtg-cta-btn .elementor-button) { transition: none !important; }
 }
+
+/* ---- Bronto guide: interactive steps (Microtec Bronto Keypad Overlay Guide design) ---- */
+
+.mtb-kicker .elementor-heading-title { margin: 0; font-family: 'Inter', sans-serif !important; font-size: 13px; font-weight: 600 !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: #A3ABDB; }
+.mtg-hero .mtg-hero-text:has(.mtb-kicker) .mtg-title .elementor-heading-title { font-size: clamp(38px, 4.6vw, 62px); }
+.e-con.mtb-hero-actions { flex-wrap: wrap; --gap: 12px; --row-gap: 12px; --column-gap: 12px; margin-top: 6px; }
+.mtb-btn .elementor-button {
+	display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 999px;
+	font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; line-height: 1; transition: background-color .2s;
+}
+.mtb-btn .elementor-button-content-wrapper { gap: 8px; }
+.mtb-btn .elementor-button-icon svg { width: 14px; height: 14px; fill: currentColor; }
+.mtb-btn .elementor-button-icon i { font-size: 13px; }
+.mtb-btn-start .elementor-button { background: #fff; color: #3B479C; border: 1px solid #fff; }
+.mtb-btn-start .elementor-button:hover { background: #EEF0F8; color: #3B479C; }
+.mtb-btn-pdf .elementor-button { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .45); }
+.mtb-btn-pdf .elementor-button:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+.e-con.mtb-hero-media { flex: 1 1 400px; }
+.mtb-hero-media .mtg-hero-img img { aspect-ratio: 4 / 3; }
+
+.e-con.mtb-wrap {
+	width: 100%; max-width: 1280px; margin: 0 auto; flex-wrap: wrap; align-items: flex-start;
+	--padding-top: clamp(56px, 7vw, 96px); --padding-bottom: clamp(56px, 7vw, 96px); --padding-left: clamp(16px, 4vw, 48px); --padding-right: clamp(16px, 4vw, 48px);
+	--row-gap: 32px; --column-gap: 48px; --gap: 32px 48px;
+}
+.e-con.mtb-side { flex: 0 1 320px; min-width: min(100%, 280px); --gap: 16px; --row-gap: 16px; }
+@media (min-width: 1000px) { .e-con.mtb-side { position: sticky; top: 24px; } }
+.e-con.mtb-card { border-radius: 16px; --padding-top: 22px; --padding-bottom: 22px; --padding-left: 22px; --padding-right: 22px; --gap: 14px; --row-gap: 14px; }
+.e-con.mtb-progress { background: #fff; border: 1px solid #E1E5EC; }
+.e-con.mtb-progress-head { justify-content: space-between; align-items: baseline; }
+.mtb-label .elementor-heading-title { margin: 0; font-family: 'Inter', sans-serif !important; font-size: 12px; font-weight: 700 !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: #3B479C; }
+.mtb-count .elementor-heading-title { margin: 0; font-size: 20px; color: #1F2766; }
+.e-con.mtb-bar { height: 8px; border-radius: 4px; background: #EEF0F4; overflow: hidden; }
+.e-con.mtb-bar-fill { width: var(--mtb-pct, 0%); height: 100%; border-radius: 4px; background: linear-gradient(90deg, #5562B8, #3B479C); transition: width .4s ease; }
+.mtb-hint p { font-size: 13px; color: #4A5266; }
+.mtb-phases { border-top: 1px solid #EEF0F4; padding-top: 6px; }
+.mtb-phases .elementor-icon-list-items { margin: 0; padding: 0; list-style: none; }
+.mtb-phases .elementor-icon-list-item { margin: 0 !important; padding: 0 !important; }
+.mtb-phases .elementor-icon-list-item a { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 10px 0; text-decoration: none; }
+.mtb-phases .elementor-icon-list-text { padding: 0; color: #1F2766; font-size: 15px; font-weight: 500; }
+.mtb-phases a:hover .elementor-icon-list-text { color: #3B479C; }
+.mtb-pcount { flex-shrink: 0; color: #7A8194; font-size: 13px; font-weight: 600; }
+.mtb-pcount.is-complete { color: #15803D; }
+
+.e-con.mtb-before { background: #1F2766; color: #fff; --gap: 12px; --row-gap: 12px; }
+.mtb-before .mtb-label .elementor-heading-title { display: flex; align-items: center; gap: 10px; color: #A3ABDB; }
+.mtb-before .mtb-label .elementor-heading-title::before {
+	content: ''; width: 20px; height: 20px; flex-shrink: 0;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A3ABDB' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.mtb-before-text p { font-size: 13px; line-height: 1.6; color: #CDD1EC; }
+.mtb-before-text p + p { margin-top: 12px; }
+.mtb-before-text strong { display: block; font-size: 15px; line-height: 1.45; color: #fff; }
+
+.e-con.mtb-steps { flex: 1 1 560px; min-width: 0; --gap: 40px; --row-gap: 40px; }
+.e-con.mtb-phase { --gap: 12px; --row-gap: 12px; scroll-margin-top: 24px; }
+.e-con.mtb-phase-head { align-items: baseline; --gap: 14px; --column-gap: 14px; margin-bottom: 4px; }
+.mtb-pnum .elementor-heading-title { margin: 0; font-size: 18px; color: #A3ABDB; }
+.mtb-ptitle .elementor-heading-title { margin: 0; font-size: clamp(26px, 2.6vw, 32px); line-height: 1.1; color: #3B479C; }
+
+.e-con.mtb-step {
+	align-items: flex-start; cursor: pointer; background: #fff; border: 1px solid #E1E5EC; border-radius: 14px;
+	--gap: 18px; --column-gap: 18px; --padding-top: 20px; --padding-bottom: 20px; --padding-left: 22px; --padding-right: 22px;
+	transition: border-color .25s, box-shadow .25s; -webkit-tap-highlight-color: transparent;
+}
+.e-con.mtb-step:hover { border-color: #A3ABDB; box-shadow: 0 10px 24px rgba(15, 20, 60, .07); }
+.e-con.mtb-step:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
+.mtb-snum { flex-shrink: 0; }
+.mtb-snum .elementor-heading-title {
+	width: 40px; height: 40px; margin: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+	background: #EEF0F8; color: #3B479C; font-size: 18px; line-height: 1; transition: background .25s, color .25s;
+}
+.mtb-stext { flex: 1 1 0; min-width: 0; }
+.mtb-stext p { padding-top: 8px; font-size: 16px; line-height: 1.6; color: #1F2766; text-wrap: pretty; transition: color .25s; }
+.e-con.mtb-step.is-done { border-color: #A3ABDB; }
+.mtb-step.is-done .mtb-snum .elementor-heading-title { background: #3B479C; color: transparent; position: relative; }
+.mtb-step.is-done .mtb-snum .elementor-heading-title::after { content: '✓'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; }
+.mtb-step.is-done .mtb-stext p { color: #7A8194; }
+
+.e-con.mtb-warn {
+	position: relative; background: #FDEDEC; border: 1px solid #F3B8B3; border-radius: 14px;
+	--gap: 4px; --row-gap: 4px; --padding-top: 20px; --padding-bottom: 20px; --padding-left: 64px; --padding-right: 22px;
+}
+.e-con.mtb-warn::before {
+	content: ''; position: absolute; left: 22px; top: 20px; width: 26px; height: 26px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B42318' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l10 18H2z'/%3E%3Cpath d='M12 10v4M12 17.5v.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.mtb-warn-title .elementor-heading-title { margin: 0; font-size: 20px; letter-spacing: .04em !important; color: #B42318; }
+.mtb-warn-text p { font-size: 16px; line-height: 1.55; color: #7A1A12; }
+
+.mtb-tip { margin-left: 58px !important; }
+.mtb-tip p {
+	display: flex; gap: 14px; align-items: center; padding: 14px 18px; border-radius: 12px; background: #EEF0F8; border: 1px solid #D5DAEE;
+	font-size: 15px; line-height: 1.55; color: #2E3880;
+}
+.mtb-tip p::before {
+	content: ''; flex-shrink: 0; width: 20px; height: 20px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B479C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 11v5M12 7.5v.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.mtb-alldone { display: none; }
+.mtb-alldone.is-visible { display: block; }
+.mtb-alldone p {
+	display: flex; gap: 14px; align-items: center; padding: 20px 22px; border-radius: 14px; background: #E8F6EE; border: 1px solid #A7DDBE;
+	color: #14532D; font-weight: 600; font-size: 16px;
+}
+.mtb-alldone p::before {
+	content: ''; width: 24px; height: 24px; flex-shrink: 0;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315803D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@media (max-width: 767px) {
+	.mtb-tip { margin-left: 0 !important; }
+	.e-con.mtb-step { --padding-left: 16px; --padding-right: 16px; --gap: 14px; --column-gap: 14px; }
+	.mtb-stext p { font-size: 15px; }
+}
+
+/* "Download PDF" prints the guide; the browser's print dialog saves it as a PDF. */
+@media print {
+	#masthead, footer, .site-footer, .elementor-location-footer, .mtb-hero-actions, .mtb-hero-media, .mtb-progress, .mtg-cta-wrap, #wpadminbar { display: none !important; }
+	.e-con.mtg-hero { background: none !important; color: #000; }
+	.mtg-hero .mtg-title .elementor-heading-title { color: #1F2766 !important; font-size: 32px !important; }
+	.mtg-crumbs, .mtg-hero::before { display: none !important; }
+	.e-con.mtg-hero-inner { --padding-top: 0px; --padding-bottom: 12px; }
+	.e-con.mtg-body { background: none !important; }
+	.e-con.mtb-wrap { --padding-top: 0px; }
+	.e-con.mtb-side { position: static; flex-basis: 100%; }
+	.e-con.mtb-before { background: #fff !important; border: 1px solid #1F2766; }
+	.mtb-before-text p, .mtb-before-text strong, .mtb-before .mtb-label .elementor-heading-title { color: #1F2766 !important; }
+	.e-con.mtb-step, .e-con.mtb-warn, .mtb-tip { break-inside: avoid; box-shadow: none !important; }
+	.mtb-step.is-done .mtb-snum .elementor-heading-title { background: #EEF0F8; color: #3B479C; }
+	.mtb-step.is-done .mtb-snum .elementor-heading-title::after { content: none; }
+	.mtb-step.is-done .mtb-stext p { color: #1F2766; }
+	.mtb-alldone { display: none !important; }
+}

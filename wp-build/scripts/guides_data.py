@@ -131,6 +131,24 @@ BRONTO_STEPS_2 = [
 BRONTO_NOTE = '“Permatex Flowable Silicone” is available in 42g tubes from Repco for under $10.'
 
 
+# Bronto guide, as laid out in the "Microtec Bronto Keypad Overlay Guide" design: the power
+# isolation step moves into "Before you start", the steps fall into four phases, and a final
+# test step is added. A dict marks the warning or tip that sits after a step.
+BRONTO_BEFORE = 'Before undertaking any electrical work on a vehicle ensure that the power supply is isolated.'
+BRONTO_PHASES = [
+    ('Disassemble the display', BRONTO_STEPS[1:7]),
+    ('Remove the old overlay', BRONTO_STEPS[7:9]),
+    ('Fit the new overlay', BRONTO_STEPS[9:11] + [{'warn': BRONTO_WARNING}] + [
+        s.replace('<strong>', '').replace('</strong>', '') for s in BRONTO_STEPS_2[0:4]]),
+    ('Seal, reassemble and test', [
+        BRONTO_STEPS_2[4].replace('<em>', '').replace('</em>', ''),
+        {'tip': BRONTO_NOTE},
+        BRONTO_STEPS_2[5],
+        'When re fitted to the machine the display may be tested for key function using the panel test application as required.',
+    ]),
+]
+
+
 def all_files():
     files = [f for _, docs in PRE for _, f in docs]
     files += [f for _, f in POST_LIGHTS]

@@ -8,7 +8,7 @@ theme's assets/css/mt-guides.css, keyed on the CSS classes set here.
 
 import hashlib, json, os, re
 from guides_data import (PRE, POST_LIGHTS, POST_CRANES, POST_MISC, TADANO, BRONTO_INTRO,
-                         BRONTO_STEPS, BRONTO_WARNING, BRONTO_STEPS_2, BRONTO_NOTE)
+                         BRONTO_BEFORE, BRONTO_PHASES)
 
 U = 'https://microteceng.wsdfy.com/wp-content/uploads/2026/10/'
 # PDFs that the old site links to but no longer serves: listed without a download link.
@@ -112,9 +112,9 @@ def body(ids, cards):
     return con(ids, 'mtg-body', [con(ids, 'mtg-wrap', cards)], _title='Guides')
 
 
-def cta(ids):
+def cta(ids, title='Can’t find the guide you need?'):
     left = con(ids, 'mtg-cta-text', [
-        heading(ids, 'mtg-cta-title', 'Can’t find the guide you need?', 'h2'),
+        heading(ids, 'mtg-cta-title', title, 'h2'),
         text(ids, 'mtg-cta-sub', '<p>Feel free to contact our office for further information.</p>'),
     ])
     right = con(ids, 'mtg-cta-actions', [
@@ -133,6 +133,81 @@ def count(groups):
 def guide_hero(ids, key, intro, img=HERO_IMG, caption='Microtec external LED warning light'):
     return hero(ids, PAGES[key][0], intro, img, caption,
                 [('Home', '/'), ('Technical / Installation Guides', GUIDES)])
+
+
+def bronto_guide(ids):
+    """The Bronto guide from the "Microtec Bronto Keypad Overlay Guide" design: a hero with
+    "Start the guide" and "Download PDF", then a progress card and "Before you start" beside
+    the steps in four phases. Steps are tap-to-tick (assets/js/mt-guide.js)."""
+    total = sum(1 for _, items in BRONTO_PHASES for i in items if isinstance(i, str))
+    title = PAGES['bronto'][0]
+    crumbs = ('<p><a href="/">Home</a><span>/</span><a href="/guides/">Technical / Installation Guides</a>'
+              '<span>/</span><strong>Bronto Keypad Overlay</strong></p>')
+    link = lambda url: {'url': url, 'is_external': '', 'nofollow': ''}
+    left = con(ids, 'mtg-hero-text', [
+        text(ids, 'mtg-crumbs', crumbs),
+        heading(ids, 'mtb-kicker', f'Installation guide · {total} steps', 'div'),
+        heading(ids, 'mtg-title', title, 'h1'),
+        con(ids, 'mtb-hero-actions', [
+            w(ids, 'button', 'mtb-btn mtb-btn-start', text='Start the guide', link=link('#steps'),
+              selected_icon={'value': 'fas fa-arrow-down', 'library': 'fa-solid'}, icon_align='row-reverse'),
+            w(ids, 'button', 'mtb-btn mtb-btn-pdf', text='Download PDF', link=link('#print'),
+              selected_icon={'value': 'fas fa-download', 'library': 'fa-solid'}, icon_align='row-reverse'),
+        ], direction='row'),
+    ])
+    right = con(ids, 'mtg-hero-media mtb-hero-media', [
+        w(ids, 'image', 'mtg-hero-img', image=BRONTO_IMG, image_size='full'),
+    ])
+    hero_sec = con(ids, 'mtg-hero mtp-hero', [con(ids, 'mtg-hero-inner', [left, right], direction='row')], _title='Hero')
+
+    # Sidebar: progress and the safety note.
+    phase_links = [{'_id': ids(), 'text': f'0{i + 1} {t}', 'link': link(f'#phase-{i + 1}'),
+                    'selected_icon': {'value': '', 'library': ''}}
+                   for i, (t, _) in enumerate(BRONTO_PHASES)]
+    progress = con(ids, 'mtb-card mtb-progress', [
+        con(ids, 'mtb-progress-head', [
+            heading(ids, 'mtb-label', 'Your progress', 'div'),
+            heading(ids, 'mtb-count', f'0 / {total}', 'div'),
+        ], direction='row'),
+        con(ids, 'mtb-bar', [con(ids, 'mtb-bar-fill', [])]),
+        text(ids, 'mtb-hint', '<p>Tap a step to mark it done.</p>'),
+        w(ids, 'icon-list', 'mtb-phases', icon_list=phase_links, view='traditional'),
+    ])
+    before = con(ids, 'mtb-card mtb-before', [
+        heading(ids, 'mtb-label', 'Before you start', 'div'),
+        text(ids, 'mtb-before-text', f'<p><strong>{BRONTO_BEFORE}</strong></p><p>{BRONTO_INTRO}</p>'),
+    ])
+    side = con(ids, 'mtb-side', [progress, before])
+
+    # Steps, phase by phase.
+    phases, n = [], 0
+    for i, (t, items) in enumerate(BRONTO_PHASES):
+        kids = [con(ids, 'mtb-phase-head', [
+            heading(ids, 'mtb-pnum', f'0{i + 1}', 'div'),
+            heading(ids, 'mtb-ptitle', t, 'h2'),
+        ], direction='row')]
+        for item in items:
+            if isinstance(item, str):
+                n += 1
+                kids.append(con(ids, 'mtb-step', [
+                    heading(ids, 'mtb-snum', str(n), 'div'),
+                    text(ids, 'mtb-stext', f'<p>{item}</p>'),
+                ], direction='row'))
+            elif 'warn' in item:
+                kids.append(con(ids, 'mtb-warn', [
+                    heading(ids, 'mtb-warn-title', 'WARNING!', 'div'),
+                    text(ids, 'mtb-warn-text', f'<p>{item["warn"]}</p>'),
+                ]))
+            else:
+                kids.append(text(ids, 'mtb-tip', f'<p>{item["tip"]}</p>'))
+        phases.append(con(ids, 'mtb-phase', kids, _element_id=f'phase-{i + 1}'))
+    phases.append(text(ids, 'mtb-alldone', f'<p>All {total} steps complete.</p>'))
+    steps = con(ids, 'mtb-steps', phases)
+
+    body_sec = con(ids, 'mtg-body mtb-body', [con(ids, 'mtb-wrap', [side, steps], direction='row')],
+                   _title='Steps', _element_id='steps')
+    cta_sec = cta(ids, 'Need help with your Bronto display?')
+    return [hero_sec, body_sec, cta_sec]
 
 
 def build():
@@ -175,22 +250,7 @@ def build():
         cta(ids),
     ]
 
-    ids = Ids('bronto')
-    steps = ''.join(f'<li>{s}</li>' for s in BRONTO_STEPS)
-    steps2 = ''.join(f'<li>{s}</li>' for s in BRONTO_STEPS_2)
-    out['bronto'] = [
-        guide_hero(ids, 'bronto', 'Step-by-step instructions for replacing the keypad overlay on a Bronto '
-                   'LCD display.', BRONTO_IMG, 'Bronto Skylift display'),
-        body(ids, [card(ids, '01', 'Bronto LCD Display Keypad Overlay Replacement',
-                        f'{len(BRONTO_STEPS) + len(BRONTO_STEPS_2)} steps', [
-                            text(ids, 'mtg-disclaimer', f'<p>{BRONTO_INTRO}</p>'),
-                            text(ids, 'mtg-steps', f'<ol>{steps}</ol>'),
-                            text(ids, 'mtg-warning', f'<p><strong>WARNING!</strong> {BRONTO_WARNING}</p>'),
-                            text(ids, "mtg-steps", f"<ol>{steps2}</ol>"),
-                            text(ids, 'mtg-note', f'<p>{BRONTO_NOTE}</p>'),
-                        ])]),
-        cta(ids),
-    ]
+    out['bronto'] = bronto_guide(Ids('bronto'))
 
     # The Guides page: one card per guide, linking to its page.
     ids = Ids('guides')
