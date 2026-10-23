@@ -17,7 +17,7 @@ $products = new WP_Query( [
 	'posts_per_page' => 48,
 ] );
 
-$pages = new WP_Query( [
+$page_results = new WP_Query( [
 	'post_type'      => 'page',
 	'post_status'    => 'publish',
 	's'              => $term,
@@ -79,13 +79,13 @@ function microtec_search_excerpt( $post ) {
 			</section>
 		<?php endif; ?>
 
-		<?php if ( $pages->have_posts() ) : ?>
+		<?php if ( $page_results->have_posts() ) : ?>
 			<section class="mt-search-section">
-				<h2 class="mt-search-section-title">Pages &amp; guides <span><?php echo (int) $pages->found_posts; ?></span></h2>
+				<h2 class="mt-search-section-title">Pages &amp; guides <span><?php echo (int) $page_results->found_posts; ?></span></h2>
 				<div class="mt-search-pages">
 					<?php
-					while ( $pages->have_posts() ) :
-						$pages->the_post();
+					while ( $page_results->have_posts() ) :
+						$page_results->the_post();
 						$parent  = wp_get_post_parent_id( get_the_ID() );
 						$section = $parent ? get_the_title( $parent ) : 'Page';
 						$excerpt = microtec_search_excerpt( get_post() );
@@ -104,7 +104,7 @@ function microtec_search_excerpt( $post ) {
 			</section>
 		<?php endif; ?>
 
-		<?php if ( ! $products->found_posts && ! $pages->found_posts ) : ?>
+		<?php if ( ! $products->found_posts && ! $page_results->found_posts ) : ?>
 			<div class="mt-search-empty">
 				<h2>No results<?php echo $term ? ' for “' . esc_html( $term ) . '”' : ''; ?></h2>
 				<p>Try a different word, a part number or a brand, or browse the <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">product range</a>. For parts and availability, <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact us</a> or call <a href="tel:0397922243">03 9792 2243</a>.</p>
