@@ -39,8 +39,6 @@ body.mt-catalog #main {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
-	position: sticky;
-	top: 24px;
 }
 
 .mt-shop-widget-title {
@@ -385,7 +383,7 @@ body.woocommerce .related ul.products li.product .woocommerce-loop-product__titl
 @media (max-width: 859px) {
 	.mt-shop { grid-template-columns: 1fr; padding-top: 32px; }
 	.mt-shop-main { order: 1; }
-	.mt-shop-side { order: 2; position: static; }
+	.mt-shop-side { order: 2; }
 }
 
 @media (max-width: 559px) {
