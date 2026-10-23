@@ -172,8 +172,8 @@ assert CONTACT_FORM in _enquiry
 _details = _built['about'][3]['html'].replace(
     '<a class="mef7ec2 mh2" href="/#enquiry">Contact Us →</a>',
     '<a class="mef7ec2 mh2" href="#enquiry">Send an Enquiry →</a>')
-_details = _details.replace('<a class="mbfe739" href="/#enquiry">contact us page</a>',
-                            '<a class="mbfe739" href="#enquiry">enquiry form above</a>')
+_details = _details.replace('Please fill in the form on the <a class="mbfe739" href="/#enquiry">contact us page</a>',
+                            'Please fill in the <a class="mbfe739" href="#enquiry">enquiry form above</a>')
 assert 'Send an Enquiry' in _details and 'enquiry form above' in _details
 
 EXTRA_PAGES = {
