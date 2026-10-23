@@ -221,6 +221,10 @@ body {
 	.mt-topbar-cart a { font-size: 12px !important; }
 }
 
+/* The header and its dropdowns stay above page content (WooCommerce's gallery zoom button
+   sits at z-index 99). */
+#masthead { position: relative; z-index: 1000 !important; }
+
 .e-con.mt-header {
 	position: relative;
 	z-index: 20;
