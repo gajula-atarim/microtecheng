@@ -174,7 +174,14 @@ _details = _built['about'][3]['html'].replace(
     '<a class="mef7ec2 mh2" href="#enquiry">Send an Enquiry →</a>')
 _details = _details.replace('Please fill in the form on the <a class="mbfe739" href="/#enquiry">contact us page</a>',
                             'Please fill in the <a class="mbfe739" href="#enquiry">enquiry form above</a>')
-assert 'Send an Enquiry' in _details and 'enquiry form above' in _details
+# Photo of the building under the physical address. The client's photo is small (200px), so it
+# sits at about its real size here rather than in the hero.
+_details = _details.replace('Dandenong, Victoria, 3175</span></div>',
+    'Dandenong, Victoria, 3175</span><img src="' + U + 'microtec-building-maxwell-st.jpg" '
+    'alt="Microtec Engineering building, 16-18 Maxwell St, Dandenong South" width="200" height="119" '
+    'loading="lazy" style="display:block;width:100%;max-width:240px;height:auto;margin-top:12px;'
+    'border-radius:10px;border:1px solid #E1E5EC"></div>', 1)
+assert 'Send an Enquiry' in _details and 'enquiry form above' in _details and 'maxwell-st.jpg' in _details
 
 EXTRA_PAGES = {
     'radio': [
