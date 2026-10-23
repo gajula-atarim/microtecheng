@@ -475,9 +475,35 @@ body.woocommerce .related ul.products li.product .woocommerce-loop-product__titl
 	.mt-shop .mt-cat-intro-img { order: -1; }
 }
 
+/* Phones: one product per row, in the shop grid and in related products on a product page.
+   The image box is 4:3 rather than square so a full-width card stays compact. */
 @media (max-width: 559px) {
-	.mt-shop ul.products { gap: 14px; }
-	.mt-shop ul.products li.product { padding: 10px 10px 14px; }
-	.mt-shop ul.products li.product .woocommerce-loop-product__title { font-size: 16px; }
-	.mt-shop ul.products li.product .button { padding: 10px 12px; font-size: 13px; }
+	.mt-shop ul.products { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+	.mt-shop ul.products li.product a img { aspect-ratio: 4 / 3; }
+	.mt-shop ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
+
+	body.single-product :is(.related, .upsells) ul.products { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+	body.single-product :is(.related, .upsells) ul.products::before,
+	body.single-product :is(.related, .upsells) ul.products::after { content: none; }
+	body.single-product :is(.related, .upsells) ul.products li.product {
+		float: none !important;
+		width: auto !important;
+		margin: 0 !important;
+		padding: 14px 14px 18px;
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		border: 1px solid var(--mt-line);
+		border-radius: 18px;
+	}
+	body.single-product :is(.related, .upsells) ul.products li.product img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: contain;
+		margin: 0 0 14px;
+		background: #fff;
+		border-radius: 12px;
+	}
+	body.single-product :is(.related, .upsells) ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
+	body.single-product :is(.related, .upsells) ul.products li.product .button { display: block; margin-top: auto; text-align: center; }
 }
