@@ -34,7 +34,9 @@ $pages = new WP_Query( [
  * ("Home/Our Services/Load Systems Load Systems ...").
  */
 function microtec_search_excerpt( $post ) {
-	$text  = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( get_the_excerpt( $post ) ) ) );
+	// Built from the saved text, not get_the_excerpt(), which renders the whole Elementor page.
+	$raw   = '' !== $post->post_excerpt ? $post->post_excerpt : strip_shortcodes( $post->post_content );
+	$text  = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $raw ) ) );
 	$title = get_the_title( $post );
 	if ( 0 === strpos( $text, 'Home/' ) ) {
 		$first = strpos( $text, $title );
