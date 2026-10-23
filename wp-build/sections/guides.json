@@ -1,0 +1,3198 @@
+{
+ "pre": [
+  {
+   "id": "75bcdef",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "2c66943",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "e42ca64",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "2225691",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Pre 01/09/11 Ext Lights & LCM</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "44c6954",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Pre 01/09/11 Ext Lights & LCM",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "4c886b2",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Installation instructions for the external warning light and Light Control Module (LCM) MKI, for units purchased before 1 September 2011. Select a guide below to view and download the PDF.</p>",
+          "_css_classes": "mtg-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "9867380",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-media"
+       },
+       "elements": [
+        {
+         "id": "ee6b3b0",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 755,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/led-warning-light-hero.jpg"
+          },
+          "image_size": "full",
+          "caption_source": "custom",
+          "caption": "Microtec external LED warning light",
+          "_css_classes": "mtg-hero-img"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2ce942",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-body",
+    "_title": "Guides"
+   },
+   "elements": [
+    {
+     "id": "090c758",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-wrap"
+     },
+     "elements": [
+      {
+       "id": "b5140a2",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "12cb2a1",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "44fc614",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "01",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "985af28",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "24d8c8f",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "External Warning Light & Light Control Module (LCM) MKI Installation Instructions (PRE 1/9/2011 Purchase)",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "5c55555",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>16 documents · 8 categories</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "6dac1da",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "9bdbf03",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "ae2dc71",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "General",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "e552a2c",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "7950853",
+                "text": "Connecting a Light Control Module (LCM) to external warning lights",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-connections-to-all-light-types-x7.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "be7c1cf",
+                "text": "General installation instructions for the Microtec Light Control Module (LCM)",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-universal-light-contol-module-instructions.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "6d1ca36",
+                "text": "Thiess Light Control Module overview (contact us for a copy)",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "bd574c6",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "91888dd",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "3B6",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "57e7997",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "17b6f3f",
+                "text": "3B6 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-franna-3b6-instructions-thesis-1.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "333bbfc",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "c98702e",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Grove/Manitowoc",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "8491ad1",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "04ffacf",
+                "text": "EKS 83 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-grove-eks83-4.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "a82109c",
+                "text": "EKS 4 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-grove-eks4-normal.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "eaa3d83",
+                "text": "EKS 5 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-grove-eks5-normal-1.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "0cc5c64",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "7c92a60",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Kato",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "15ec46c",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "f9c912b",
+                "text": "MS7 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-ms7.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "639e3eb",
+                "text": "MS10 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-kato-ms10.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "e9e3ac7",
+                "text": "MS15B LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-kato-ms15b-1.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "f878f5c",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "8dbb5aa",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Liebherr",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "3e1f584",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "347bc0a",
+                "text": "Liccon LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-liccon-liebherr-1.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "33bacb2",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "0b40767",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "PAT",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "874337c",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "fdab674",
+                "text": "DS350G LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-pat-ds350g.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "68a5a97",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "6190c58",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Robway",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "da81770",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "7a0ced3",
+                "text": "1502 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-robway-1502.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "95cc819",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "ca44fa5",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Tadano",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "443dea8",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "7375f26",
+                "text": "AML LC, LA installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-aml-lc-la.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "fb44c89",
+                "text": "AML M1, M2 installation instructions for truck cranes",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-tadano-aml-m1-m2.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "ecd9fa2",
+                "text": "AML M1, M2 installation instructions for rough terrain cranes",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-tadano-aml-m1-m2-1.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ee7e9a4",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-cta-wrap",
+    "_title": "Call to action"
+   },
+   "elements": [
+    {
+     "id": "dac25a6",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-cta"
+     },
+     "elements": [
+      {
+       "id": "baaef7f",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-cta-text"
+       },
+       "elements": [
+        {
+         "id": "c1d6ca3",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Can’t find the guide you need?",
+          "header_size": "h2",
+          "_css_classes": "mtg-cta-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "1214924",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Feel free to contact our office for further information.</p>",
+          "_css_classes": "mtg-cta-sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "7dcb610",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtg-cta-actions"
+       },
+       "elements": [
+        {
+         "id": "3381e18",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us →",
+          "link": {
+           "url": "/contact/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-btn"
+         },
+         "elements": []
+        },
+        {
+         "id": "54bae60",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>or call</p>",
+          "_css_classes": "mtg-cta-or"
+         },
+         "elements": []
+        },
+        {
+         "id": "edb04eb",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "03 9792 2243",
+          "header_size": "div",
+          "link": {
+           "url": "tel:0397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-phone"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "post": [
+  {
+   "id": "39489f1",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "9a93c96",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "c2a49d0",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "0897770",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Post 01/09/11 Ext Lights & LCM</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "01d58e2",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Post 01/09/11 Ext Lights & LCM",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "7df3997",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Installation instructions for the external warning light and Light Control Module (LCM) MKII/MKIII, for units purchased from 1 September 2011. Select a guide below to view and download the PDF.</p>",
+          "_css_classes": "mtg-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "b122184",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-media"
+       },
+       "elements": [
+        {
+         "id": "b9e1f9e",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 755,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/led-warning-light-hero.jpg"
+          },
+          "image_size": "full",
+          "caption_source": "custom",
+          "caption": "Microtec external LED warning light",
+          "_css_classes": "mtg-hero-img"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5c0d459",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-body",
+    "_title": "Guides"
+   },
+   "elements": [
+    {
+     "id": "46bffbe",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-wrap"
+     },
+     "elements": [
+      {
+       "id": "90cb5a0",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "d20b67b",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "68a2066",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "01",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "a54baf0",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "bc2b059",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Light Control Module (LCM) MKII/MKIII to external warning light connections",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "8174c20",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>9 documents</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "805ea84",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "fd9cea7",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group mtg-group-plain"
+           },
+           "elements": [
+            {
+             "id": "94cc36d",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "bcfe608",
+                "text": "Connecting an LCM MKII/MKIII to Microtec Compact LED external warning lights",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mk-ii-connections-to-compact-microtec-led-light.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "1292316",
+                "text": "Connecting an LCM MKII/MKIII to Microtec Standard Globe Tower lights (contact us for a copy)",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                }
+               },
+               {
+                "_id": "a95d62a",
+                "text": "Connecting an LCM MKII/MKIII to Patlite WME-A common ground light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-common-ground-wme-a.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "fec72ad",
+                "text": "Connecting an LCM MKII/MKIII to Patlite WME-A light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-wme-a.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "120d57a",
+                "text": "Connecting an LCM MKII/MKIII to Patlite WME-AFB light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-wme-afb-with-buzzer.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "705215d",
+                "text": "Connecting an LCM MKII/MKIII to Patlite KJSB-302-RAG light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-kjsb-302-rag-with-buzzer.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "333e2c5",
+                "text": "Connecting an LCM MKII/MKIII to Microtec Large LED light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-large-microtec-led-light.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "4ccb192",
+                "text": "Connecting an LCM MKII/MKIII to Robway LED light assembly",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connections-to-robway-led-light.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "d41b926",
+                "text": "Connecting an LCM MKII/MKIII to 8 types of light assemblies",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-lcm-connections-to-8-light-types.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "081a68d",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "12efa8e",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "e4a3e18",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "02",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "11b5adc",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "634284a",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Light Control Module (LCM) MKII/MKIII connections to crane computers",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "382d857",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>14 documents · 8 categories</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "296716c",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "da4ee46",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "59ad2ae",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "3B6",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "5a90c85",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "c7967f1",
+                "text": "Franna late model 3B6 LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-franna-3b6-late-model.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "72e5a0e",
+                "text": "Franna early model 3B6 LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-franna-3b6-older-model.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "063b820",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "f1ca07a",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Grove/Manitowoc",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "6f3f371",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "9e6a8dc",
+                "text": "EKS 4 LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-grove-eks4.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "142bea0",
+                "text": "EKS 5 LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-grove-eks5.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "1932eef",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "4149ba3",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Kato",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "def1126",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "0e27c8c",
+                "text": "MS10 LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-kato-ms10.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "64cdbb8",
+                "text": "MS15B LCM MKII/MKIII installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-kato-ms15.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "e08daab",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "079e365",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Kobelco",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "e3ff0ab",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "7b15682",
+                "text": "RK70-2 installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-kobelco-rk70-2.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "c5336e3",
+                "text": "RK160-2 installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-kobelco-rk160-2.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "a07a05f",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "5a80ae0",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Liebherr",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "3305396",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "fe48b08",
+                "text": "Liccon LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-liebherr-liccon.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "ef69841",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "8893e59",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "PAT",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "9b3381d",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "40215f1",
+                "text": "DS350G LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-pat-ds350.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "bcacb0b",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "5f42207",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Robway",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "67286e2",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "a352997",
+                "text": "1502 LCM installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-robway-1502.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "87c0f84",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group"
+           },
+           "elements": [
+            {
+             "id": "d8661d1",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Tadano",
+              "header_size": "h3",
+              "_css_classes": "mtg-group-label"
+             },
+             "elements": []
+            },
+            {
+             "id": "dbd425a",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "a9de4dc",
+                "text": "AML LC, LA installation instructions",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-tadano-aml-la-lc.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "0a8ea97",
+                "text": "AML M1, M2 installation instructions for truck cranes",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-tadano-aml-m1-m2-tl.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "6e99fe9",
+                "text": "AML M1, M2 installation instructions for rough terrain cranes",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-connection-instructions-tadano-aml-m1-m2-tr.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "168e951",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "90a526d",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "ece8dc7",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "03",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "dc6a02a",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "fab5ce7",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "LCM MKII/MKIII miscellaneous instructions",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "7458ff4",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>4 documents</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "066be79",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "9417ed9",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group mtg-group-plain"
+           },
+           "elements": [
+            {
+             "id": "dff7f86",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "714f926",
+                "text": "LCM MKII/MKIII fault finding table",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-light-control-module-fault-finding-table.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "48e3e0f",
+                "text": "LCM MKII/MKIII operational overview",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-microtec-mkii-light-control-module-overview.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "eaf1f56",
+                "text": "LCM MKII/MKIII Thiess spec/latching module operational overview",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-microtec-mkii-latching-light-control-module-overview.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               },
+               {
+                "_id": "e83b17f",
+                "text": "Replacing an old LCM with a new LCM MKII/MKIII",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-mkii-lcm-conversion.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a7d44dc",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-cta-wrap",
+    "_title": "Call to action"
+   },
+   "elements": [
+    {
+     "id": "2696ba7",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-cta"
+     },
+     "elements": [
+      {
+       "id": "19fd2a2",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-cta-text"
+       },
+       "elements": [
+        {
+         "id": "a6262ed",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Can’t find the guide you need?",
+          "header_size": "h2",
+          "_css_classes": "mtg-cta-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "12008da",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Feel free to contact our office for further information.</p>",
+          "_css_classes": "mtg-cta-sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "94a11f7",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtg-cta-actions"
+       },
+       "elements": [
+        {
+         "id": "719ef0e",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us →",
+          "link": {
+           "url": "/contact/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-btn"
+         },
+         "elements": []
+        },
+        {
+         "id": "4ddbdc3",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>or call</p>",
+          "_css_classes": "mtg-cta-or"
+         },
+         "elements": []
+        },
+        {
+         "id": "3ba9b23",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "03 9792 2243",
+          "header_size": "div",
+          "link": {
+           "url": "tel:0397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-phone"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tadano": [
+  {
+   "id": "e095450",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "75b431b",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "0d6622f",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "9e07e6a",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Tadano Cranes Tech Information</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "ad9cb5a",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Tadano Cranes Tech Information",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "b10a8a5",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Technical information for Tadano cranes from the Microtec team. Download the guide below, or contact us on +61 3 9792 2243.</p>",
+          "_css_classes": "mtg-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "5e6a0e0",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-media"
+       },
+       "elements": [
+        {
+         "id": "cb8365a",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 641,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/tadano-exchange-load-cell-a.jpg"
+          },
+          "image_size": "full",
+          "caption_source": "custom",
+          "caption": "Tadano load cell",
+          "_css_classes": "mtg-hero-img"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a2e6d97",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-body",
+    "_title": "Guides"
+   },
+   "elements": [
+    {
+     "id": "925106e",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-wrap"
+     },
+     "elements": [
+      {
+       "id": "d5dfc33",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "7a1b395",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "069e608",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "01",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "1e8c8db",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "c354c3b",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Tadano Cranes Technical Information",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "681bc79",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>1 document</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "251aa1d",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "ebccb01",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtg-group mtg-group-plain"
+           },
+           "elements": [
+            {
+             "id": "4b9101d",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "settings": {
+              "icon_list": [
+               {
+                "_id": "c2d2ccb",
+                "text": "Troubleshooting Tadano load cell faults",
+                "selected_icon": {
+                 "value": "far fa-file-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/guide-troubleshooting-tadano-load-cell-faults.pdf",
+                 "is_external": "on",
+                 "nofollow": ""
+                }
+               }
+              ],
+              "view": "traditional",
+              "_css_classes": "mtg-docs"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "236545d",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>Contact us on <a href=\"tel:+61397922243\">+61 3 9792 2243</a></p>",
+            "_css_classes": "mtg-note"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "96d367b",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-cta-wrap",
+    "_title": "Call to action"
+   },
+   "elements": [
+    {
+     "id": "8da551e",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-cta"
+     },
+     "elements": [
+      {
+       "id": "acee8c8",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-cta-text"
+       },
+       "elements": [
+        {
+         "id": "9b2a16c",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Can’t find the guide you need?",
+          "header_size": "h2",
+          "_css_classes": "mtg-cta-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "d05d537",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Feel free to contact our office for further information.</p>",
+          "_css_classes": "mtg-cta-sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "c0642de",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtg-cta-actions"
+       },
+       "elements": [
+        {
+         "id": "13fc492",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us →",
+          "link": {
+           "url": "/contact/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-btn"
+         },
+         "elements": []
+        },
+        {
+         "id": "207114b",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>or call</p>",
+          "_css_classes": "mtg-cta-or"
+         },
+         "elements": []
+        },
+        {
+         "id": "a1a0ce2",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "03 9792 2243",
+          "header_size": "div",
+          "link": {
+           "url": "tel:0397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-phone"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "bronto": [
+  {
+   "id": "d2adc2d",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "67e5b5b",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "2f68ad5",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "44c0632",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><a href=\"/guides/\">Technical / Installation Guides</a><span>/</span><strong>Bronto LCD Display Keypad Overlay Replacement</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "5ebbf75",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Bronto LCD Display Keypad Overlay Replacement",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "040eb24",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Step-by-step instructions for replacing the keypad overlay on a Bronto LCD display.</p>",
+          "_css_classes": "mtg-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "ea4fb5e",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-media"
+       },
+       "elements": [
+        {
+         "id": "a5d6213",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 668,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/bronto-skylift-screen-overlay-3.jpg"
+          },
+          "image_size": "full",
+          "caption_source": "custom",
+          "caption": "Bronto Skylift display",
+          "_css_classes": "mtg-hero-img"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "194ac21",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-body",
+    "_title": "Guides"
+   },
+   "elements": [
+    {
+     "id": "926ff15",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-wrap"
+     },
+     "elements": [
+      {
+       "id": "537d816",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card"
+       },
+       "elements": [
+        {
+         "id": "2e49b20",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "70d95aa",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "01",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "10b8879",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "2657f84",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Bronto LCD Display Keypad Overlay Replacement",
+              "header_size": "h2",
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "446da27",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>17 steps</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "c9d8589",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtg-card-body"
+         },
+         "elements": [
+          {
+           "id": "351d17b",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>Reasonable care is exercised in the preparation of these instructions, but variations in machine build may impact the accuracy from time to time and are beyond our control. These instructions should be used by suitably competent personnel for guidance only.</p>",
+            "_css_classes": "mtg-disclaimer"
+           },
+           "elements": []
+          },
+          {
+           "id": "ed7a52f",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<ol><li>Before undertaking any electrical work on a vehicle ensure that the power supply is isolated.</li><li>Unscrew the front panel of the display unit. Disconnect the internal connectors to allow separation of the panel from the housing. Ensure that the connectors can be returned to their original locations during re assembly.</li><li>Remove the display to a clean work area.</li><li>Remove the outer cover and mounting screws that secure the main PCB behind the display module.</li><li>Taking great care not to tug on or damage the interconnecting wires, remove the fixings that secure the display module behind the front panel.</li><li>Carefully unplug the 14 way ribbon cable connecting the front panel to the main PCB. Separate the 2 assemblies and put the electronics safely aside ready for re assembly.</li><li>Cut through the silicone around the rear of the ribbon cable to free the cable from the panel.</li><li>Without damaging the paint finish or the acrylic window on the panel, lift an outer corner of the keypad label and peel it from the panel.</li><li>Thoroughly clean remnants of the old label and any adhesive / sealant from the panel and cable slot. A solvent such as IPA alcohol is ideal for this because of its degreasing properties. Stronger solvents may damage the acrylic window or paint finish.</li><li>Dry fit the replacement label to ensure a good fit. Do not kink or tightly bend the connecting ribbon as this will cause irreparable damage to the new overlay.</li><li>When a satisfactory fit is confirmed the label should be removed and approximately 1/3 of the protective backing peeled back from the area nearest to the ribbon cable. Also remove the backing from the small in-fill piece behind the ribbon cable ensuring that the ribbon is not allowed to contact the adhesive.</li></ol>",
+            "_css_classes": "mtg-steps"
+           },
+           "elements": []
+          },
+          {
+           "id": "4b40562",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p><strong>WARNING!</strong> Once adhered to the panel, removal of the new label will not be possible without damage.</p>",
+            "_css_classes": "mtg-warning"
+           },
+           "elements": []
+          },
+          {
+           "id": "55eb5e3",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<ol><li>Feed the ribbon cable through the slot and carefully place the section of the label <strong>WITH</strong> backing in place on the panel while keeping the section with exposed adhesive clear of the panel.</li><li>Use the section of the label <strong>WITH</strong> backing to slide the label precisely into position.</li><li>Only when absolutely sure of a perfect placement should the section with exposed adhesive be allowed to come down gently on the panel. The margins of the adhesive that bound the backing material should not be allowed to bond firmly with the panel as this makes removal of the remaining backing difficult.</li><li>The remaining backing must now be removed from beneath the label so that the entire surface may be fully applied to the panel. Firmly rub down the label to ensure complete adhesion and sealing.</li><li>Invert the panel and pour a small quantity of flowable silicone into the slot around the ribbon cable. It is beneficial for the silicone to seep into any voids around the ribbon in-fill area. <em>The quality of the seal provided by this step will determine the level of protection afforded to the electronics within the enclosure.</em></li><li>Allow the silicone to fully cure before plugging the ribbon connector into the main PCB and re assembling the display.</li></ol>",
+            "_css_classes": "mtg-steps"
+           },
+           "elements": []
+          },
+          {
+           "id": "3c26099",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>“Permatex Flowable Silicone” is available in 42g tubes from Repco for under $10.</p>",
+            "_css_classes": "mtg-note"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "97568f4",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-cta-wrap",
+    "_title": "Call to action"
+   },
+   "elements": [
+    {
+     "id": "d6a784d",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-cta"
+     },
+     "elements": [
+      {
+       "id": "c76b728",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-cta-text"
+       },
+       "elements": [
+        {
+         "id": "90c94e8",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Can’t find the guide you need?",
+          "header_size": "h2",
+          "_css_classes": "mtg-cta-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "70e5897",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Feel free to contact our office for further information.</p>",
+          "_css_classes": "mtg-cta-sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "6b460c0",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtg-cta-actions"
+       },
+       "elements": [
+        {
+         "id": "e543261",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us →",
+          "link": {
+           "url": "/contact/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-btn"
+         },
+         "elements": []
+        },
+        {
+         "id": "99111e5",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>or call</p>",
+          "_css_classes": "mtg-cta-or"
+         },
+         "elements": []
+        },
+        {
+         "id": "d2547a7",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "03 9792 2243",
+          "header_size": "div",
+          "link": {
+           "url": "tel:0397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-phone"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "guides": [
+  {
+   "id": "68fe416",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "84911bb",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "dabeaed",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "2b85dc2",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><strong>Technical / Installation Guides</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "54510bf",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Technical / Installation Guides",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "7df58ca",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Installation instructions and technical information for Microtec products. Select a guide below to view and download the PDFs.</p>",
+          "_css_classes": "mtg-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "7a15798",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-media"
+       },
+       "elements": [
+        {
+         "id": "d52d9f3",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 755,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/led-warning-light-hero.jpg"
+          },
+          "image_size": "full",
+          "caption_source": "custom",
+          "caption": "Microtec external LED warning light",
+          "_css_classes": "mtg-hero-img"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1d4cd27",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-body",
+    "_title": "Guides"
+   },
+   "elements": [
+    {
+     "id": "feb0ee8",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-wrap"
+     },
+     "elements": [
+      {
+       "id": "5d453d3",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card mtg-card-link"
+       },
+       "elements": [
+        {
+         "id": "d828ea1",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "018d02b",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "01",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "9319324",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "52d7a97",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Pre 01/09/11 Ext Lights & LCM",
+              "header_size": "h2",
+              "link": {
+               "url": "/guides/pre-01-09-11-ext-lights-lcm/",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "f68a388",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>16 documents · 8 categories</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "176d65f",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card mtg-card-link"
+       },
+       "elements": [
+        {
+         "id": "5d9f616",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "13922f3",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "02",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "61564fa",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "3f67b4d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Post 01/09/11 Ext Lights & LCM",
+              "header_size": "h2",
+              "link": {
+               "url": "/guides/post-01-09-11-ext-lights-lcm/",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "c8808eb",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>27 documents · 3 sections</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "f88675c",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card mtg-card-link"
+       },
+       "elements": [
+        {
+         "id": "db41f47",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "4d2fac1",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "03",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "d9ede0f",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "6a95b41",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Tadano Cranes Tech Information",
+              "header_size": "h2",
+              "link": {
+               "url": "/guides/tadano-cranes-tech-information/",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "7f13903",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>1 document</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "de111f3",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-card mtg-card-link"
+       },
+       "elements": [
+        {
+         "id": "5f4f8ba",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "mtg-card-head"
+         },
+         "elements": [
+          {
+           "id": "1706666",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "04",
+            "header_size": "div",
+            "_css_classes": "mtg-num"
+           },
+           "elements": []
+          },
+          {
+           "id": "8548bfd",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtg-card-heading"
+           },
+           "elements": [
+            {
+             "id": "a2a7259",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Bronto LCD Display Keypad Overlay Replacement",
+              "header_size": "h2",
+              "link": {
+               "url": "/guides/bronto-lcd-display-keypad-overlay-replacement/",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "mtg-card-title"
+             },
+             "elements": []
+            },
+            {
+             "id": "bb36af9",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>Step-by-step instructions</p>",
+              "_css_classes": "mtg-card-meta"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dd60bc8",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-cta-wrap",
+    "_title": "Call to action"
+   },
+   "elements": [
+    {
+     "id": "3666273",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtg-cta"
+     },
+     "elements": [
+      {
+       "id": "47f7480",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-cta-text"
+       },
+       "elements": [
+        {
+         "id": "79513a6",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Can’t find the guide you need?",
+          "header_size": "h2",
+          "_css_classes": "mtg-cta-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "644eeee",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Feel free to contact our office for further information.</p>",
+          "_css_classes": "mtg-cta-sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "a20fc1e",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtg-cta-actions"
+       },
+       "elements": [
+        {
+         "id": "e3cccbd",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us →",
+          "link": {
+           "url": "/contact/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-btn"
+         },
+         "elements": []
+        },
+        {
+         "id": "080368d",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>or call</p>",
+          "_css_classes": "mtg-cta-or"
+         },
+         "elements": []
+        },
+        {
+         "id": "9fa24e4",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "03 9792 2243",
+          "header_size": "div",
+          "link": {
+           "url": "tel:0397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "_css_classes": "mtg-cta-phone"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

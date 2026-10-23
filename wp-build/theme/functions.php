@@ -28,6 +28,8 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'microtec-pages-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap', [], null );
 	wp_enqueue_style( 'microtec-pages', $uri . '/assets/css/mt-pages.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-pages.css' ) );
 	wp_enqueue_script( 'microtec-pages', $uri . '/assets/js/mt-pages.js', [], filemtime( $dir . '/assets/js/mt-pages.js' ), true );
+	// Technical / Installation Guides: built from Elementor widgets, styled by class.
+	wp_enqueue_style( 'microtec-guides', $uri . '/assets/css/mt-guides.css', [ 'microtec-pages' ], filemtime( $dir . '/assets/css/mt-guides.css' ) );
 }, 30 );
 
 // Load the brand CSS inside the Elementor editor preview too, so editing matches the front end.

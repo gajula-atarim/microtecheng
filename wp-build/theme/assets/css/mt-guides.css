@@ -1,0 +1,166 @@
+/*
+ * Microtec Engineering — Technical / Installation Guides pages.
+ * The pages are built from Elementor's own widgets (wp-build/scripts/guides.py); this file gives
+ * them the look of the "Microtec Technical Guides" design. Every rule is keyed on an mtg-* class
+ * set on a container or widget, so other pages are untouched.
+ */
+
+/* Page defaults inside the guide sections */
+.e-con.mtg-hero, .e-con.mtg-body, .e-con.mtg-cta-wrap {
+	--padding-top: 0px; --padding-right: 0px; --padding-bottom: 0px; --padding-left: 0px; --gap: 0px; --row-gap: 0px; --column-gap: 0px;
+	font-family: 'Inter', sans-serif; color: #1E2433; -webkit-font-smoothing: antialiased;
+}
+:is(.mtg-hero, .mtg-body, .mtg-cta-wrap) .e-con { --padding-top: 0px; --padding-right: 0px; --padding-bottom: 0px; --padding-left: 0px; --gap: 0px; --row-gap: 0px; --column-gap: 0px; }
+:is(.mtg-hero, .mtg-body, .mtg-cta-wrap) .elementor-widget { margin: 0; }
+:is(.mtg-hero, .mtg-body, .mtg-cta-wrap) :is(p, ol, ul) { margin: 0; }
+:is(.mtg-hero, .mtg-body, .mtg-cta-wrap) .elementor-heading-title { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+
+/* The floating header bar sits over the hero, as on the other pages */
+body:has(.mtg-hero) #masthead { margin-bottom: -98px; position: relative; z-index: 20; }
+
+/* ---- Hero ---- */
+.e-con.mtg-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(160deg, #3B479C 0%, #2E3880 55%, #1F2766 100%); }
+.e-con.mtg-hero::before {
+	content: ''; position: absolute; right: -60px; top: -80px; width: 306px; height: 420px; opacity: .07; pointer-events: none;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 306 420'%3E%3Crect x='0' width='90' height='420' rx='45' fill='%23fff'/%3E%3Crect x='108' width='90' height='420' rx='45' fill='%23fff'/%3E%3Crect x='216' width='90' height='420' rx='45' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.e-con.mtg-hero-inner {
+	position: relative; width: 100%; max-width: 1280px; margin: 0 auto; flex-wrap: wrap; align-items: center;
+	--padding-top: 150px; --padding-bottom: clamp(56px, 7vw, 88px); --padding-left: clamp(16px, 4vw, 48px); --padding-right: clamp(16px, 4vw, 48px);
+	--row-gap: 40px; --column-gap: 56px; --gap: 40px 56px;
+}
+.e-con.mtg-hero-text { flex: 1 1 440px; --gap: 22px; --row-gap: 22px; }
+.e-con.mtg-hero-media { flex: 1 1 440px; }
+.mtg-crumbs p { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: #CDD1EC; }
+.mtg-crumbs a { color: #CDD1EC; text-decoration: none; }
+.mtg-crumbs a:hover { color: #fff; text-decoration: underline; }
+.mtg-crumbs strong { color: #fff; font-weight: 600; }
+.mtg-hero .mtg-title .elementor-heading-title { margin: 0; color: #fff; font-size: clamp(40px, 5vw, 66px); line-height: .98; text-transform: uppercase; text-wrap: balance; }
+.mtg-intro p { max-width: 620px; font-size: 18px; line-height: 1.65; color: #E6EAF3; text-wrap: pretty; }
+.mtg-hero-img figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.mtg-hero-img img {
+	display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px;
+	border: 1px solid rgba(255, 255, 255, .18); box-shadow: rgba(10, 14, 45, .5) 0 30px 60px;
+}
+.mtg-hero-img figcaption { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; color: #CDD1EC; text-align: left; }
+.mtg-hero-img figcaption::before {
+	content: ''; flex-shrink: 0; width: 34px; height: 8px;
+	background: radial-gradient(circle 4px at 4px 4px, #3FD07A 98%, transparent), radial-gradient(circle 4px at 17px 4px, #F5B731 98%, transparent), radial-gradient(circle 4px at 30px 4px, #F0524A 98%, transparent);
+}
+
+/* ---- Guide cards ---- */
+.e-con.mtg-body { background: #F2F4F7; }
+.e-con.mtg-wrap {
+	width: 100%; max-width: 1080px; margin: 0 auto; --gap: 14px; --row-gap: 14px;
+	--padding-top: clamp(56px, 7vw, 96px); --padding-bottom: clamp(56px, 7vw, 96px); --padding-left: clamp(16px, 4vw, 48px); --padding-right: clamp(16px, 4vw, 48px);
+}
+.e-con.mtg-card { background: #fff; border: 1px solid #A3ABDB; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 30px rgba(59, 71, 156, .08); }
+.e-con.mtg-card-head { align-items: center; --gap: 16px; --column-gap: 16px; --padding-top: 18px; --padding-bottom: 18px; --padding-left: clamp(18px, 3vw, 28px); --padding-right: clamp(18px, 3vw, 28px); }
+.mtg-num { flex-shrink: 0; }
+.mtg-num .elementor-heading-title {
+	width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+	background: #3B479C; color: #fff; font-size: 20px; line-height: 1;
+}
+.e-con.mtg-card-heading { flex: 1 1 0; min-width: 0; --gap: 4px; --row-gap: 4px; }
+.mtg-card-title .elementor-heading-title { margin: 0; font-size: clamp(20px, 2vw, 24px); line-height: 1.15; color: #1F2766; text-wrap: pretty; }
+.mtg-card-meta p { font-size: 14px; color: #4A5266; }
+.e-con.mtg-card-body { border-top: 1px solid #E1E5EC; --gap: 26px; --row-gap: 26px; --padding-top: clamp(18px, 3vw, 28px); --padding-bottom: clamp(18px, 3vw, 28px); --padding-left: clamp(18px, 3vw, 28px); --padding-right: clamp(18px, 3vw, 28px); }
+
+/* Hub cards: the whole card opens the guide page */
+.e-con.mtg-card-link { position: relative; border-color: #E1E5EC; transition: border-color .3s, box-shadow .3s, transform .3s; }
+.e-con.mtg-card-link:hover { border-color: #A3ABDB; box-shadow: 0 16px 36px rgba(59, 71, 156, .14); transform: translateY(-2px); }
+.mtg-card-link .mtg-num .elementor-heading-title { background: #EEF0F8; color: #3B479C; transition: background .3s, color .3s; }
+.mtg-card-link:hover .mtg-num .elementor-heading-title { background: #3B479C; color: #fff; }
+.mtg-card-link .mtg-card-title a { color: inherit; text-decoration: none; }
+.mtg-card-link .mtg-card-title a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.e-con.mtg-card-link .mtg-card-head::after {
+	content: ''; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #E1E5EC;
+	background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B479C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat;
+	transition: transform .3s;
+}
+.mtg-card-link:hover .mtg-card-head::after { transform: translateX(3px); }
+
+/* Category groups: label on the left, documents on the right */
+.e-con.mtg-group { flex-wrap: wrap; --column-gap: 28px; --row-gap: 4px; --gap: 4px 28px; }
+.mtg-group-label { flex: 1 1 180px; }
+.mtg-group-label .elementor-heading-title { margin: 0; padding-top: 14px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #3B479C; }
+.mtg-group .mtg-docs { flex: 3 1 320px; min-width: 0; }
+.mtg-group-plain .mtg-docs { flex-basis: 100%; }
+
+/* Document rows (Icon List items) */
+.mtg-docs .elementor-icon-list-items { margin: 0; padding: 0; list-style: none; }
+.mtg-docs .elementor-icon-list-item { margin: 0 !important; padding: 0 !important; }
+.mtg-docs .elementor-icon-list-item > :is(a, span):first-child,
+.mtg-docs .elementor-icon-list-item:not(:has(> a)) {
+	display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid #EEF0F4; color: #1F2766; text-decoration: none;
+}
+.mtg-docs .elementor-icon-list-item:last-child > *, .mtg-docs .elementor-icon-list-item:last-child:not(:has(> a)) { border-bottom: 0; }
+.mtg-docs .elementor-icon-list-icon { flex-shrink: 0; display: flex; padding: 0; }
+.mtg-docs .elementor-icon-list-icon i { color: #A3ABDB; font-size: 18px; }
+.mtg-docs .elementor-icon-list-icon svg { width: 18px; height: 18px; fill: #A3ABDB; }
+.mtg-docs .elementor-icon-list-text { flex: 1 1 auto; min-width: 0; padding: 0; font-size: 15px; line-height: 1.45; color: #1F2766; text-wrap: pretty; }
+.mtg-docs a .elementor-icon-list-text { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mtg-docs a .elementor-icon-list-text::after {
+	content: 'PDF'; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; padding: 7px 30px 7px 12px; border-radius: 999px;
+	font-size: 13px; font-weight: 600; color: #3B479C;
+	background: #EEF0F8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B479C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v12M7 11l5 5 5-5M5 20h14'/%3E%3C/svg%3E") right 11px center / 14px no-repeat;
+	transition: background-color .2s, color .2s;
+}
+.mtg-docs a:hover .elementor-icon-list-text { color: #3B479C; }
+.mtg-docs a:hover .elementor-icon-list-text::after {
+	background-color: #3B479C; color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v12M7 11l5 5 5-5M5 20h14'/%3E%3C/svg%3E");
+}
+.mtg-docs .elementor-icon-list-item:not(:has(> a)) .elementor-icon-list-text { color: #4A5266; }
+
+/* Written guides (Bronto) */
+.mtg-disclaimer p { padding: 16px 18px; border-radius: 12px; background: #F2F4F7; font-size: 14px; line-height: 1.6; color: #4A5266; }
+/* The step count runs on across both lists, around the warning */
+.e-con.mtg-card-body:has(.mtg-steps) { counter-reset: mtg-step; }
+.mtg-steps ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+.mtg-steps li { counter-increment: mtg-step; position: relative; padding: 14px 0 14px 50px; border-bottom: 1px solid #EEF0F4; font-size: 15.5px; line-height: 1.6; color: #1E2433; }
+.mtg-steps li:last-child { border-bottom: 0; }
+.mtg-steps li::before {
+	content: counter(mtg-step); position: absolute; left: 0; top: 12px; width: 32px; height: 32px; border-radius: 9px;
+	display: flex; align-items: center; justify-content: center; background: #EEF0F8; color: #3B479C;
+	font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 16px;
+}
+.mtg-warning p { padding: 16px 18px; border-radius: 12px; border: 1px solid #F3C1BD; border-left: 4px solid #F0524A; background: #FEF3F2; font-size: 15px; line-height: 1.6; color: #7A1F17; }
+.mtg-warning strong { color: #C3271C; }
+.mtg-note p { font-size: 15px; line-height: 1.6; color: #4A5266; }
+.mtg-note a { color: #3B479C; font-weight: 600; }
+
+/* ---- Call to action ---- */
+.e-con.mtg-cta-wrap { background: #fff; }
+.e-con.mtg-cta {
+	position: relative; overflow: hidden; width: calc(100% - 2 * clamp(16px, 4vw, 48px)); max-width: 1184px; flex-wrap: wrap; align-items: center; justify-content: space-between;
+	margin: clamp(64px, 8vw, 104px) auto; border-radius: 20px; color: #fff; background: linear-gradient(140deg, #3B479C 0%, #2E3880 55%, #1F2766 100%);
+	--padding-top: clamp(32px, 5vw, 56px); --padding-bottom: clamp(32px, 5vw, 56px); --padding-left: clamp(32px, 5vw, 56px); --padding-right: clamp(32px, 5vw, 56px);
+	--row-gap: 24px; --column-gap: 40px; --gap: 24px 40px;
+}
+.e-con.mtg-cta::before {
+	content: ''; position: absolute; right: -30px; top: -50px; width: 204px; height: 260px; opacity: .1; pointer-events: none;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 204 260'%3E%3Crect x='0' width='60' height='260' rx='30' fill='%23fff'/%3E%3Crect x='72' width='60' height='260' rx='30' fill='%23fff'/%3E%3Crect x='144' width='60' height='260' rx='30' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.e-con.mtg-cta-text { position: relative; max-width: 620px; --gap: 10px; --row-gap: 10px; }
+.mtg-cta-title .elementor-heading-title { margin: 0; color: #fff; font-size: clamp(28px, 3vw, 38px); line-height: 1.08; }
+.mtg-cta-sub p { font-size: 16px; line-height: 1.6; color: #E6EAF3; }
+.e-con.mtg-cta-actions { position: relative; flex-wrap: wrap; align-items: center; --row-gap: 12px; --column-gap: 18px; --gap: 12px 18px; }
+.mtg-cta-btn .elementor-button {
+	background: #fff; color: #3B479C; border-radius: 999px; padding: 15px 26px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; line-height: 1;
+	transition: transform .2s, box-shadow .2s;
+}
+.mtg-cta-btn .elementor-button:hover { color: #3B479C; background: #fff; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(10, 14, 45, .3); }
+.mtg-cta-or p { font-size: 15px; color: #CDD1EC; }
+.mtg-cta-phone .elementor-heading-title { margin: 0; font-family: 'Inter', sans-serif; font-size: 20px; }
+.mtg-cta-phone .elementor-heading-title a { color: #fff; text-decoration: none; }
+
+/* ---- Smaller screens ---- */
+@media (max-width: 767px) {
+	.e-con.mtg-hero-inner { --padding-top: 130px; }
+	.mtg-docs a .elementor-icon-list-text { font-size: 14.5px; }
+	.mtg-steps li { padding-left: 44px; font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	:is(.mtg-card-link, .mtg-card-link *, .mtg-cta-btn .elementor-button) { transition: none !important; }
+}
