@@ -21,7 +21,7 @@ body:has(.mtg-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 /* ---- Hero ---- */
 .e-con.mtg-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(160deg, #3B479C 0%, #2E3880 55%, #1F2766 100%); }
 .e-con.mtg-hero::before {
-	content: ''; position: absolute; right: -60px; top: -80px; width: 306px; height: 420px; opacity: .07; pointer-events: none;
+	content: ''; position: absolute; inset: -80px -60px auto auto; width: 306px; height: 420px; opacity: .07; pointer-events: none; border-radius: 0; mix-blend-mode: normal;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 306 420'%3E%3Crect x='0' width='90' height='420' rx='45' fill='%23fff'/%3E%3Crect x='108' width='90' height='420' rx='45' fill='%23fff'/%3E%3Crect x='216' width='90' height='420' rx='45' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .e-con.mtg-hero-inner {
@@ -42,7 +42,7 @@ body:has(.mtg-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 	display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px;
 	border: 1px solid rgba(255, 255, 255, .18); box-shadow: rgba(10, 14, 45, .5) 0 30px 60px;
 }
-.mtg-hero-img figcaption { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; color: #CDD1EC; text-align: left; }
+.mtg-hero-img figcaption { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; font-style: normal; color: #CDD1EC; text-align: left; }
 .mtg-hero-img figcaption::before {
 	content: ''; flex-shrink: 0; width: 34px; height: 8px;
 	background: radial-gradient(circle 4px at 4px 4px, #3FD07A 98%, transparent), radial-gradient(circle 4px at 17px 4px, #F5B731 98%, transparent), radial-gradient(circle 4px at 30px 4px, #F0524A 98%, transparent);
@@ -139,7 +139,7 @@ body:has(.mtg-hero) #masthead { margin-bottom: -98px; position: relative; z-inde
 	--row-gap: 24px; --column-gap: 40px; --gap: 24px 40px;
 }
 .e-con.mtg-cta::before {
-	content: ''; position: absolute; right: -30px; top: -50px; width: 204px; height: 260px; opacity: .1; pointer-events: none;
+	content: ''; position: absolute; inset: -50px -30px auto auto; width: 204px; height: 260px; opacity: .1; pointer-events: none; border-radius: 0; mix-blend-mode: normal;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 204 260'%3E%3Crect x='0' width='60' height='260' rx='30' fill='%23fff'/%3E%3Crect x='72' width='60' height='260' rx='30' fill='%23fff'/%3E%3Crect x='144' width='60' height='260' rx='30' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .e-con.mtg-cta-text { position: relative; max-width: 620px; --gap: 10px; --row-gap: 10px; }
