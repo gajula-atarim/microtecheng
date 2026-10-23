@@ -507,3 +507,73 @@ body.woocommerce .related ul.products li.product .woocommerce-loop-product__titl
 	body.single-product :is(.related, .upsells) ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
 	body.single-product :is(.related, .upsells) ul.products li.product .button { display: block; margin-top: auto; text-align: center; }
 }
+
+/* ---- Site search (search.php): products as shop cards, then pages and guides ---- */
+
+.mt-shop.mt-search { display: block; }
+.mt-search-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.mt-search-title {
+	margin: 0;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: clamp(32px, 4vw, 48px);
+	line-height: 1.05;
+	color: var(--mt-blue);
+}
+.mt-shop .mt-search-form { max-width: 560px; }
+.mt-search-section + .mt-search-section { margin-top: 56px; }
+.mt-search-section-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 20px;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 700;
+	font-size: 26px;
+	color: var(--mt-ink);
+}
+.mt-search-section-title span {
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: #EEF0F8;
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--mt-blue);
+}
+.mt-search ul.products { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.mt-search-more { margin: 20px 0 0; }
+.mt-search-more a, .mt-search-empty a { color: var(--mt-blue); font-weight: 600; }
+
+.mt-search-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mt-search-card {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 22px 22px 20px;
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	border-radius: 18px;
+	text-decoration: none !important;
+	transition: box-shadow .25s var(--mt-ease), transform .25s var(--mt-ease), border-color .25s;
+}
+.mt-search-card:hover { border-color: #A3ABDB; box-shadow: 0 18px 40px rgba(15, 20, 60, .12); transform: translateY(-3px); }
+.mt-search-card-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mt-blue); }
+.mt-search-card-title { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15; color: var(--mt-ink); }
+.mt-search-card-text { font-size: 14px; line-height: 1.6; color: var(--mt-body); }
+.mt-search-card-link { margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 600; color: var(--mt-blue); }
+
+.mt-search-empty { padding: 32px; border-radius: 18px; background: var(--mt-grey); }
+.mt-search-empty h2 { margin: 0 0 8px; font-family: "Barlow Semi Condensed", sans-serif; font-size: 26px; color: var(--mt-blue); }
+.mt-search-empty p { margin: 0; line-height: 1.65; }
+
+@media (max-width: 1099px) {
+	.mt-search ul.products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.mt-search-pages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 859px) {
+	.mt-search ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 559px) {
+	.mt-search ul.products, .mt-search-pages { grid-template-columns: minmax(0, 1fr); }
+}

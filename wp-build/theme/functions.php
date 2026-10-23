@@ -47,7 +47,8 @@ function microtec_is_catalog() {
 }
 
 add_action( 'wp_enqueue_scripts', function () {
-	if ( ! function_exists( 'is_woocommerce' ) || ! is_woocommerce() ) {
+	// Shop pages, and the site search, which shows products as shop cards (search.php).
+	if ( ! function_exists( 'is_woocommerce' ) || ! ( is_woocommerce() || is_search() ) ) {
 		return;
 	}
 	$dir = get_stylesheet_directory();
@@ -58,7 +59,7 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 30 );
 
 add_filter( 'body_class', function ( $classes ) {
-	if ( microtec_is_catalog() ) {
+	if ( microtec_is_catalog() || is_search() ) {
 		$classes[] = 'mt-catalog';
 	}
 	return $classes;
