@@ -194,6 +194,12 @@ body {
 }
 .mt-nav-desktop { flex: 1 1 auto; min-width: 0; }
 .mt-nav-desktop .hfe-nav-menu { flex-wrap: nowrap; white-space: nowrap; }
+/* Up to 1439px the menu (with "Technical / Installation Guides") sits a little tighter so it
+   clears the header icons. */
+@media (min-width: 1240px) and (max-width: 1439px) {
+	.mt-nav-desktop .hfe-nav-menu > li > .hfe-has-submenu-container > a.hfe-menu-item,
+	.mt-nav-desktop .hfe-nav-menu > li > a.hfe-menu-item { padding-left: 7px !important; padding-right: 7px !important; font-size: 14.5px !important; }
+}
 .mt-topbar-cart a { color: #fff; font-family: "Archivo", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; }
 
 .mt-topbar a { transition: color .2s; }
