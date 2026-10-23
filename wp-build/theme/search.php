@@ -102,7 +102,7 @@ function microtec_search_excerpt( $post ) {
 			</section>
 		<?php endif; ?>
 
-		<?php if ( ! $products->have_posts() && ! $pages->have_posts() ) : ?>
+		<?php if ( ! $products->found_posts && ! $pages->found_posts ) : ?>
 			<div class="mt-search-empty">
 				<h2>No results<?php echo $term ? ' for “' . esc_html( $term ) . '”' : ''; ?></h2>
 				<p>Try a different word, a part number or a brand, or browse the <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">product range</a>. For parts and availability, <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact us</a> or call <a href="tel:0397922243">03 9792 2243</a>.</p>
