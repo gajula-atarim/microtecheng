@@ -52,7 +52,7 @@ function microtec_is_catalog() {
 
 add_action( 'wp_enqueue_scripts', function () {
 	// Shop pages, and the site search, which shows products as shop cards (search.php).
-	if ( ! function_exists( 'is_woocommerce' ) || ! ( is_woocommerce() || is_search() ) ) {
+	if ( ! function_exists( 'is_woocommerce' ) || ! ( is_woocommerce() || is_search() || is_page( 'wishlist' ) ) ) {
 		return;
 	}
 	$dir = get_stylesheet_directory();
@@ -60,6 +60,15 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	wp_enqueue_style( 'microtec-pages-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap', [], null );
 	wp_enqueue_style( 'microtec-shop', $uri . '/assets/css/mt-shop.css', [ 'microtec' ], filemtime( $dir . '/assets/css/mt-shop.css' ) );
+	// Product page and wishlist page: quantity buttons, wishlist, copy-link sharing.
+	if ( is_product() || is_page( 'wishlist' ) ) {
+		wp_enqueue_script( 'microtec-product', $uri . '/assets/js/mt-product.js', [], filemtime( $dir . '/assets/js/mt-product.js' ), true );
+		wp_localize_script( 'microtec-product', 'mtProduct', [
+			'rest'     => esc_url_raw( rest_url() ),
+			'wishlist' => home_url( '/wishlist/' ),
+			'shop'     => home_url( '/products/' ),
+		] );
+	}
 }, 30 );
 
 // Search popup from the header search icon (every page), and the Cart / Checkout / My account
@@ -219,6 +228,94 @@ function microtec_result_count() {
 	}
 	echo '</p>';
 }
+
+/* ---- Product page: savings, stock, wishlist and sharing (as on the old site) ---- */
+
+// Percentage saved on a sale product (the largest across a variable product's options).
+function microtec_sale_percent( $product ) {
+	if ( ! $product || ! $product->is_on_sale() ) {
+		return 0;
+	}
+	$items = $product->is_type( 'variable' ) ? array_filter( array_map( 'wc_get_product', $product->get_children() ) ) : [ $product ];
+	$best  = 0;
+	foreach ( $items as $item ) {
+		$reg  = (float) $item->get_regular_price();
+		$sale = (float) $item->get_sale_price();
+		if ( $reg > 0 && $sale > 0 && $sale < $reg ) {
+			$best = max( $best, (int) round( ( $reg - $sale ) / $reg * 100 ) );
+		}
+	}
+	return $best;
+}
+
+// Sale badge: "19% OFF" instead of "Sale!".
+add_filter( 'woocommerce_sale_flash', function ( $html, $post, $product ) {
+	$pct = microtec_sale_percent( $product );
+	return $pct ? '<span class="onsale">' . esc_html( sprintf( '%d%% OFF', $pct ) ) . '</span>' : $html;
+}, 10, 3 );
+
+// Under the price: what the customer saves, and whether it is in stock.
+add_action( 'woocommerce_single_product_summary', function () {
+	global $product;
+	$save = '';
+	if ( $product->is_type( 'simple' ) && $product->is_on_sale() ) {
+		$reg  = (float) $product->get_regular_price();
+		$sale = (float) $product->get_sale_price();
+		if ( $reg > $sale && $sale > 0 ) {
+			$save = sprintf( '<span class="mt-save">Save %s (%d%%)</span>', wc_price( $reg - $sale ), (int) round( ( $reg - $sale ) / $reg * 100 ) );
+		}
+	}
+	$stock = $product->is_in_stock()
+		? '<span class="mt-stock is-in">In stock</span>'
+		: '<span class="mt-stock is-out">Out of stock</span>';
+	echo '<div class="mt-price-meta">' . $save . $stock . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput
+}, 11 );
+
+// Wishlist button (saved in the visitor's browser; listed on /wishlist/) and share links.
+add_action( 'woocommerce_single_product_summary', function () {
+	global $product;
+	$url   = rawurlencode( get_permalink( $product->get_id() ) );
+	$title = rawurlencode( $product->get_name() );
+	$img   = rawurlencode( (string) wp_get_attachment_url( $product->get_image_id() ) );
+	$icon  = function ( $d, $stroke = false ) {
+		return $stroke
+			? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $d . '</svg>'
+			: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' . $d . '</svg>';
+	};
+	$links = [
+		[ 'Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' . $url, $icon( '<path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/>' ) ],
+		[ 'X', 'https://twitter.com/intent/tweet?url=' . $url . '&text=' . $title, $icon( '<path d="M17.8 3h3l-6.6 7.6L22 21h-6.1l-4.8-6.3L5.6 21h-3l7.1-8.1L2.2 3h6.2l4.3 5.7zm-1 16.2h1.7L7.3 4.7H5.5z"/>' ) ],
+		[ 'LinkedIn', 'https://www.linkedin.com/sharing/share-offsite/?url=' . $url, $icon( '<path d="M6.5 8.6H3.2V20h3.3zM4.9 3.4a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.8 13.7c0-3.1-1.7-5.3-4.5-5.3-1.7 0-2.8.9-3.2 1.7V8.6H9.9V20h3.3v-6c0-1.6.7-2.7 2.1-2.7s1.9 1.1 1.9 2.7v6h3.3z"/>' ) ],
+		[ 'Pinterest', 'https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $img . '&description=' . $title, $icon( '<path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.9 1.6 1.9 1.9 0 3.3-2 3.3-4.9 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.3 1.9.8 2.4l.1.4-.3 1.1c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4.1 0-3.3 2.4-6.4 7-6.4 3.7 0 6.5 2.6 6.5 6.1 0 3.7-2.3 6.6-5.5 6.6-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/>' ) ],
+		[ 'Email', 'mailto:?subject=' . $title . '&body=' . $url, $icon( '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>', true ) ],
+	];
+	echo '<div class="mt-product-extras">';
+	printf(
+		'<button type="button" class="mt-wish" data-id="%d" aria-pressed="false"><span class="mt-wish-heart" aria-hidden="true"></span><span class="mt-wish-label">Add to wishlist</span></button>',
+		(int) $product->get_id()
+	);
+	echo '<div class="mt-share"><span class="mt-share-label">Share</span>';
+	foreach ( $links as $l ) {
+		printf(
+			'<a class="mt-share-link" href="%s" target="_blank" rel="noopener" aria-label="Share on %s" title="%s">%s</a>',
+			esc_url( $l[1] ),
+			esc_attr( $l[0] ),
+			esc_attr( $l[0] ),
+			$l[2] // phpcs:ignore WordPress.Security.EscapeOutput
+		);
+	}
+	printf(
+		'<button type="button" class="mt-share-link mt-share-copy" data-url="%s" aria-label="Copy link" title="Copy link">%s</button>',
+		esc_url( get_permalink( $product->get_id() ) ),
+		$icon( '<path d="M10 13a5 5 0 0 0 7.1 0l2.8-2.8a5 5 0 0 0-7.1-7.1L11.5 4.4"/><path d="M14 11a5 5 0 0 0-7.1 0l-2.8 2.8a5 5 0 0 0 7.1 7.1l1.3-1.3"/>', true ) // phpcs:ignore WordPress.Security.EscapeOutput
+	);
+	echo '</div></div>';
+}, 35 );
+
+// [mt_wishlist]: the wishlist page; mt-product.js fills it from the visitor's saved products.
+add_shortcode( 'mt_wishlist', function () {
+	return '<div class="mt-wishlist" aria-live="polite"><p class="mt-wishlist-empty">Loading your wishlist&hellip;</p></div>';
+} );
 
 // Products sold on enquiry (no price set) show "Call for price" instead of an empty price.
 add_filter( 'woocommerce_get_price_html', function ( $html, $product ) {
