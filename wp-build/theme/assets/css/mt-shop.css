@@ -694,6 +694,26 @@ body.woocommerce .single_add_to_cart_button.button.alt:hover,
 body.woocommerce ul.products li.product .button:hover { background: var(--mt-blue-hover); color: #fff; }
 body.woocommerce .single_add_to_cart_button.button.alt.disabled { background: var(--mt-blue); opacity: .55; }
 body.woocommerce span.onsale { background: var(--mt-blue); color: #fff; }
+/* Product page sale badge: a round "47% / OFF" disc (WooCommerce's stretched to an oval to fit the text). */
+body.woocommerce.single-product div.product > span.onsale {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 68px;
+	height: 68px;
+	min-width: 0;
+	min-height: 0;
+	padding: 0 10px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	top: -12px;
+	left: -12px;
+	z-index: 10;
+	font: 700 15px/1.05 "Inter", sans-serif;
+	text-align: center;
+	white-space: normal;
+	box-shadow: 0 6px 16px rgba(59, 71, 156, .28);
+}
 /* Tabs start at the content edge (WooCommerce indents them by 1em). */
 body.woocommerce div.product .woocommerce-tabs ul.tabs { padding-left: 0; }
 body.woocommerce div.product .woocommerce-tabs ul.tabs li:first-child { margin-left: 0; }
