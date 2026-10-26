@@ -694,13 +694,6 @@ body.woocommerce .single_add_to_cart_button.button.alt:hover,
 body.woocommerce ul.products li.product .button:hover { background: var(--mt-blue-hover); color: #fff; }
 body.woocommerce .single_add_to_cart_button.button.alt.disabled { background: var(--mt-blue); opacity: .55; }
 body.woocommerce span.onsale { background: var(--mt-blue); color: #fff; }
-body.woocommerce div.product form.cart .variations select {
-	height: 44px;
-	padding: 0 14px;
-	border: 1px solid var(--mt-line);
-	border-radius: 10px;
-	background: #fff;
-}
 /* Tabs start at the content edge (WooCommerce indents them by 1em). */
 body.woocommerce div.product .woocommerce-tabs ul.tabs { padding-left: 0; }
 body.woocommerce div.product .woocommerce-tabs ul.tabs li:first-child { margin-left: 0; }
@@ -787,8 +780,159 @@ body.single-product form.cart .mt-qty:focus-within { border-color: var(--mt-blue
 .mt-qty-btn:hover, .mt-qty-btn:focus-visible { background: #EEF0F8; color: var(--mt-blue); outline: none; }
 body.single-product form.cart .single_add_to_cart_button { height: 48px; margin: 0 !important; float: none; }
 body.single-product form.cart .variations { flex-basis: 100%; }
+
+/* Options (variable products): label above a full-width select, no table shading or borders. */
+body.single-product form.cart table.variations {
+	width: 100%;
+	margin: 0 0 4px;
+	border: 0;
+	border-collapse: collapse;
+	background: none;
+}
+body.single-product form.cart table.variations :is(tbody, tr) { display: block; }
+body.single-product form.cart table.variations tr + tr { margin-top: 14px; }
+body.single-product form.cart table.variations :is(th, td) {
+	display: block;
+	padding: 0;
+	border: 0;
+	background: none !important;
+	text-align: left;
+	line-height: 1.4;
+}
+body.single-product form.cart table.variations th.label label {
+	display: block;
+	margin: 0 0 8px;
+	font: 600 14px "Inter", sans-serif;
+	color: var(--mt-ink);
+}
+body.single-product form.cart table.variations td.value { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+body.woocommerce div.product form.cart table.variations select {
+	-webkit-appearance: none;
+	appearance: none;
+	flex: 1 1 240px;
+	min-width: 0;
+	max-width: 100%;
+	height: 48px;
+	margin: 0;
+	padding: 0 46px 0 18px;
+	border: 1px solid var(--mt-line);
+	border-radius: 999px;
+	background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B479C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 18px center / 16px no-repeat;
+	font: 500 15px "Inter", sans-serif;
+	color: var(--mt-ink);
+	cursor: pointer;
+	transition: border-color .2s, box-shadow .2s;
+}
+body.woocommerce div.product form.cart table.variations select:hover { border-color: #A3ABDB; }
+body.woocommerce div.product form.cart table.variations select:focus {
+	outline: none;
+	border-color: var(--mt-blue);
+	box-shadow: 0 0 0 3px rgba(59, 71, 156, .14);
+}
+body.single-product form.cart table.variations .reset_variations {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--mt-blue);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+body.single-product form.cart .single_variation:not(:empty) { margin: 4px 0 14px; }
+body.single-product form.cart .single_variation .price { font-weight: 600; font-size: 20px; color: var(--mt-blue); }
+body.single-product form.cart .single_variation .stock { margin: 4px 0 0; font-size: 14px; }
 body.single-product form.cart .single_variation_wrap { flex-basis: 100%; }
 body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+/* Shipping calculator */
+.mt-ship {
+	margin: 18px 0 4px;
+	padding: 18px;
+	border: 1px solid var(--mt-line);
+	border-radius: 16px;
+	background: #F6F7FB;
+}
+.mt-ship-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 12px;
+	font: 600 15px "Inter", sans-serif;
+	color: var(--mt-ink);
+}
+.mt-ship-title svg { width: 22px; height: 22px; color: var(--mt-blue); }
+.mt-ship-form { display: flex; flex-wrap: wrap; gap: 8px; }
+.mt-ship .screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+.mt-ship-form :is(input, select) {
+	height: 44px;
+	margin: 0;
+	padding: 0 14px;
+	border: 1px solid var(--mt-line);
+	border-radius: 10px;
+	background-color: #fff;
+	font: 400 14px "Inter", sans-serif;
+	color: var(--mt-ink);
+	box-sizing: border-box;
+}
+.mt-ship-form :is(input, select):focus { outline: none; border-color: var(--mt-blue); box-shadow: 0 0 0 3px rgba(59, 71, 156, .14); }
+.mt-ship-form .mt-ship-qty { flex: 0 0 72px; width: 72px; text-align: center; }
+.mt-ship-form .mt-ship-country {
+	flex: 1 1 150px;
+	min-width: 0;
+	padding-right: 36px;
+	-webkit-appearance: none;
+	appearance: none;
+	background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B479C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 12px center / 14px no-repeat;
+	cursor: pointer;
+}
+.mt-ship-form .mt-ship-postcode { flex: 1 1 110px; min-width: 0; }
+.mt-ship-btn {
+	flex: 0 0 auto;
+	height: 44px;
+	padding: 0 20px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--mt-blue);
+	color: #fff;
+	font: 600 14px "Inter", sans-serif;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+.mt-ship-btn:hover { background: var(--mt-blue-hover); }
+.mt-ship-btn:disabled { opacity: .6; cursor: progress; }
+.mt-ship-result:empty { display: none; }
+.mt-ship-result { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--mt-body); }
+.mt-ship-result p { margin: 0; }
+.mt-ship-result a { color: var(--mt-blue); font-weight: 600; }
+.mt-ship-result.is-note { padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid var(--mt-line); }
+.mt-ship-rates { margin: 0 0 8px; padding: 0; list-style: none; }
+.mt-ship-rates li {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 14px;
+	border: 1px solid var(--mt-line);
+	border-radius: 10px;
+	background: #fff;
+	color: var(--mt-ink);
+}
+.mt-ship-rates li + li { margin-top: 6px; }
+.mt-ship-rates strong { color: var(--mt-blue); white-space: nowrap; }
+.mt-ship-note { font-size: 13px; color: var(--mt-muted); }
+/* Narrow summary column (laptops and phones): Qty + Country, then Post code + Calculate. */
+@media (max-width: 1239px) and (min-width: 860px), (max-width: 559px) {
+	.mt-ship-form .mt-ship-country { flex-basis: calc(100% - 80px); }
+	.mt-ship-form .mt-ship-postcode { flex-basis: 0; flex-grow: 1; }
+}
 
 /* Wishlist and share. space-between keeps Share on the right while it fits on the same line,
    and at the left edge once it wraps (a lone item on a line starts at the left). */

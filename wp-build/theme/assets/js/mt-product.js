@@ -7,6 +7,7 @@
  *   /wishlist/ page ([mt_wishlist]) lists the saved products from the WooCommerce Store API,
  *   with Add to cart / View product and Remove.
  * - Share: "Copy link" copies the product address.
+ * - Shipping: "Calculate shipping" quotes the product to a post code (?wc-ajax=mt_shipping_quote).
  */
 ( function () {
 	'use strict';
@@ -143,10 +144,82 @@
 		load();
 	}
 
+	/* ---- Shipping calculator ---- */
+	function initShipping() {
+		var box = document.querySelector( '.mt-ship' );
+		if ( ! box || ! cfg.ship ) return;
+		var form = box.querySelector( '.mt-ship-form' );
+		var out = box.querySelector( '.mt-ship-result' );
+		var btn = form.querySelector( '.mt-ship-btn' );
+		var qty = form.querySelector( '.mt-ship-qty' );
+		var touched = false;
+
+		// Follow the main quantity until the visitor types their own.
+		qty.addEventListener( 'input', function () { touched = true; } );
+		var mainQty = document.querySelector( 'form.cart input.qty' );
+		if ( mainQty ) {
+			mainQty.addEventListener( 'change', function () { if ( ! touched ) qty.value = mainQty.value; } );
+		}
+
+		function show( html, cls ) {
+			out.className = 'mt-ship-result' + ( cls ? ' ' + cls : '' );
+			out.innerHTML = html;
+		}
+		// A different option means a different quote: clear the old one (WooCommerce fires these via jQuery).
+		var vform = document.querySelector( 'form.variations_form' );
+		if ( vform && window.jQuery ) {
+			window.jQuery( vform ).on( 'found_variation reset_data', function () { show( '' ); } );
+		}
+		form.addEventListener( 'submit', function ( e ) {
+			e.preventDefault();
+			var variation = '';
+			var vf = document.querySelector( 'form.variations_form' );
+			if ( vf ) {
+				var vi = vf.querySelector( 'input[name="variation_id"]' );
+				variation = vi ? vi.value : '';
+				if ( ! variation || variation === '0' ) { show( '<p>Choose an option above first, then calculate shipping.</p>', 'is-note' ); return; }
+			}
+			var pc = form.postcode.value.trim();
+			if ( ! pc ) { show( '<p>Enter a post code.</p>', 'is-note' ); form.postcode.focus(); return; }
+
+			var params = new URLSearchParams( {
+				product_id: box.dataset.product,
+				variation_id: variation,
+				qty: qty.value || 1,
+				country: form.country.value,
+				postcode: pc
+			} );
+			btn.disabled = true;
+			box.classList.add( 'is-loading' );
+			show( '<p>Calculating&hellip;</p>' );
+			fetch( cfg.ship + ( cfg.ship.indexOf( '?' ) === -1 ? '?' : '&' ) + params.toString(), { credentials: 'same-origin' } )
+				.then( function ( r ) { return r.json(); } )
+				.then( function ( res ) {
+					var d = ( res && res.data ) || {};
+					if ( res && res.success && d.rates && d.rates.length ) {
+						show( '<ul class="mt-ship-rates">' + d.rates.map( function ( r ) {
+							return '<li><span>' + esc( r.label ) + '</span><strong>' + esc( r.cost ) + '</strong></li>';
+						} ).join( '' ) + '</ul><p class="mt-ship-note">' + ( d.note || '' ) + '</p>', 'has-rates' );
+					} else {
+						show( '<p>' + ( d.message || 'Shipping couldn&rsquo;t be calculated. Please call 03 9792 2243.' ) + '</p>', 'is-note' );
+						if ( d.field === 'postcode' ) form.postcode.focus();
+					}
+				} )
+				.catch( function () {
+					show( '<p>Shipping couldn&rsquo;t be calculated right now. Please call <a href="tel:0397922243">03 9792 2243</a>.</p>', 'is-note' );
+				} )
+				.then( function () {
+					btn.disabled = false;
+					box.classList.remove( 'is-loading' );
+				} );
+		} );
+	}
+
 	function init() {
 		initQuantity( document );
 		initWishButton();
 		initWishlistPage();
+		initShipping();
 	}
 	if ( document.readyState === 'loading' ) document.addEventListener( 'DOMContentLoaded', init );
 	else init();
