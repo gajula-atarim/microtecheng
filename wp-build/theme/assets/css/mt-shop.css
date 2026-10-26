@@ -1145,6 +1145,9 @@ body.single-product form.cart .mt-qty .mt-qty-btn:is(:hover, :focus) { backgroun
 	.mt-shop ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
 }
 
+/* "Others Also Bought" (cross-sells, set per product as on the old site) sits above Related products. */
+body.single-product .mt-also-bought { margin: 8px 0 56px; }
+
 /* ---- Related and upsell products on a product page ----
    The same cards as the shop grid: white card, contained image, price under the title and a
    full-width button pinned to the bottom so the buttons line up across a row. */

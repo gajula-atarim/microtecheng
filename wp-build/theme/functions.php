@@ -456,6 +456,119 @@ add_action( 'wc_ajax_mt_shipping_quote', function () {
 	] );
 } );
 
+// "Others Also Bought" under the product (as on the old site), from the product's cross-sells.
+// The same products also appear as WooCommerce's cross-sells on the cart page.
+add_action( 'woocommerce_after_single_product_summary', function () {
+	global $product;
+	if ( ! $product ) {
+		return;
+	}
+	$items = array_filter( array_map( 'wc_get_product', $product->get_cross_sell_ids() ), function ( $p ) {
+		return $p && $p->is_visible();
+	} );
+	if ( ! $items ) {
+		return;
+	}
+	wc_set_loop_prop( 'name', 'also-bought' );
+	wc_set_loop_prop( 'columns', 4 );
+	echo '<section class="upsells products mt-also-bought"><h2>Others Also Bought</h2>';
+	woocommerce_product_loop_start();
+	foreach ( $items as $item ) {
+		$GLOBALS['post'] = get_post( $item->get_id() ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+		setup_postdata( $GLOBALS['post'] );
+		wc_get_template_part( 'content', 'product' );
+	}
+	woocommerce_product_loop_end();
+	echo '</section>';
+	wp_reset_postdata();
+}, 15 );
+
+/* ---- Redirects from the old store (www.microteceng.com.au, Neto) ----
+   Old product addresses don't always match the product (e.g. /kato-ms-15-acs-graphic-lcd was the
+   Kobelco tile), so each maps to a product ID rather than a slug. Runs before WordPress's own
+   404 "guess", which would send some of them to the wrong product. */
+function microtec_old_site_target( $path ) {
+	$products = [
+		'aml-ca' => 691, 'anemometer' => 648, 'cups-to-suit-lsi-anemometer' => 649,
+		'battery-lithium-d-size-3.6v' => 650, 'brass-adapter-bush' => 651, 'brass-gear-for-kato-reeler' => 579,
+		'bronto-skylift-screen-overlay' => 692, 'circular-bubble-level-4-deg-chrome-plated-aluminiu' => 627,
+		'circular-bubble-level-4-deg-chrome-plated-aluminium' => 627, 'cobo-cls-lcd-display' => 499,
+		'cobo-3b6-acq-mac-25-cable-reeler-please-call-for-p' => 500, 'cobo-3b6-lcd-display-older-metal-case' => 501,
+		'eproms' => 580, 'tera-7-display' => 502, 'tadano-length-cable-price-per-meter' => 581,
+		'kato-ms-16-acs-lcd-display-tile~262' => 609, 'kato-ms-10-acs-lcd-display-tile-99960462010' => 610,
+		'kato-ms-16-acs-lcd-display-tile~261' => 608, 'kato-ms-16-display-push-buttons' => 611, 'kato-ms16-lcd' => 693,
+		'kato-ms-15-acs-graphic-lcd' => 607, 'kobelco-overlay-rk160m-2-fly-jib' => 694,
+		'kobelco-overlay-rk70m-2-no-fly-jib' => 695, 'kobelco-overlay-rk70m-2' => 696, 'l2-b-overlay' => 697,
+		'lcd-display' => 582, 'lcd-tile-robway-1502-1445' => 612, 'level-bubble-3cm-6-deg' => 628,
+		'inclinometer' => 652, 'liebherr-membrane-keypad-overlay' => 698, 'light-control-module' => 710,
+		'ms16-kato-overlay' => 699, 'overlay-aml-k' => 700, 'plug-base-relay-5a-12v-24v-dc' => 657,
+		'pots-10-turn' => 503, 'pressure-transducer' => 504, 'radio-control-systems' => 653,
+		'robway-1502-overlay' => 701, 'sauer-danfoss-157b4735-proportional-solenoid' => 569,
+		'scanreco-g5-antenna' => 654, 'servo-pots~239' => 658, 'switch-atb-microtec-battery-powered' => 655,
+		'tadano-overlay' => 702, 'tadano-aml-k-lcd' => 613, 'tadano-aml-la-replacement-overlay' => 703,
+		'tadano-aml-lc-replacement-overlay' => 704, 'tadano-aml-le-replacement-overlay' => 705,
+		'tadano-aml-m1-replacement-overlay' => 706, 'tadano-aml-m1-lcd-tile-display' => 618,
+		'tadano-aml-m2-replacement-overlay' => 707, 'tadano-aml-m2-lcd-tile-display' => 615,
+		'tadano-lcd-control-panel-replacement' => 619, 'tadano-exchange-load-cell-a' => 656,
+		'tadano-faun-10.4-touch-screen' => 620, 'lcd-aml-l-replacement' => 622, 'tadano-length-cable' => 708,
+		'length-potentiometer' => 709, 'thiess-spec-latching-light-control-module' => 711,
+	];
+	$categories = [
+		'cobo' => 'cobo-components', 'cobo-components' => 'cobo-components', 'hetronic' => 'hetronic',
+		'hydraulic-parts' => 'hydraulic-parts', 'kato-parts' => 'kato-parts', 'lcds' => 'lcds',
+		'level-bubbles' => 'level-bubbles', 'miscellaneous-crane-parts' => 'misc-crane-parts',
+		'overlays' => 'overlays', 'tadano-parts' => 'tadano-parts',
+		'external-warning-lights-accessories' => 'warning-lights-accessories',
+	];
+	$pages = [
+		'page/design-services' => 111, 'page/radio-control-systems' => 355, 'page/system-intergration' => 354,
+		'page/system-integration' => 354, 'page/bronto-lcd-display-keypad-overlay-replacement' => 757,
+		'page/tadano-cranes-technical-information' => 756, 'page/job-information-sheet' => 52,
+		'page/external-warning-light-and-light-control-module-mk' => 51, 'page/about-us' => 49,
+		'page/contact-us' => 52, 'robway' => 8,
+	];
+	if ( isset( $products[ $path ] ) ) {
+		return get_permalink( $products[ $path ] );
+	}
+	if ( isset( $categories[ $path ] ) ) {
+		$link = get_term_link( $categories[ $path ], 'product_cat' );
+		return is_wp_error( $link ) ? '' : $link;
+	}
+	if ( isset( $pages[ $path ] ) ) {
+		return get_permalink( $pages[ $path ] );
+	}
+	// Neto's short product addresses: /~266 or /some-name~266 (266 = the product's SKU).
+	if ( preg_match( '/~(\d+)$/', $path, $m ) ) {
+		$id = wc_get_product_id_by_sku( $m[1] );
+		return $id ? get_permalink( $id ) : '';
+	}
+	// Other old /page/<name>/ addresses: a page of the same name on this site, else the guides hub
+	// for the guide pages (/page/<name>/~-118 and the like).
+	if ( 0 === strpos( $path, 'page/' ) ) {
+		$name  = strtok( substr( $path, 5 ), '/' );
+		$found = get_posts( [ 'name' => $name, 'post_type' => 'page', 'post_status' => 'publish', 'numberposts' => 1, 'fields' => 'ids' ] );
+		if ( $found ) {
+			return get_permalink( $found[0] );
+		}
+		if ( isset( $pages[ 'page/' . $name ] ) ) {
+			return get_permalink( $pages[ 'page/' . $name ] );
+		}
+	}
+	return '';
+}
+add_action( 'template_redirect', function () {
+	$path = strtolower( trim( rawurldecode( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) ), '/' ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+	// Only addresses this site doesn't serve itself (an image's attachment page can share an old name).
+	if ( '' === $path || ( ! is_404() && ! is_attachment() ) ) {
+		return;
+	}
+	$url = microtec_old_site_target( $path );
+	if ( $url ) {
+		wp_safe_redirect( $url, 301, 'Microtec' );
+		exit;
+	}
+}, 1 );
+
 // [mt_wishlist]: the wishlist page; mt-product.js fills it from the visitor's saved products.
 add_shortcode( 'mt_wishlist', function () {
 	return '<div class="mt-wishlist" aria-live="polite"><p class="mt-wishlist-empty">Loading your wishlist&hellip;</p></div>';
