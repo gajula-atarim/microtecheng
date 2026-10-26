@@ -77,37 +77,46 @@ body.mt-catalog #main {
 }
 .mt-shop .mt-stock-option:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 3px; border-radius: 6px; }
 
-/* Search */
+/* Search: the button sits inside the field as a round icon, so the field takes the full
+   sidebar width and the "Search products…" placeholder is never cut off. */
 .mt-shop .woocommerce-product-search {
-	display: flex;
-	gap: 8px;
+	position: relative;
+	display: block;
 }
 .mt-shop .woocommerce-product-search .search-field {
-	flex: 1;
-	min-width: 0;
-	height: 44px;
-	padding: 0 14px;
+	display: block;
+	width: 100%;
+	height: 46px;
+	padding: 0 46px 0 16px;
 	border: 1px solid var(--mt-line);
 	border-radius: 999px;
 	background: #fff;
-	font: 400 15px "Inter", sans-serif;
+	font: 400 14px "Inter", sans-serif;
 	color: var(--mt-ink);
+	text-overflow: ellipsis;
+	box-sizing: border-box;
 }
+.mt-shop .woocommerce-product-search .search-field::placeholder { color: var(--mt-muted); opacity: 1; }
 .mt-shop .woocommerce-product-search .search-field:focus {
 	outline: none;
 	border-color: var(--mt-blue);
 }
 .mt-shop .woocommerce-product-search button {
-	height: 44px;
-	padding: 0 18px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 36px;
+	height: 36px;
+	padding: 0;
 	border: 0;
-	border-radius: 999px;
-	background: var(--mt-blue);
-	color: #fff;
-	font: 600 14px "Inter", sans-serif;
+	border-radius: 50%;
+	background: var(--mt-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='M16 16l4.5 4.5'/%3E%3C/svg%3E") center / 17px no-repeat;
+	font-size: 0; /* the "Search" label stays as the button's accessible name */
+	color: transparent;
 	cursor: pointer;
 }
-.mt-shop .woocommerce-product-search button:hover { background: var(--mt-blue-hover); }
+.mt-shop .woocommerce-product-search button:hover { background-color: var(--mt-blue-hover); }
+.mt-shop .woocommerce-product-search button:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
 
 /* Price filter */
 .mt-shop .widget_price_filter .price_slider_wrapper .ui-widget-content { background: var(--mt-line); }
