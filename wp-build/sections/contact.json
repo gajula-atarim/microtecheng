@@ -1,0 +1,817 @@
+{
+ "elements": [
+  {
+   "id": "b26ba22",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtg-hero mtp-hero mtc-hero",
+    "_title": "Hero"
+   },
+   "elements": [
+    {
+     "id": "89a98fe",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtg-hero-inner mtc-hero-inner"
+     },
+     "elements": [
+      {
+       "id": "c3ef64e",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtg-hero-text"
+       },
+       "elements": [
+        {
+         "id": "3efeadd",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p><a href=\"/\">Home</a><span>/</span><strong>Contact Us</strong></p>",
+          "_css_classes": "mtg-crumbs"
+         },
+         "elements": []
+        },
+        {
+         "id": "d006c55",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Contact Us",
+          "header_size": "h1",
+          "_css_classes": "mtg-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "04186b1",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Talk to our team about parts, electronic repairs, custom design and installation for plant and equipment. Call us, email us or send an enquiry below.</p>",
+          "_css_classes": "mtg-intro mtc-intro"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "01a163f",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtc-cards"
+       },
+       "elements": [
+        {
+         "id": "f6ef8f0",
+         "elType": "widget",
+         "widgetType": "icon-box",
+         "settings": {
+          "selected_icon": {
+           "value": {
+            "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-phone.svg",
+            "id": 91
+           },
+           "library": "svg"
+          },
+          "title_text": "Call us",
+          "description_text": "03 9792 2243",
+          "link": {
+           "url": "tel:+61397922243",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "position": "left",
+          "title_size": "div",
+          "_css_classes": "mtc-card"
+         },
+         "elements": []
+        },
+        {
+         "id": "52750c2",
+         "elType": "widget",
+         "widgetType": "icon-box",
+         "settings": {
+          "selected_icon": {
+           "value": {
+            "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-mail.svg",
+            "id": 92
+           },
+           "library": "svg"
+          },
+          "title_text": "Email us",
+          "description_text": "enquiries@microteceng.com.au",
+          "link": {
+           "url": "mailto:enquiries@microteceng.com.au",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "position": "left",
+          "title_size": "div",
+          "_css_classes": "mtc-card"
+         },
+         "elements": []
+        },
+        {
+         "id": "7b79a7c",
+         "elType": "widget",
+         "widgetType": "icon-box",
+         "settings": {
+          "selected_icon": {
+           "value": {
+            "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-pin.svg",
+            "id": 93
+           },
+           "library": "svg"
+          },
+          "title_text": "Visit us",
+          "description_text": "16-18 Maxwell St, Dandenong South VIC 3175",
+          "link": {
+           "url": "#contact-details",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "position": "left",
+          "title_size": "div",
+          "_css_classes": "mtc-card"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "86e5438",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtc-enquiry",
+    "_title": "Enquiry",
+    "_element_id": "enquiry"
+   },
+   "elements": [
+    {
+     "id": "28b4d81",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "css_classes": "mtc-enquiry-wrap"
+     },
+     "elements": [
+      {
+       "id": "41ff3ae",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtc-photo-card"
+       },
+       "elements": [
+        {
+         "id": "60456cb",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "id": 962,
+           "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/contact-technician.jpg",
+           "alt": "Technician working on machine electronics"
+          },
+          "image_size": "large",
+          "_css_classes": "mtc-photo"
+         },
+         "elements": []
+        },
+        {
+         "id": "68e6f16",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtc-photo-text"
+         },
+         "elements": [
+          {
+           "id": "633e317",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Need a component, repair or engineering solution?",
+            "header_size": "h2",
+            "_css_classes": "mtc-photo-title"
+           },
+           "elements": []
+          },
+          {
+           "id": "56bbd1a",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>Tell us what you need and our team will get back to you.</p>",
+            "_css_classes": "mtc-photo-sub"
+           },
+           "elements": []
+          },
+          {
+           "id": "3a5f26a",
+           "elType": "widget",
+           "widgetType": "icon-list",
+           "settings": {
+            "icon_list": [
+             {
+              "_id": "5956c7e",
+              "text": "03 9792 2243",
+              "link": {
+               "url": "tel:+61397922243",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": {
+                "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-phone.svg",
+                "id": 91
+               },
+               "library": "svg"
+              }
+             },
+             {
+              "_id": "193c171",
+              "text": "enquiries@microteceng.com.au",
+              "link": {
+               "url": "mailto:enquiries@microteceng.com.au",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "selected_icon": {
+               "value": {
+                "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-mail.svg",
+                "id": 92
+               },
+               "library": "svg"
+              }
+             },
+             {
+              "_id": "8753b97",
+              "text": "16-18 Maxwell St, Dandenong South VIC 3175",
+              "selected_icon": {
+               "value": {
+                "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-pin.svg",
+                "id": 93
+               },
+               "library": "svg"
+              }
+             },
+             {
+              "_id": "8e9605f",
+              "text": "PO Box 4413, Dandenong South VIC 3164",
+              "selected_icon": {
+               "value": "fas fa-box",
+               "library": "fa-solid"
+              }
+             }
+            ],
+            "view": "traditional",
+            "_css_classes": "mtc-lines"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "c070960",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mtc-form-card"
+       },
+       "elements": [
+        {
+         "id": "dbecb92",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Get in touch",
+          "header_size": "div",
+          "_css_classes": "mtc-kicker"
+         },
+         "elements": []
+        },
+        {
+         "id": "fbce870",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Send an enquiry",
+          "header_size": "h2",
+          "_css_classes": "mtc-form-title"
+         },
+         "elements": []
+        },
+        {
+         "id": "ea29486",
+         "elType": "widget",
+         "widgetType": "shortcode",
+         "settings": {
+          "shortcode": "[contact-form-7 id=\"963\" title=\"Contact page enquiry\"]",
+          "_css_classes": "mtc-form"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c956ebc",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "mtc-details",
+    "_title": "Contact details",
+    "_element_id": "contact-details"
+   },
+   "elements": [
+    {
+     "id": "c88afec",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "mtc-details-wrap"
+     },
+     "elements": [
+      {
+       "id": "957a44e",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mtc-details-card"
+       },
+       "elements": [
+        {
+         "id": "1087078",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtc-info"
+         },
+         "elements": [
+          {
+           "id": "ffc35bb",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Get in touch",
+            "header_size": "div",
+            "_css_classes": "mtc-kicker mtc-kicker-light"
+           },
+           "elements": []
+          },
+          {
+           "id": "050c3bc",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Company contact details",
+            "header_size": "h2",
+            "_css_classes": "mtc-details-title"
+           },
+           "elements": []
+          },
+          {
+           "id": "bf61458",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mtc-rows"
+           },
+           "elements": [
+            {
+             "id": "17fee5d",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "row",
+              "css_classes": "mtc-row"
+             },
+             "elements": [
+              {
+               "id": "6150b92",
+               "elType": "widget",
+               "widgetType": "icon",
+               "settings": {
+                "selected_icon": {
+                 "value": {
+                  "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-pin.svg",
+                  "id": 93
+                 },
+                 "library": "svg"
+                },
+                "_css_classes": "mtc-row-icon"
+               },
+               "elements": []
+              },
+              {
+               "id": "106d31d",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Physical Address",
+                "header_size": "h3",
+                "_css_classes": "mtc-row-label"
+               },
+               "elements": []
+              },
+              {
+               "id": "7b09c36",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>16-18 Maxwell St<br>Dandenong South, Victoria, 3175</p>",
+                "_css_classes": "mtc-row-value"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "5bfaecd",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "row",
+              "css_classes": "mtc-row"
+             },
+             "elements": [
+              {
+               "id": "c84c36d",
+               "elType": "widget",
+               "widgetType": "icon",
+               "settings": {
+                "selected_icon": {
+                 "value": {
+                  "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-phone.svg",
+                  "id": 91
+                 },
+                 "library": "svg"
+                },
+                "_css_classes": "mtc-row-icon"
+               },
+               "elements": []
+              },
+              {
+               "id": "30a7d1e",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Phone",
+                "header_size": "h3",
+                "_css_classes": "mtc-row-label"
+               },
+               "elements": []
+              },
+              {
+               "id": "3383211",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p><a href=\"tel:+61397922243\">+61 3 9792 2243</a></p>",
+                "_css_classes": "mtc-row-value"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "0fa2a80",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "row",
+              "css_classes": "mtc-row"
+             },
+             "elements": [
+              {
+               "id": "fc5e95f",
+               "elType": "widget",
+               "widgetType": "icon",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-box",
+                 "library": "fa-solid"
+                },
+                "_css_classes": "mtc-row-icon"
+               },
+               "elements": []
+              },
+              {
+               "id": "e201501",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Mailing Address",
+                "header_size": "h3",
+                "_css_classes": "mtc-row-label"
+               },
+               "elements": []
+              },
+              {
+               "id": "08bd3f6",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>PO Box 4413<br>Dandenong Sth B.C., Victoria, Australia, 3164</p>",
+                "_css_classes": "mtc-row-value"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "477f44a",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "row",
+              "css_classes": "mtc-row"
+             },
+             "elements": [
+              {
+               "id": "3f33e4c",
+               "elType": "widget",
+               "widgetType": "icon",
+               "settings": {
+                "selected_icon": {
+                 "value": {
+                  "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/ico-mail.svg",
+                  "id": 92
+                 },
+                 "library": "svg"
+                },
+                "_css_classes": "mtc-row-icon"
+               },
+               "elements": []
+              },
+              {
+               "id": "1712e00",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Email",
+                "header_size": "h3",
+                "_css_classes": "mtc-row-label"
+               },
+               "elements": []
+              },
+              {
+               "id": "02eb31f",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Please fill in the <a href=\"#enquiry\">enquiry form above</a><br>or<br><a href=\"mailto:enquiries@microteceng.com.au\">enquiries@<wbr>microteceng.com.au</a></p>",
+                "_css_classes": "mtc-row-value"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "bb955ee",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "row",
+              "css_classes": "mtc-row"
+             },
+             "elements": [
+              {
+               "id": "04f901a",
+               "elType": "widget",
+               "widgetType": "icon",
+               "settings": {
+                "selected_icon": {
+                 "value": "far fa-credit-card",
+                 "library": "fa-regular"
+                },
+                "_css_classes": "mtc-row-icon"
+               },
+               "elements": []
+              },
+              {
+               "id": "38c137c",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Accounts",
+                "header_size": "h3",
+                "_css_classes": "mtc-row-label"
+               },
+               "elements": []
+              },
+              {
+               "id": "152885c",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p><a href=\"tel:+61397922243\">+61 3 9792 2243</a></p>",
+                "_css_classes": "mtc-row-value"
+               },
+               "elements": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "4e32c20",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtc-pills"
+           },
+           "elements": [
+            {
+             "id": "1d0fc94",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "ACN: 103 309 253",
+              "header_size": "div",
+              "_css_classes": "mtc-pill"
+             },
+             "elements": []
+            },
+            {
+             "id": "13597f0",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "ABN: 26 103 309 253",
+              "header_size": "div",
+              "_css_classes": "mtc-pill"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "10cec5e",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "mtc-map"
+         },
+         "elements": [
+          {
+           "id": "7c0d512",
+           "elType": "widget",
+           "widgetType": "google_maps",
+           "settings": {
+            "address": "16 Maxwell St, Dandenong South VIC 3175, Australia",
+            "zoom": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "height": {
+             "unit": "px",
+             "size": 520,
+             "sizes": []
+            },
+            "_css_classes": "mtc-map-embed"
+           },
+           "elements": []
+          },
+          {
+           "id": "e7f4997",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mtc-workshop"
+           },
+           "elements": [
+            {
+             "id": "b76af58",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "id": 489,
+               "url": "https://microteceng.wsdfy.com/wp-content/uploads/2026/10/microtec-building-maxwell-st.jpg",
+               "alt": "Microtec Engineering building, 16-18 Maxwell St, Dandenong South"
+              },
+              "image_size": "full",
+              "_css_classes": "mtc-workshop-img"
+             },
+             "elements": []
+            },
+            {
+             "id": "c1e4042",
+             "elType": "container",
+             "isInner": false,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "mtc-workshop-text"
+             },
+             "elements": [
+              {
+               "id": "a5e9a11",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Our workshop",
+                "header_size": "div",
+                "_css_classes": "mtc-workshop-title"
+               },
+               "elements": []
+              },
+              {
+               "id": "df7f3fd",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>16-18 Maxwell St, Dandenong South</p>",
+                "_css_classes": "mtc-workshop-sub"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "29678f1",
+             "elType": "widget",
+             "widgetType": "button",
+             "settings": {
+              "text": "Get directions →",
+              "link": {
+               "url": "https://www.google.com/maps/search/?api=1&query=16+Maxwell+St+Dandenong+South+VIC+3175",
+               "is_external": "on",
+               "nofollow": ""
+              },
+              "_css_classes": "mtc-directions"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "form_template": "<div class=\"mtc-cf\">\n<div class=\"mtc-field mtc-full\"><span class=\"mtc-label\">Product or service needed</span>\n[radio product-service use_label_element default:1 \"Part or component\" \"Electronic repair\" \"Design & installation\" \"Technical support\" \"Other\"]</div>\n<label class=\"mtc-field\">Name [text* your-name autocomplete:name]</label>\n<label class=\"mtc-field\">Company [text your-company autocomplete:organization]</label>\n<label class=\"mtc-field\">Email [email* your-email autocomplete:email]</label>\n<label class=\"mtc-field\">Phone [tel* your-phone autocomplete:tel]</label>\n<label class=\"mtc-field mtc-full\">Part number (optional) [text part-number placeholder \"e.g. 363-xxxx\"]</label>\n<label class=\"mtc-field mtc-full\">Message [textarea* your-message x4 placeholder \"Machine make and model, fault description, quantity…\"]</label>\n<label class=\"mtc-file mtc-full\"><span class=\"mtc-file-icon\" aria-hidden=\"true\"></span><span class=\"mtc-file-text\"><span class=\"mtc-file-title\">Photo (optional)</span><span class=\"mtc-file-name\">No file chosen · JPG or PNG</span></span><span class=\"mtc-file-browse\" aria-hidden=\"true\">Browse</span>[file photo limit:8mb filetypes:jpg|jpeg|png|gif|webp|heic]</label>\n<div class=\"mtc-submit mtc-full\">[submit \"Send an Enquiry →\"]</div>\n</div>"
+}

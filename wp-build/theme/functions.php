@@ -31,6 +31,9 @@ add_action( 'wp_enqueue_scripts', function () {
 	// Technical / Installation Guides: built from Elementor widgets, styled by class.
 	wp_enqueue_style( 'microtec-guides', $uri . '/assets/css/mt-guides.css', [ 'microtec-pages' ], filemtime( $dir . '/assets/css/mt-guides.css' ) );
 	wp_enqueue_script( 'microtec-guide', $uri . '/assets/js/mt-guide.js', [], filemtime( $dir . '/assets/js/mt-guide.js' ), true );
+	// Contact Us: built from Elementor widgets too; styles keyed on mtc-* classes.
+	wp_enqueue_style( 'microtec-contact', $uri . '/assets/css/mt-contact.css', [ 'microtec-guides' ], filemtime( $dir . '/assets/css/mt-contact.css' ) );
+	wp_enqueue_script( 'microtec-contact', $uri . '/assets/js/mt-contact.js', [], filemtime( $dir . '/assets/js/mt-contact.js' ), true );
 }, 30 );
 
 // Load the brand CSS inside the Elementor editor preview too, so editing matches the front end.
