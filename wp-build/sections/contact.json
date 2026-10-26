@@ -94,6 +94,8 @@
            "nofollow": ""
           },
           "position": "left",
+          "position_tablet": "left",
+          "position_mobile": "left",
           "title_size": "div",
           "_css_classes": "mtc-card"
          },
@@ -119,6 +121,8 @@
            "nofollow": ""
           },
           "position": "left",
+          "position_tablet": "left",
+          "position_mobile": "left",
           "title_size": "div",
           "_css_classes": "mtc-card"
          },
@@ -144,6 +148,8 @@
            "nofollow": ""
           },
           "position": "left",
+          "position_tablet": "left",
+          "position_mobile": "left",
           "title_size": "div",
           "_css_classes": "mtc-card"
          },

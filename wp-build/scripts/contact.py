@@ -51,7 +51,7 @@ def hero(ids):
     ])
     row = con(ids, 'mtc-cards', [
         w(ids, 'icon-box', 'mtc-card', selected_icon=ICON[icon], title_text=label, description_text=value,
-          link=link(url), position='left', title_size='div')
+          link=link(url), position='left', position_tablet='left', position_mobile='left', title_size='div')
         for label, value, url, icon in cards
     ], direction='row')
     inner = con(ids, 'mtg-hero-inner mtc-hero-inner', [text_col, row])
