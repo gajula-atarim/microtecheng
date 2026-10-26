@@ -1,0 +1,105 @@
+[
+ {
+  "id": "3249f92",
+  "elType": "container",
+  "isInner": false,
+  "settings": {
+   "content_width": "full",
+   "flex_direction": "column",
+   "css_classes": "mtg-hero mtp-hero",
+   "_title": "Hero"
+  },
+  "elements": [
+   {
+    "id": "cd5436a",
+    "elType": "container",
+    "isInner": false,
+    "settings": {
+     "content_width": "full",
+     "flex_direction": "row",
+     "css_classes": "mtg-hero-inner"
+    },
+    "elements": [
+     {
+      "id": "1945c71",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+       "content_width": "full",
+       "flex_direction": "column",
+       "css_classes": "mtg-hero-text"
+      },
+      "elements": [
+       {
+        "id": "0a796ed",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p><a href=\"/\">Home</a><span>/</span><strong>Wishlist</strong></p>",
+         "_css_classes": "mtg-crumbs"
+        },
+        "elements": []
+       },
+       {
+        "id": "ddcf054",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Wishlist",
+         "header_size": "h1",
+         "_css_classes": "mtg-title"
+        },
+        "elements": []
+       },
+       {
+        "id": "9d51f78",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Products you have saved on this device. Add them to your cart, or call us on 03 9792 2243 for prices and availability.</p>",
+         "_css_classes": "mtg-intro"
+        },
+        "elements": []
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d834edb",
+  "elType": "container",
+  "isInner": false,
+  "settings": {
+   "content_width": "full",
+   "flex_direction": "column",
+   "css_classes": "mtg-body",
+   "_title": "Wishlist"
+  },
+  "elements": [
+   {
+    "id": "559597e",
+    "elType": "container",
+    "isInner": false,
+    "settings": {
+     "content_width": "full",
+     "flex_direction": "column",
+     "css_classes": "mtg-wrap"
+    },
+    "elements": [
+     {
+      "id": "828a6dc",
+      "elType": "widget",
+      "widgetType": "shortcode",
+      "settings": {
+       "shortcode": "[mt_wishlist]",
+       "_css_classes": "mt-wishlist-w"
+      },
+      "elements": []
+     }
+    ]
+   }
+  ]
+ }
+]
