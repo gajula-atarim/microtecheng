@@ -718,7 +718,7 @@ body.single-product .woocommerce-breadcrumb { margin-bottom: 24px !important; }
 	border-radius: 999px;
 	font: 600 13px/1.3 "Inter", sans-serif;
 }
-.mt-save { background: #FDECEC; color: #B4231A; }
+.mt-save { display: inline-block; background: #FDECEC; color: #B4231A; } /* not flex: keeps the spaces in "Save $X (N%)" */
 .mt-save .amount { color: inherit; }
 .mt-stock.is-in { background: #E7F6EE; color: #17703D; }
 .mt-stock.is-in::before { content: ''; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #2FB463; }
