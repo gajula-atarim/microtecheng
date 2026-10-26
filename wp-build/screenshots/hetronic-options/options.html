@@ -1,0 +1,147 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3B479C;--blue2:#2E3880;--navy:#1F2766;--ink:#1E2433;--body:#4A5266;--muted:#5B6478;--grey:#F2F4F7;--line:#E1E5EC;--soft:#EEF0F8;--lav:#A3ABDB}
+*{box-sizing:border-box}body{margin:0;background:#fff;font-family:Inter,sans-serif;color:var(--body);-webkit-font-smoothing:antialiased}
+.opt{padding:28px 24px 40px;border-bottom:8px solid #E9EBF2}
+.tag{display:inline-block;margin:0 0 18px;padding:6px 14px;border-radius:999px;background:#1E2433;color:#fff;font:600 13px Inter;letter-spacing:.04em}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:6px}
+h1{margin:0 0 18px;font:700 clamp(36px,6vw,52px)/1 'Barlow Semi Condensed';color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--blue);color:#fff;font-weight:600;font-size:15px;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.white{background:#fff;color:var(--blue)}
+.phone{font:700 22px 'Barlow Semi Condensed';color:var(--blue);text-decoration:none}
+.ico{width:18px;height:18px;flex-shrink:0}
+img{display:block;max-width:100%}
+
+/* ---------- A: Brand banner + supplies tiles ---------- */
+.a-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:34px;border-radius:20px;background:linear-gradient(150deg,#3B479C 0%,#2E3880 55%,#1F2766 100%);color:#fff}
+.a-hero::after{content:'';position:absolute;right:-40px;top:-60px;width:200px;height:280px;opacity:.07;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 280'%3E%3Crect width='58' height='280' rx='29' fill='%23fff'/%3E%3Crect x='71' width='58' height='280' rx='29' fill='%23fff'/%3E%3Crect x='142' width='58' height='280' rx='29' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat}
+.a-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#E6EAF3}
+.a-hero h2{margin:14px 0 10px;font:700 34px/1.05 'Barlow Semi Condensed'}
+.a-hero p{margin:0 0 20px;font-size:15.5px;line-height:1.65;color:#D9DEF0}
+.a-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.a-cta span{color:#CDD1EC;font-size:14px}.a-cta .phone{color:#fff}
+.a-img{position:relative;z-index:1;background:#fff;border-radius:16px;padding:14px;box-shadow:0 24px 50px rgba(10,14,45,.35)}
+.a-sup{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.a-sup div{display:flex;align-items:center;gap:10px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;font-weight:600;font-size:14.5px;color:var(--ink)}
+.a-sup i{width:34px;height:34px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.a-label{margin:26px 0 0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.a-more{margin-top:14px;font-size:14.5px;line-height:1.65}
+.a-more summary{cursor:pointer;color:var(--blue);font-weight:600;list-style:none}
+
+/* ---------- B: Split card, image on top ---------- */
+.b-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 14px 34px rgba(59,71,156,.08)}
+.b-media{background:linear-gradient(180deg,#F7F8FC,#EEF0F8);padding:22px 40px;display:flex;justify-content:center}
+.b-media img{max-height:250px;width:auto}
+.b-body{display:grid;grid-template-columns:1.25fr .75fr;gap:0}
+.b-text{padding:28px 30px}
+.b-text h2{margin:0 0 6px;font:700 28px/1.1 'Barlow Semi Condensed';color:var(--navy)}
+.b-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;font-size:13px;font-weight:600;color:#1A7F46}
+.b-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:#3FD07A;box-shadow:0 0 0 4px rgba(63,208,122,.18)}
+.b-text p{margin:0 0 12px;font-size:15px;line-height:1.65}
+.b-side{padding:28px 26px;background:var(--grey);border-left:1px solid var(--line)}
+.b-side h3{margin:0 0 12px;font:700 20px 'Barlow Semi Condensed';color:var(--blue)}
+.b-side ul{margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.b-side li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:500;color:var(--ink)}
+.b-side li::before{content:'';flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/11px no-repeat}
+.b-side .btn{width:100%;justify-content:center}
+.b-side .call{margin-top:10px;text-align:center;font-size:14px}.b-side .call a{color:var(--blue);font-weight:700;text-decoration:none}
+
+/* ---------- C: Compact strip + stat badges ---------- */
+.c-wrap{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start;padding:26px;border-radius:20px;background:var(--grey)}
+.c-img{background:#fff;border-radius:16px;padding:12px;border:1px solid var(--line)}
+.c-stats{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.c-stats div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.c-stats b{display:block;font:700 26px/1 'Barlow Semi Condensed';color:var(--blue)}
+.c-stats span{font-size:12px;color:var(--muted)}
+.c-main h2{margin:0 0 8px;font:700 28px/1.1 'Barlow Semi Condensed';color:var(--navy)}
+.c-lead{margin:0 0 16px;font-size:16px;line-height:1.6;color:var(--ink)}
+.c-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.c-chips span{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #D5DAE3;font-size:13.5px;font-weight:600;color:var(--navy)}
+.c-acc{border-top:1px solid #DDE1EA}
+.c-acc details{border-bottom:1px solid #DDE1EA;padding:12px 0}
+.c-acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-weight:600;color:var(--ink);font-size:15px}
+.c-acc summary::after{content:'+';color:var(--blue);font-size:20px;line-height:1}
+.c-acc details[open] summary::after{content:'–'}
+.c-acc p{margin:10px 0 0;font-size:14.5px;line-height:1.65}
+.c-cta{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+
+@media (max-width:600px){
+ .opt{padding:20px 16px 32px}
+ .a-hero,.b-body,.c-wrap{grid-template-columns:1fr}
+ .a-hero{padding:24px}.a-img{order:-1}
+ .a-sup{grid-template-columns:1fr 1fr}
+ .b-side{border-left:0;border-top:1px solid var(--line)}
+ .b-media{padding:18px}
+ .c-wrap{padding:18px}
+}
+</style></head><body>
+
+<!-- A -->
+<section class="opt" id="a">
+<span class="tag">Option A · Brand banner + supply tiles</span>
+<div class="crumb">Home / Hetronic</div><h1>Hetronic</h1>
+<div class="a-hero">
+ <div style="position:relative;z-index:1">
+  <span class="a-eyebrow">★ Hetronic service agent since 2010</span>
+  <h2>Radio remote control repairs &amp; supplies</h2>
+  <p>Hetronic designs and builds industrial Radio Remote Control (RRC) systems that meet current global safety standards. We repair them and supply the parts that keep them running.</p>
+  <div class="a-cta"><a class="btn white" href="#">Contact Us →</a><span>or call</span><a class="phone" href="#">03 9792 2243</a></div>
+ </div>
+ <div class="a-img"><img src="hetronic.jpg" alt=""></div>
+</div>
+<p class="a-label">Repairs &amp; supplies</p>
+<div class="a-sup">
+ <div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Aerials</div><div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Batteries</div><div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Battery chargers (AC &amp; DC)</div>
+ <div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Belts</div><div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Antenna extension cables</div><div><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Remote components</div>
+</div>
+<details class="a-more"><summary>More about Hetronic ↓</summary></details>
+</section>
+
+<!-- B -->
+<section class="opt" id="b">
+<span class="tag">Option B · Product card with checklist sidebar</span>
+<div class="crumb">Home / Hetronic</div><h1>Hetronic</h1>
+<div class="b-card">
+ <div class="b-media"><img src="hetronic.jpg" alt=""></div>
+ <div class="b-body">
+  <div class="b-text">
+   <div class="b-badge">Authorised Hetronic service agent since 2010</div>
+   <h2>Industrial radio remote controls</h2>
+   <p>Hetronic specialises in the custom design and manufacture of industrial Radio Remote Control (RRC) systems, giving operators maximum safety and convenience to the newest global safety standards.</p>
+   <p>No matter the application, Hetronic's high quality, reliable and affordable systems increase the safety and efficiency of your machines.</p>
+  </div>
+  <div class="b-side">
+   <h3>Remote repairs &amp; supplies</h3>
+   <ul><li>Aerials</li><li>Batteries</li><li>Battery chargers (AC &amp; DC)</li><li>Belts</li><li>Antenna extension cables</li><li>Remote components</li></ul>
+   <a class="btn" href="#">Ask about sales &amp; repairs →</a>
+   <div class="call">or call <a href="#">03 9792 2243</a></div>
+  </div>
+ </div>
+</div>
+</section>
+
+<!-- C -->
+<section class="opt" id="c">
+<span class="tag">Option C · Compact intro, chips and read-more</span>
+<div class="crumb">Home / Hetronic</div><h1>Hetronic</h1>
+<div class="c-wrap">
+ <div>
+  <div class="c-img"><img src="hetronic.jpg" alt=""></div>
+  <div class="c-stats"><div><b>2010</b><span>Service agent since</span></div><div><b>RRC</b><span>Sales &amp; repairs</span></div></div>
+ </div>
+ <div class="c-main">
+  <h2>Remote repairs &amp; supplies</h2>
+  <p class="c-lead">Microtec are the Hetronic service agent for Australia, repairing and supplying industrial Radio Remote Control (RRC) systems.</p>
+  <div class="c-chips"><span>Aerials</span><span>Batteries</span><span>Battery chargers (AC &amp; DC)</span><span>Belts</span><span>Antenna extension cables</span><span>Remote components</span></div>
+  <div class="c-acc">
+   <details open><summary>About Hetronic</summary><p>Hetronic specialises in the custom design and manufacture of industrial Radio Remote Control (RRC) systems. Their equipment features the newest standards of protection and is designed to meet current global safety standards.</p></details>
+   <details><summary>Why Hetronic</summary></details>
+  </div>
+  <div class="c-cta"><a class="btn" href="#">Contact Us →</a><span>or call</span><a class="phone" href="#">03 9792 2243</a></div>
+ </div>
+</div>
+</section>
+</body></html>
