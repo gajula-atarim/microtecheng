@@ -314,7 +314,11 @@ body.mt-catalog .mt-shop ul.product_list_widget li ins { text-decoration: none; 
 }
 .mt-shop .woocommerce-no-products-found .woocommerce-info::before { display: none; }
 
-.mt-shop .woocommerce-result-count {
+/* The count is the theme's own (functions.php): something on the page removes WooCommerce's
+   .woocommerce-result-count element once a filter or sort order is in the URL. */
+.mt-shop .woocommerce-result-count,
+.mt-shop .mt-result-count {
+	float: left;
 	margin: 20px 0;
 	font-size: 14px;
 	color: var(--mt-muted);
