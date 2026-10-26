@@ -200,6 +200,18 @@ body {
 	.mt-nav-desktop .hfe-nav-menu > li > .hfe-has-submenu-container > a.hfe-menu-item,
 	.mt-nav-desktop .hfe-nav-menu > li > a.hfe-menu-item { padding-left: 7px !important; padding-right: 7px !important; font-size: 14.5px !important; }
 }
+/* From 1440px the bar is still 1280px wide, so the menu keeps a slightly smaller size than
+   Elementor's 16px / 13px padding, which ran "Contact Us" into the search icon. */
+@media (min-width: 1440px) {
+	.mt-nav-desktop .hfe-nav-menu > li > .hfe-has-submenu-container > a.hfe-menu-item,
+	.mt-nav-desktop .hfe-nav-menu > li > a.hfe-menu-item { padding-left: 9px !important; padding-right: 9px !important; font-size: 15px !important; }
+}
+/* Below 1240px the menu is hidden: keep the wordmark beside the logo and the icons at the right,
+   instead of spreading the three items across the bar. */
+@media (max-width: 1239px) {
+	.e-con.mt-header-bar { justify-content: flex-start !important; --justify-content: flex-start !important; }
+	.e-con.mt-header-actions { margin-left: auto; }
+}
 .mt-topbar-cart a { color: #fff; font-family: "Archivo", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; }
 
 .mt-topbar a { transition: color .2s; }
@@ -260,6 +272,16 @@ body.home #masthead { margin-bottom: -98px; }
 	border-radius: 50%;
 }
 .mt-header-icon .elementor-icon:hover { background: #EEF0F4; }
+
+/* Search: a line magnifier to match the account and bag icons (the widget's own icon is the
+   heavy solid Font Awesome one). */
+.mt-header-search .hfe-search-icon-toggle {
+	width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E2433' stroke-width='1.9' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") center / 21px no-repeat;
+	cursor: pointer;
+}
+.mt-header-search .hfe-search-icon-toggle:hover { background-color: #EEF0F4; }
+.mt-header-search .hfe-search-icon-toggle :is(i, svg) { visibility: hidden; }
 
 /* Desktop nav shows from 1240px, the menu toggle below it (per design) */
 @media (max-width: 1239px) { .mt-nav-desktop { display: none !important; } }
