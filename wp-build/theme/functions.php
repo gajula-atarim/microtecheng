@@ -205,7 +205,7 @@ function microtec_result_count() {
 	}
 	$per   = (int) $wp_query->get( 'posts_per_page' );
 	$paged = max( 1, (int) get_query_var( 'paged' ) );
-	echo '<p class="woocommerce-result-count">';
+	echo '<p class="mt-result-count">';
 	if ( 1 === $total ) {
 		esc_html_e( 'Showing the single result', 'woocommerce' );
 	} elseif ( $per < 1 || $total <= $per ) {
