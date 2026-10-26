@@ -743,7 +743,7 @@ body.single-product form.cart { display: flex; flex-wrap: wrap; align-items: cen
 body.single-product form.cart::before,
 body.single-product form.cart::after,
 body.single-product form.cart .woocommerce-variation-add-to-cart::before,
-body.single-product form.cart .woocommerce-variation-add-to-cart::after { content: none; }
+body.single-product form.cart .woocommerce-variation-add-to-cart::after { content: none !important; } /* beats .woocommerce div.product form.cart::before */
 body.single-product form.cart .quantity.mt-qty {
 	display: inline-flex;
 	align-items: stretch;
