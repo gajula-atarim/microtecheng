@@ -209,6 +209,9 @@ body.mt-catalog .mt-shop ul.product_list_widget li ins { text-decoration: none; 
 	background: var(--mt-grey);
 	border-radius: 18px;
 }
+/* Text-only intro (e.g. Cobo): the text uses the full width. */
+.mt-shop .mt-cat-intro:not(:has(.mt-cat-intro-img)) { grid-template-columns: minmax(0, 1fr); }
+.mt-shop .mt-cat-intro:not(:has(.mt-cat-intro-img)) p { max-width: 820px; }
 .mt-shop .mt-cat-intro h3 {
 	margin: 0 0 10px;
 	font-family: "Barlow Semi Condensed", sans-serif;
