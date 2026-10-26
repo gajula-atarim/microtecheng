@@ -711,6 +711,53 @@ body.woocommerce .related ul.products li.product .woocommerce-loop-product__titl
 	color: var(--mt-ink);
 }
 
+/* Product gallery: every main image and thumbnail in the same square frame, the whole photo
+   shown on white (product photos come in all shapes, so the page height jumped between products). */
+body.single-product div.product .woocommerce-product-gallery__image img:not(.zoomImg) {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: contain;
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	border-radius: 16px;
+	box-sizing: border-box;
+}
+body.single-product div.product .woocommerce-product-gallery .flex-viewport { border-radius: 16px; }
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 10px;
+	margin: 10px 0 0;
+	padding: 0;
+}
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs::before,
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs::after { content: none; }
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li {
+	float: none;
+	width: auto;
+	margin: 0;
+}
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: contain;
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	border-radius: 10px;
+	box-sizing: border-box;
+	opacity: .6;
+	transition: opacity .2s, border-color .2s;
+}
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img:hover,
+body.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img.flex-active {
+	opacity: 1;
+	border-color: var(--mt-blue);
+}
+
 /* Room between the floating header and the product (breadcrumb sat right under the bar). */
 body.single-product .site-main { padding-top: clamp(28px, 4vw, 48px); padding-bottom: 72px; }
 body.single-product .woocommerce-breadcrumb { margin-bottom: 24px !important; }
