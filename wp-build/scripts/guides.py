@@ -16,6 +16,7 @@ MISSING = {'Microtec Light Activation Box overview (Theiss).pdf',
            'MkII Connections to Microtec Standard Globe Tower Light.pdf'}
 
 HERO_IMG = {'id': 755, 'url': U + 'led-warning-light-hero.jpg'}
+POST_IMG = {'id': 967, 'url': U + 'led-tower-light-post-hero.jpg'}
 TADANO_IMG = {'id': 641, 'url': U + 'tadano-exchange-load-cell-a.jpg'}
 BRONTO_IMG = {'id': 668, 'url': U + 'bronto-skylift-screen-overlay-3.jpg'}
 
@@ -228,7 +229,7 @@ def build():
     out['post'] = [
         guide_hero(ids, 'post', 'Installation instructions for the external warning light and Light Control '
                    'Module (LCM) MKII/MKIII, for units purchased from 1 September 2011. Select a guide below '
-                   'to view and download the PDF.'),
+                   'to view and download the PDF.', POST_IMG),
         body(ids, [
             card(ids, '01', 'Light Control Module (LCM) MKII/MKIII to external warning light connections',
                  f'{len(POST_LIGHTS)} documents', [group(ids, None, POST_LIGHTS)]),
