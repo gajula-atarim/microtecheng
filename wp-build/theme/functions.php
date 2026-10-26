@@ -189,8 +189,36 @@ add_action( 'woocommerce_after_main_content', function () {
 add_action( 'wp', function () {
 	if ( microtec_is_catalog() ) {
 		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+		// WooCommerce's own count drops out whenever the URL carries a filter or sort order
+		// (?stock=, ?orderby=, ?min_price=); this one is worked out from the query itself.
+		remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+		add_action( 'woocommerce_before_shop_loop', 'microtec_result_count', 20 );
 	}
 } );
+
+// "Showing all 3 results" / "Showing 1–12 of 62 results", as WooCommerce words it.
+function microtec_result_count() {
+	global $wp_query;
+	$total = (int) $wp_query->found_posts;
+	if ( ! $total ) {
+		return;
+	}
+	$per   = (int) $wp_query->get( 'posts_per_page' );
+	$paged = max( 1, (int) get_query_var( 'paged' ) );
+	echo '<p class="woocommerce-result-count">';
+	if ( 1 === $total ) {
+		esc_html_e( 'Showing the single result', 'woocommerce' );
+	} elseif ( $per < 1 || $total <= $per ) {
+		/* translators: %d: total results */
+		printf( esc_html( _n( 'Showing all %d result', 'Showing all %d results', $total, 'woocommerce' ) ), (int) $total );
+	} else {
+		$first = $per * ( $paged - 1 ) + 1;
+		$last  = min( $total, $per * $paged );
+		/* translators: 1: first result 2: last result 3: total results */
+		printf( esc_html( _nx( 'Showing %1$d&ndash;%2$d of %3$d result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, 'with first and last result', 'woocommerce' ) ), (int) $first, (int) $last, (int) $total );
+	}
+	echo '</p>';
+}
 
 // Products sold on enquiry (no price set) show "Call for price" instead of an empty price.
 add_filter( 'woocommerce_get_price_html', function ( $html, $product ) {
