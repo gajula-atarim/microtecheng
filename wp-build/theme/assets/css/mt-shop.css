@@ -701,6 +701,10 @@ body.woocommerce div.product form.cart .variations select {
 	border-radius: 10px;
 	background: #fff;
 }
+/* Tabs start at the content edge (WooCommerce indents them by 1em). */
+body.woocommerce div.product .woocommerce-tabs ul.tabs { padding-left: 0; }
+body.woocommerce div.product .woocommerce-tabs ul.tabs li:first-child { margin-left: 0; }
+body.woocommerce div.product .woocommerce-tabs ul.tabs li:first-child::before { display: none; }
 body.woocommerce div.product .woocommerce-tabs h2,
 body.woocommerce .related > h2,
 body.woocommerce .upsells > h2 {
@@ -735,6 +739,11 @@ body.single-product .woocommerce-breadcrumb { margin-bottom: 24px !important; }
 
 /* Quantity: − [n] + in one pill; the browser's spinner arrows are hidden */
 body.single-product form.cart { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+/* WooCommerce's clearfix pseudo-elements would be flex items and add a gap before the quantity. */
+body.single-product form.cart::before,
+body.single-product form.cart::after,
+body.single-product form.cart .woocommerce-variation-add-to-cart::before,
+body.single-product form.cart .woocommerce-variation-add-to-cart::after { content: none; }
 body.single-product form.cart .quantity.mt-qty {
 	display: inline-flex;
 	align-items: stretch;
@@ -781,11 +790,13 @@ body.single-product form.cart .variations { flex-basis: 100%; }
 body.single-product form.cart .single_variation_wrap { flex-basis: 100%; }
 body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 
-/* Wishlist and share */
+/* Wishlist and share. space-between keeps Share on the right while it fits on the same line,
+   and at the left edge once it wraps (a lone item on a line starts at the left). */
 .mt-product-extras {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: space-between;
 	gap: 14px 20px;
 	margin: 6px 0 22px;
 	padding: 16px 0;
@@ -817,7 +828,7 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 .mt-wish.is-on .mt-wish-heart { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff' stroke='%23fff' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.2 4.8 2.9 1.2-1.7 2.8-2.9 4.8-2.9 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z'/%3E%3C/svg%3E"); }
 .mt-wish-view { font-size: 14px; font-weight: 600; color: var(--mt-blue); text-decoration: none; }
 .mt-wish-view:hover { text-decoration: underline; }
-.mt-share { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-left: auto; }
+.mt-share { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .mt-share-label { margin-right: 4px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mt-muted); }
 .mt-share-link {
 	display: inline-flex;
@@ -881,7 +892,6 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 	.mt-wishlist-item { grid-template-columns: 72px minmax(0, 1fr); }
 	.mt-wishlist-img { width: 72px; height: 72px; }
 	.mt-wishlist-actions { grid-column: 1 / -1; }
-	.mt-share { margin-left: 0; }
 }
 
 /* ---- Smaller screens ---- */
@@ -902,38 +912,111 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 	.mt-shop .mt-cat-hero-media { order: -1; }
 }
 
-/* Phones: one product per row, in the shop grid and in related products on a product page.
-   The image box is 4:3 rather than square so a full-width card stays compact. */
+/* Phones: one product per row. The image box is 4:3 rather than square so a full-width
+   card stays compact. */
 @media (max-width: 559px) {
 	.mt-shop ul.products { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 	.mt-shop ul.products li.product a img { aspect-ratio: 4 / 3; }
 	.mt-shop ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
-
-	body.single-product :is(.related, .upsells) ul.products { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
-	body.single-product :is(.related, .upsells) ul.products::before,
-	body.single-product :is(.related, .upsells) ul.products::after { content: none; }
-	body.single-product :is(.related, .upsells) ul.products li.product {
-		float: none !important;
-		width: auto !important;
-		margin: 0 !important;
-		padding: 14px 14px 18px;
-		display: flex;
-		flex-direction: column;
-		background: #fff;
-		border: 1px solid var(--mt-line);
-		border-radius: 18px;
-	}
-	body.single-product :is(.related, .upsells) ul.products li.product img {
-		width: 100%;
-		aspect-ratio: 4 / 3;
-		object-fit: contain;
-		margin: 0 0 14px;
-		background: #fff;
-		border-radius: 12px;
-	}
-	body.single-product :is(.related, .upsells) ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
-	body.single-product :is(.related, .upsells) ul.products li.product .button { display: block; margin-top: auto; text-align: center; }
 }
+
+/* ---- Related and upsell products on a product page ----
+   The same cards as the shop grid: white card, contained image, price under the title and a
+   full-width button pinned to the bottom so the buttons line up across a row. */
+body.single-product :is(.related, .upsells) ul.products {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 24px;
+	margin: 0;
+	padding: 0;
+}
+body.single-product :is(.related, .upsells) ul.products::before,
+body.single-product :is(.related, .upsells) ul.products::after { content: none; }
+body.single-product :is(.related, .upsells) ul.products li.product {
+	position: relative;
+	float: none !important;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 14px 14px 18px;
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border: 1px solid var(--mt-line);
+	border-radius: 18px;
+	transition: box-shadow .25s var(--mt-ease), transform .25s var(--mt-ease);
+}
+body.single-product :is(.related, .upsells) ul.products li.product:hover {
+	box-shadow: 0 18px 40px rgba(15, 20, 60, .12);
+	transform: translateY(-3px);
+}
+body.single-product :is(.related, .upsells) ul.products li.product a { text-decoration: none; }
+body.single-product :is(.related, .upsells) ul.products li.product a img {
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: contain;
+	margin: 0 0 14px;
+	background: #fff;
+	border-radius: 12px;
+}
+body.single-product :is(.related, .upsells) ul.products li.product .woocommerce-loop-product__title {
+	margin: 0 0 8px;
+	padding: 0;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 1.2;
+	color: var(--mt-ink);
+}
+body.single-product :is(.related, .upsells) ul.products li.product .price {
+	display: block;
+	margin: 0 0 16px;
+	font-size: 16px;
+}
+body.single-product :is(.related, .upsells) ul.products li.product .button {
+	margin-top: auto;
+	display: block;
+	width: 100%;
+	padding: 12px 18px;
+	text-align: center;
+	font-size: 14px;
+}
+body.single-product :is(.related, .upsells) ul.products li.product .added_to_cart {
+	margin-top: 8px;
+	text-align: center;
+	font-size: 13px;
+	color: var(--mt-blue);
+}
+body.single-product :is(.related, .upsells) ul.products li.product .onsale {
+	top: 22px;
+	left: 22px;
+	right: auto;
+	min-width: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 4px 12px;
+	border-radius: 999px;
+	font: 600 12px/1.4 "Inter", sans-serif;
+}
+@media (max-width: 1099px) {
+	body.single-product :is(.related, .upsells) ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 559px) {
+	body.single-product :is(.related, .upsells) ul.products { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+	body.single-product :is(.related, .upsells) ul.products li.product a img { aspect-ratio: 4 / 3; }
+	body.single-product :is(.related, .upsells) ul.products li.product .woocommerce-loop-product__title { font-size: 18px; }
+}
+
+/* Review form: the submit button as the brand pill (WooCommerce left it a grey box). */
+body.single-product #review_form #respond .form-submit input#submit {
+	padding: 12px 26px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--mt-blue);
+	color: #fff;
+	font: 600 15px "Inter", sans-serif;
+	cursor: pointer;
+}
+body.single-product #review_form #respond .form-submit input#submit:hover { background: var(--mt-blue-hover); }
 
 /* ---- Site search (search.php): products as shop cards, then pages and guides ---- */
 
