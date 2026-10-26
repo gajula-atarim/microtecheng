@@ -1059,6 +1059,20 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 .mt-share-link:hover, .mt-share-link:focus-visible { background: var(--mt-blue); border-color: var(--mt-blue); color: #fff; outline: none; }
 .mt-share-copy.is-copied { background: #2FB463; border-color: #2FB463; color: #fff; }
 
+/* Hello Elementor's reset paints any hovered or focused button pink (#c36), and the Elementor kit
+   turns hovered links brand blue (the share icons vanished on the blue hover circle). These keep
+   the product page controls in the brand colours, before and after a click. */
+.mt-share .mt-share-link:focus:not(:focus-visible) { background: #fff; border-color: var(--mt-line); color: var(--mt-blue); }
+.mt-share .mt-share-link:hover,
+.mt-share .mt-share-link:focus-visible { background: var(--mt-blue); border-color: var(--mt-blue); color: #fff; outline: none; }
+.mt-share .mt-share-copy.is-copied { background: #2FB463; border-color: #2FB463; color: #fff; }
+.mt-product-extras .mt-wish:is(:hover, :focus) { background: #EEF0F8; border-color: var(--mt-blue); color: var(--mt-blue); }
+.mt-product-extras .mt-wish.is-on { background: var(--mt-blue); border-color: var(--mt-blue); color: #fff; }
+.mt-product-extras .mt-wish.is-on:is(:hover, :focus) { background: var(--mt-blue-hover); border-color: var(--mt-blue-hover); color: #fff; }
+body.single-product form.cart .mt-qty .mt-qty-btn:is(:hover, :focus) { background: #EEF0F8; color: var(--mt-blue); outline: none; }
+.mt-ship .mt-ship-btn:is(:hover, :focus) { background: var(--mt-blue-hover); color: #fff; }
+.mt-ship .mt-ship-btn:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 2px; }
+
 /* Wishlist page ([mt_wishlist]) */
 .mt-wishlist { font-family: "Inter", sans-serif; color: var(--mt-body); }
 .mt-wishlist-count { margin: 0 0 16px; font-size: 14px; color: var(--mt-muted); }
