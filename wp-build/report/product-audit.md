@@ -137,3 +137,11 @@ The old store's web addresses differ from the new ones for most products, and se
 | /~267 | /product/tadano-aml-ca-graphic-lcd-display-module-replacement-with-led-backlight/ |
 | /~269 | /product/tadano-aml-m1-lcd-tile-display/ |
 | /~273 | /product/zebra-strip-and-clamp-kits/ |
+
+## Changes made after the audit (26 Oct 2026)
+
+- **Others Also Bought:** the old site's pairings are set as cross-sells on 21 products. They show on the product page under "Others Also Bought", and in the cart.
+- **Shipping weight and size:** set on the 16 products that had them on the old site; 12 of them also have parcel sizes. They are stored in lbs and inches, the store's current units (converted from the old kg and m). If the store is switched to kg and cm, these values need re-entering.
+- **Brand:** COBO on the COBO 3B6 ACQ Mac 25 Cable Reeler; Tadano on the Tadano / Faun Outrigger Control Panel Overlay, Zebra strip and clamp kits, and Kato MS-16 Display push buttons. Uses WooCommerce Brands.
+- **Option photos:** the blue 10-turn pot on both Potentiometers 10 turn options; separate Superseal and Hirschman photos on the Pressure Transducer options.
+- **Redirects:** every old product address in the table above, the old category addresses, Neto's short /~SKU addresses and the old /page/… addresses now 301-redirect to the new pages.
