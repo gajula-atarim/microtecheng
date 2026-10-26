@@ -50,6 +50,33 @@ body.mt-catalog #main {
 	color: var(--mt-blue);
 }
 
+/* Filter by Stock: one tick box */
+.mt-shop .mt-stock-option {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--mt-ink);
+	font-size: 15px;
+	text-decoration: none;
+}
+.mt-shop .mt-stock-option .count { margin-left: auto; color: var(--mt-muted); font-size: 13px; }
+.mt-shop .mt-stock-box {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	border: 1.5px solid #A3ABDB;
+	border-radius: 6px;
+	background: #fff;
+	transition: background-color .2s, border-color .2s;
+}
+.mt-shop .mt-stock-option:hover .mt-stock-box { border-color: var(--mt-blue); }
+.mt-shop .mt-stock-option.is-active { color: var(--mt-blue); font-weight: 600; }
+.mt-shop .mt-stock-option.is-active .mt-stock-box {
+	border-color: var(--mt-blue);
+	background: var(--mt-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+.mt-shop .mt-stock-option:focus-visible { outline: 3px solid #A3ABDB; outline-offset: 3px; border-radius: 6px; }
+
 /* Search */
 .mt-shop .woocommerce-product-search {
 	display: flex;

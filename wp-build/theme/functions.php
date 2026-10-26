@@ -120,11 +120,64 @@ add_action( 'woocommerce_before_main_content', function () {
 	];
 	echo '<div class="mt-shop"><aside class="mt-shop-side">';
 	the_widget( 'WC_Widget_Product_Search', [ 'title' => '' ], $widget );
+	microtec_stock_filter();
 	the_widget( 'WC_Widget_Price_Filter', [ 'title' => 'Filter by Price' ], $widget );
 	the_widget( 'WC_Widget_Product_Categories', [ 'title' => 'Categories', 'count' => 1, 'hide_empty' => 1 ], $widget );
 	the_widget( 'WC_Widget_Products', [ 'title' => 'Our Best Sellers', 'number' => 5, 'orderby' => 'sales', 'order' => 'desc' ], $widget );
 	echo '</aside><div class="mt-shop-main">';
 }, 15 );
+
+/**
+ * Filter by Stock: "In Stock (n)" in the shop sidebar, as on the old site. Ticking it adds
+ * ?stock=instock, which hides out-of-stock products (WooCommerce marks them with the
+ * "outofstock" product visibility term, so variable products are covered too).
+ */
+function microtec_stock_query_on() {
+	return isset( $_GET['stock'] ) && 'instock' === $_GET['stock']; // phpcs:ignore WordPress.Security.NonceVerification
+}
+
+add_action( 'woocommerce_product_query', function ( $q ) {
+	if ( ! microtec_stock_query_on() ) {
+		return;
+	}
+	$tax   = (array) $q->get( 'tax_query' );
+	$tax[] = [
+		'taxonomy' => 'product_visibility',
+		'field'    => 'name',
+		'terms'    => [ 'outofstock' ],
+		'operator' => 'NOT IN',
+	];
+	$q->set( 'tax_query', $tax );
+} );
+
+function microtec_stock_filter() {
+	$tax = [ [ 'taxonomy' => 'product_visibility', 'field' => 'name', 'terms' => [ 'outofstock', 'exclude-from-catalog' ], 'operator' => 'NOT IN' ] ];
+	if ( is_product_taxonomy() ) {
+		$term  = get_queried_object();
+		$tax[] = [ 'taxonomy' => $term->taxonomy, 'field' => 'term_id', 'terms' => [ $term->term_id ] ];
+	}
+	$count = count( get_posts( [
+		'post_type'      => 'product',
+		'post_status'    => 'publish',
+		'posts_per_page' => -1,
+		'fields'         => 'ids',
+		'tax_query'      => $tax, // phpcs:ignore WordPress.DB.SlowDBQuery
+	] ) );
+
+	$on  = microtec_stock_query_on();
+	// Back to page 1, keeping the other filters (price, sorting).
+	$url = remove_query_arg( [ 'stock', 'paged' ], get_pagenum_link( 1, false ) );
+	$url = $on ? $url : add_query_arg( 'stock', 'instock', $url );
+
+	printf(
+		'<section class="mt-shop-widget mt-stock-filter"><h2 class="mt-shop-widget-title">Filter by Stock</h2>'
+		. '<a class="mt-stock-option%s" href="%s" role="checkbox" aria-checked="%s"><span class="mt-stock-box" aria-hidden="true"></span>In Stock <span class="count">(%d)</span></a></section>',
+		$on ? ' is-active' : '',
+		esc_url( $url ),
+		$on ? 'true' : 'false',
+		(int) $count
+	);
+}
 
 add_action( 'woocommerce_after_main_content', function () {
 	if ( microtec_is_catalog() ) {
