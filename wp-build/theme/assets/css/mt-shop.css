@@ -845,7 +845,7 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 
 /* Shipping calculator */
 .mt-ship {
-	margin: 18px 0 4px;
+	margin: 18px 0 20px;
 	padding: 18px;
 	border: 1px solid var(--mt-line);
 	border-radius: 16px;
@@ -912,7 +912,7 @@ body.single-product form.cart .woocommerce-variation-add-to-cart { display: flex
 .mt-ship-result:empty { display: none; }
 .mt-ship-result { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--mt-body); }
 .mt-ship-result p { margin: 0; }
-.mt-ship-result a { color: var(--mt-blue); font-weight: 600; }
+.mt-ship-result a { color: var(--mt-blue); font-weight: 600; white-space: nowrap; }
 .mt-ship-result.is-note { padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid var(--mt-line); }
 .mt-ship-rates { margin: 0 0 8px; padding: 0; list-style: none; }
 .mt-ship-rates li {
