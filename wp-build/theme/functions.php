@@ -398,7 +398,8 @@ add_action( 'wc_ajax_mt_shipping_quote', function () {
 		wp_send_json_error( [ 'message' => 'We don&rsquo;t ship to that country online. ' . $contact ] );
 	}
 	$postcode = wc_format_postcode( $postcode, $country );
-	if ( '' === $postcode || ! WC_Validation::is_postcode( $postcode, $country ) ) {
+	// WooCommerce has no Australian post code pattern, so check for four digits here.
+	if ( '' === $postcode || ! WC_Validation::is_postcode( $postcode, $country ) || ( 'AU' === $country && ! preg_match( '/^\d{4}$/', $postcode ) ) ) {
 		wp_send_json_error( [ 'message' => 'Please check the post code.', 'field' => 'postcode' ] );
 	}
 
