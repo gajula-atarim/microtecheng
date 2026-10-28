@@ -792,7 +792,9 @@ body.home #masthead { margin-bottom: -98px; }
 .mt-footer-contact a { color: #C3CBDD; }
 .mt-footer-contact a:hover { color: #fff; }
 .mt-footer-contact a.mt-strong { color: #fff; font-weight: 600; }
-.mt-footer-mark img { width: 40px; height: auto; display: block; }
+/* Footer logo: the blue logo and wordmark on a white panel, matching the header. */
+.e-con.mt-footer-logo { background: #fff; border-radius: 14px; padding: 10px 18px 10px 12px !important; width: fit-content !important; --width: auto; max-width: 100%; }
+.mt-footer-mark img { width: auto !important; height: 58px !important; display: block; }
 
 .mt-wordmark p { margin: 0; }
 .mt-wordmark span {
