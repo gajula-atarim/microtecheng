@@ -525,10 +525,15 @@ function microtec_old_site_target( $path ) {
 		'page/system-integration' => 354, 'page/bronto-lcd-display-keypad-overlay-replacement' => 757,
 		'page/tadano-cranes-technical-information' => 756, 'page/job-information-sheet' => 52,
 		'page/external-warning-light-and-light-control-module-mk' => 51, 'page/about-us' => 49,
-		'page/contact-us' => 52, 'robway' => 8,
+		'page/contact-us' => 52,
 	];
 	if ( isset( $products[ $path ] ) ) {
 		return get_permalink( $products[ $path ] );
+	}
+	// The old ROBWAY category is the Robway brand page here.
+	if ( 'robway' === $path ) {
+		$link = get_term_link( 'robway', 'product_brand' );
+		return is_wp_error( $link ) ? get_permalink( 8 ) : $link;
 	}
 	if ( isset( $categories[ $path ] ) ) {
 		$link = get_term_link( $categories[ $path ], 'product_cat' );
