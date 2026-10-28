@@ -152,7 +152,7 @@ body {
 
 /* ---------- Header (UAE) ---------- */
 
-.mt-logo img { height: 58px !important; width: auto !important; max-width: none; display: block; }
+.mt-logo img { height: 74px !important; width: auto !important; max-width: none; display: block; }
 .mt-logo .hfe-site-logo-container { display: block; line-height: 0; }
 
 /* Wordmark beside the logo mark: the name baked into the logo PNG is 85px wide at
@@ -170,7 +170,7 @@ body {
 .mt-wordmark__a {
 	font-family: "Archivo", sans-serif;
 	font-weight: 700;
-	font-size: 17px;
+	font-size: 20px;
 	letter-spacing: .11em;
 	text-transform: uppercase;
 	color: var(--mt-blue);
@@ -178,11 +178,11 @@ body {
 .mt-wordmark__b {
 	font-family: "Archivo", sans-serif;
 	font-weight: 600;
-	font-size: 11px;
+	font-size: 12.5px;
 	letter-spacing: .2em;
 	text-transform: uppercase;
 	color: var(--mt-blue);
-	margin-top: 3px;
+	margin-top: 4px;
 }
 /* Phones: one line, then the mark alone. The icons and Enquire need the room. */
 @media (max-width: 767px) {
@@ -322,6 +322,7 @@ body.home #masthead { margin-bottom: -98px; }
 
 /* Phones: tighten the floating bar so logo, icons and Enquire fit on one line */
 @media (max-width: 480px) {
+	.mt-logo img { height: 62px !important; }
 	.e-con.mt-header-bar { --gap: 14px 12px !important; --column-gap: 12px !important; padding-left: 14px !important; padding-right: 10px !important; }
 	.e-con.mt-header-actions { --gap: 2px !important; --column-gap: 2px !important; --row-gap: 2px !important; }
 	.mt-header-icon .elementor-icon,
