@@ -186,9 +186,14 @@ a.mt-wordmark .mt-wordmark__b {
 	color: var(--mt-blue);
 	margin-top: 4px;
 }
+/* Client asked for MICROTEC with the same letter spacing as ENGINEERING (05 Nov 2026). The footer
+   wordmark's ".mt-wordmark span:first-child" (.36em, further down) also matched the header, so this
+   is scoped to the header lockup with enough specificity to win. */
+a.mt-wordmark span.mt-wordmark__a { letter-spacing: .01em; }
 /* Phones: one line, then the mark alone. The icons and Enquire need the room. */
 @media (max-width: 767px) {
 	.mt-wordmark__a { font-size: 14px; letter-spacing: .06em; }
+	a.mt-wordmark span.mt-wordmark__a { letter-spacing: .02em; }
 	a.mt-wordmark .mt-wordmark__b { font-size: 14px; letter-spacing: .02em; }
 }
 @media (max-width: 599px) {
