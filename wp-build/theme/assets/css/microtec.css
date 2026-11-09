@@ -152,7 +152,7 @@ body {
 
 /* ---------- Header (UAE) ---------- */
 
-.mt-logo img { height: 74px !important; width: auto !important; max-width: none; display: block; }
+.mt-logo img { height: 92px !important; width: auto !important; max-width: none; display: block; }
 .mt-logo .hfe-site-logo-container { display: block; line-height: 0; }
 
 /* Wordmark beside the logo mark: the name baked into the logo PNG is 85px wide at
@@ -175,11 +175,13 @@ body {
 	text-transform: uppercase;
 	color: var(--mt-blue);
 }
-.mt-wordmark__b {
+/* Client asked for ENGINEERING at the same size as MICROTEC (03 Nov 2026). Scoped to the
+   header lockup (an <a>) so the footer wordmark keeps the rules further down this file. */
+a.mt-wordmark .mt-wordmark__b {
 	font-family: "Archivo", sans-serif;
 	font-weight: 600;
-	font-size: 12.5px;
-	letter-spacing: .2em;
+	font-size: 20px;
+	letter-spacing: .01em;
 	text-transform: uppercase;
 	color: var(--mt-blue);
 	margin-top: 4px;
@@ -187,7 +189,7 @@ body {
 /* Phones: one line, then the mark alone. The icons and Enquire need the room. */
 @media (max-width: 767px) {
 	.mt-wordmark__a { font-size: 14px; letter-spacing: .06em; }
-	.mt-wordmark__b { display: none; }
+	a.mt-wordmark .mt-wordmark__b { font-size: 14px; letter-spacing: .02em; }
 }
 @media (max-width: 599px) {
 	.elementor-widget.mt-wordmark-w { display: none !important; }
@@ -255,7 +257,7 @@ body {
 	box-shadow: 0 10px 30px rgba(59, 71, 156, .10);
 }
 /* On the homepage the floating bar sits over the hero */
-body.home #masthead { margin-bottom: -98px; }
+body.home #masthead { margin-bottom: -116px; }
 
 .mt-header-icon .elementor-icon,
 .mt-header-bar .hfe-search-button-wrapper .hfe-search-icon-toggle,
