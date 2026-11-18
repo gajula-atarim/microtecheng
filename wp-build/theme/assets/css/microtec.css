@@ -261,8 +261,32 @@ a.mt-wordmark span.mt-wordmark__a { letter-spacing: .01em; }
 	border-radius: 999px;
 	box-shadow: 0 10px 30px rgba(59, 71, 156, .10);
 }
-/* On the homepage the floating bar sits over the hero */
-body.home #masthead { margin-bottom: -116px; }
+/* Pages with a hero tuck it under the floating bar, so the hero shows behind the bar instead of a
+   white strip. The overlap is the height of the bar's row (15px gap above + the pill): 136px, or
+   102px on phones where the logo is 62px. The heroes' top padding is raised by the same amount the
+   overlap grew (was -98px on inner pages, -116px on Home) so their content doesn't move. */
+.e-con.mt-header-bar { padding-top: 14px !important; padding-bottom: 14px !important; padding-left: 36px !important; }
+body.home #masthead,
+body:has(.mtp-hero) #masthead,
+body:has(.mtg-hero) #masthead { margin-bottom: -136px !important; }
+@media screen {
+	body .mtp.mtp.mtp .md6a7de { padding-top: 188px; }
+	body .mtp.mtp.mtp .m859e4b { padding-top: 170px; }
+	body .e-con.e-con.mtg-hero-inner { --padding-top: 188px; }
+}
+@media screen and (max-width: 767px) {
+	body .e-con.e-con.mtg-hero-inner { --padding-top: 168px; }
+}
+/* Phones: the square logo clears the pill's rounded ends with a little more room. */
+@media screen and (max-width: 480px) {
+	.e-con.mt-header-bar { padding-top: 12px !important; padding-bottom: 12px !important; padding-left: 24px !important; }
+	body.home #masthead,
+	body:has(.mtp-hero) #masthead,
+	body:has(.mtg-hero) #masthead { margin-bottom: -102px !important; }
+	body .mtp.mtp.mtp .md6a7de { padding-top: 154px; }
+	body .mtp.mtp.mtp .m859e4b { padding-top: 136px; }
+	body .e-con.e-con.mtg-hero-inner { --padding-top: 134px; }
+}
 
 .mt-header-icon .elementor-icon,
 .mt-header-bar .hfe-search-button-wrapper .hfe-search-icon-toggle,
@@ -330,7 +354,7 @@ body.home #masthead { margin-bottom: -116px; }
 /* Phones: tighten the floating bar so logo, icons and Enquire fit on one line */
 @media (max-width: 480px) {
 	.mt-logo img { height: 62px !important; }
-	.e-con.mt-header-bar { --gap: 14px 12px !important; --column-gap: 12px !important; padding-left: 14px !important; padding-right: 10px !important; }
+	.e-con.mt-header-bar { --gap: 14px 12px !important; --column-gap: 12px !important; padding-right: 10px !important; }
 	.e-con.mt-header-actions { --gap: 2px !important; --column-gap: 2px !important; --row-gap: 2px !important; }
 	.mt-header-icon .elementor-icon,
 	.mt-nav-mobile .hfe-nav-menu__toggle { width: 36px; height: 36px; }
